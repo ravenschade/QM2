@@ -113,9 +113,28 @@ Aktuelle Datei: \url{http://github.com/downloads/ravenschade/QM2/skript.pdf}\\
 Dieses Skript ist aus den Vorlesungsmitschriften vom WiSe 09/10 entstanden, die anhand der der Vorlesung aus dem Wise 10/11 aktualisiert werden. Das Skript wurde von Prof. Requardt NICHT gegengelesen und dient damit nur zur Orientierung. Ich übernehme KEINE Garantie für die Richtigkeit der Aussagen in diesem Skript. Also bitte KRITISCH lesen.\\
 Die Verbreitung dieser Mitschrift wurde von Prof. Requardt erlaubt.\\
 Die Quelldateien für dieses Skript sind unter \url{http://github.com/ravenschade/QM2} zu finden. Dort kann auch jeder Fehler ändern. Wenn ihr Fehler/Verbesserungen habt und nicht mit Git vertraut sein solltet, dann schickt mir bitte eine Mail an ravenschade@googlemail.com.
-Ich werde das Skript anhand der Vorlesung im WS 2010/11 aktualisieren (ca. jedes 2te Wochenende) und eine aktualisierte Version zum Download auf \url{http://github.com/downloads/ravenschade/QM2/skript.pdf} stellen.\\
+Ich werde das Skript anhand der Vorlesung im WS 2010/11 aktualisieren und eine aktualisierte Version zum Download auf \url{http://github.com/downloads/ravenschade/QM2/skript.pdf} stellen.\\
 Ale Changelog dient das Commit-Log vom Git-Repo.
 \newpage
+
+%Korrekturen:
+%eingebaut:
+%26.10
+%28.10
+%2.11
+%4.11
+%9.11
+%11.11
+%16.11
+%18.11
+%
+%Todo:
+%
+%
+%
+%
+%
+
 \part{Vorlesung}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %19.10.09
@@ -292,68 +311,6 @@ $sign(\Pi)=\pm 1$ je nach Anzahl von benachbarten Transpositionen in $\Pi$
 \end{enumerate}
 $S_N$ und $A_N$ auf $\mathcal H_N$ $\ni$ Monome $\nu_{i_1} \otimes ... \otimes \nu_{i_N}$, $\{\nu_{i}\}$ ON-Basis in $\mathcal H$
 Bemerkung: $u_\Pi$ ist ein unitärer Operator auf $\mathcal H_N$ und $S_N$ und $A_N$ projezieren die symmetrischen bzw. antisymmetrischen Elemente aus $\mathcal H \otimes ... \otimes \mathcal H$.
-\subsubsection*{ÜBUNGSAUFGABEN}
-\begin{enumerate}
- \item Im Tensorprodukt $\mathcal H_1 \otimes \mathcal H_2$ zeige man, dass $\begin{cases}
-  A:= A_1\otimes \Eins+ \Eins \otimes A_2\\
-  B:= B_1\otimes \Eins+ \Eins \otimes B_2\\
-\end{cases}$ vertauschen, wenn $[A_1,B_1]=[A_2,B_2]=0.$
- \item Sei $\psi_1$ Eigenzustand von $H_2$ zum Eigenwert $E_0$ und $\psi_2$ Eigenzustand von $H_2$ zum Eigenwert $E_2$.
-Zeige: $$H(\psi_1 \otimes \psi_2)=(E_1+E_2)(\psi_1 \otimes \psi_2)$$
-$$H=H_1\otimes \Eins+ \Eins \otimes H_2$$
- \item Zeige, dass $L^2(\mathbb R^3)\oplus L^2(\mathbb R^3)\cong L^2(\mathbb R^3)\otimes \mathbb C^2$.
- \item Zeige: $u_\Pi(A_N \psi)=sgn(\Pi)(A_N \psi)$, $\psi$ e.g. Monom ($\nu_i \otimes ... \otimes \nu_N$), beachte:
-$$sign(\Pi \Pi')=sign(\Pi)\cdot sign(\Pi')$$
-$$sign(\Pi )=sign(\Pi^{-1})$$
-$$u_\Pi(\nu_1 \otimes ... \otimes \nu_N):=\nu_{\Pi(1)}\otimes ... \otimes \nu_{\Pi(N)}$$
-\end{enumerate}
-\ifthenelse{\boolean{lsg}}{
-\subsubsection*{LÖSUNG}
-\begin{enumerate}
-\item 
-\begin{align*}
-A&=A_1\otimes \Eins+ \Eins \otimes A_2\\
-B&=B_1\otimes \Eins+ \Eins \otimes B_2\\
-AB&=A_1B_1 \otimes \Eins+ B_1 \otimes A_2 +A_1 \otimes B_2+\Eins \otimes A_2B_2\\
-BA&=B_1A_1 \otimes \Eins+ A_1 \otimes B_2 +B_1 \otimes A_2+\Eins \otimes B_2A_2\\
-AC &= CA, \ \mathrm{wenn} \ [A_1,B_1]=[A_2,B_2]=0
-\end{align*}
-%\begin{align*}
-%A&=A\otimes \Eins+ \Eins \otimes A\\
-%C&=C_1\otimes C_2\\
-%AC&=(A_1 \otimes \Eins)(C_1 \otimes C_2)+(\Eins\otimes A_2)(C_1 \otimes C_2)\\
-%&=A_1 C_1 \otimes C_2+C_1 \otimes A_2 C_2\\
-%CA&=(C_1 \otimes C_2)(A_1 \otimes \Eins)+(C_1 \otimes C_2)(\Eins\otimes A_2)(C_1 \otimes C_2)\\
-%&=C_1 A_1 \otimes C_2+C_1 \otimes C_2A_2\\
-%AC &\neq CA, \ \mathrm{da} \ [C_1,A_1] \stackrel{i.A.}{\neq}0\stackrel{i.A.}{\neq} [C_2,A_2]
-%\end{align*}
-\item \begin{align*}
-H&=H_1\otimes \Eins+ \Eins \otimes H_2\\
-H(\psi_1 \otimes \psi_2)&=H_1(\psi_1 \otimes \Eins)+H_2(\Eins \otimes \psi_2)\\
-&=E_1(\psi_1 \otimes \Eins)+E_2(\Eins \otimes \psi_2)\\
-&=(E_1+E_2)(\psi_1 \otimes \psi_2)\\
-\end{align*}
-\item
-$$\psi_1,\psi_2 \in L^^2(\mathbb R^3), \psi \in L^2(\mathbb R^3) \oplus L^2(\mathbb R^3)$$
-$$\psi=\begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix}=\begin{pmatrix} \psi_1 \\ 0 \end{pmatrix}+\begin{pmatrix} 0 \\ \psi_2 \end{pmatrix}$$
-$$=\psi_1\cdot\begin{pmatrix} 1 \\ 0 \end{pmatrix}+\psi_2 \cdot\begin{pmatrix} 0 \\ 1 \end{pmatrix} $$
-$\begin{pmatrix} 1 \\ 0 \end{pmatrix}$, $\begin{pmatrix} 0 \\ 1 \end{pmatrix}$ ist eine Basis in $\mathbb C^2$\\
-Mit dem Isomorphismus auf den Basisvektoren:
-$$\psi_1\begin{pmatrix} 1 \\ 0 \end{pmatrix}+\psi_2\begin{pmatrix} 0 \\ 1 \end{pmatrix} \mapsto \psi_1 \otimes\begin{pmatrix} 1 \\ 0 \end{pmatrix}+\psi_2\otimes \begin{pmatrix} 0 \\ 1 \end{pmatrix}$$
-gilt $\psi \in L^2(\mathbb R^3) \otimes \mathbb C^2$ und damit $L^2(\mathbb R^3) \oplus L^2(\mathbb R^3) \cong L^2(\mathbb R^3) \otimes \mathbb C^2$
-\item 
-Beweis für Monom $v_{i_1} \otimes ... \otimes v_{i_N}$:
-\begin{align}
-u_\Pi  \circ \sum_{\Pi'} sign(\Pi') v_{\Pi'(i_1)} \otimes ... \otimes v_{\Pi'(i_N)}&= \sum_{\Pi'} sgn(\Pi') v_{\Pi''=\Pi \circ \Pi'(i_1)} \otimes ... \otimes v_{\Pi \circ \Pi'(i_N)} \\
-&= \sum_{\Pi''} sgn(\Pi^{-1}\Pi'') v_{\Pi''(i_1)} \otimes ... \otimes v_{\Pi''(i_N)} \\
-&= sgn(\Pi) \sum_{\Pi''} sgn(\Pi'') v_{\Pi''(i_1)} \otimes ... \otimes v_{\Pi''(i_N)} \\
-&=N! sgn(\Pi) A_N \circ (v_{\Pi''(i_1)} \otimes ... \otimes v_{\Pi''(i_N)}). \Box
-\end{align}
-Sym$_N$ ist eine Gruppe; ferner ist $\Pi \ra sgn(\Pi)$ eine ''Darstellung'' von Sym$_N$, d.h. 
-$$sgn(\Pi \circ \Pi')= sgn(\Pi)\cdot sgn(\Pi')$$
-$$sgn(\Pi^{-1})=sgn(\Pi)$$
-\end{enumerate}
-}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %26.10.09
 %V03
@@ -404,13 +361,6 @@ In der QM handelt es sich um unitäre Darstellungen, d.h. $D(g)$ sind unitäre O
 \begin{verbatim}
 Titel: 	Analysis, Manifolds and Physics / Yvone Choquet-Bruhat; Cecile Dewitt-Morette; Margaret Dillard-Bleick
 Verfasser: 	Choquet-Bruhat, Yvonne *1923-* ; DeWitt-Morette, Cécile ; Dillard-Bleick, Margaret
-Erschienen: 	Amsterdam [u.a.]: North-Holland, 1977
-Umfang: 	XVII, 544 S.
-Anmerkung: 	Literaturverz. S. 521 - 526
-ISBN: 	0-7204-0494-0
-Schlagwörter: 	*Manifolds (Mathematics) ; Mathematical physics
-Mehr zum Thema: 	Klassifikation der Library of Congress: QC20.7.D/
-Dewey Dezimal-Klassifikation: 516.36
 \end{verbatim}
 \end{tiny}
 
@@ -418,34 +368,13 @@ Dewey Dezimal-Klassifikation: 516.36
 \begin{verbatim}
 Titel:	The road to reality : a complete guide to the laws of the universe / Roger Penrose
 Verfasser:	Penrose, Roger (Mathematiker) *1931-*
-Ausgabe:	1st Vintage Books ed.
-Erschienen:	New York : Vintage Books, 2007
-Umfang:	XXVIII, 1099 S. : Ill., graph. Darst. ; 23 cm
-Anmerkung:	Includes bibliographical references (p. 1050 - 1085) and index
-Originally publ. by Jonathan Cape, London , 2004
-ISBN:	978-0-679-77631-4
-Schlagwörter:	*Weltall / Gesetz <Physik> / Mathematik 
-Mathematical physics
-Physical laws
-Sachgebiete:	39.22 ; Astrophysik
-30.02 ; Philosophie und Theorie der Naturwissenschaften
-Mehr zum Thema:	Klassifikation der Library of Congress: QC20
-Dewey Dezimal-Klassifikation: 530.1
 \end{verbatim}
 \end{tiny} 
 \item[Darstellungstheorie]
 \begin{tiny}
 \begin{verbatim}
-Titel: 	Darstellungen von Gruppen : mit Berücksichtigung der Bedürfnisse der 
-modernen Physik / Hermann Boerner
+Titel: 	Darstellungen von Gruppen : mit Berücksichtigung der Bedürfnisse der modernen Physik / Hermann Boerner
 Verfasser: 	Boerner, Hermann
-Ausgabe: 	2., überarb. Aufl.
-Erschienen: 	Berlin [u.a.] : Springer, 1967
-Umfang: 	XIII, 317 S. : graph. Darst.
-Schriftenreihe: 	Die Grundlehren der mathematischen Wissenschaften in Einzeldarstellungen ; 74
-Anmerkung: 	Literaturverz. S. 307 - 312
-Schlagwörter: 	*Gruppentheorie / Darstellungstheorie
-Sachgebiete: 	33.99 ; Physik: Sonstiges
 \end{verbatim}
 \end{tiny}
 
@@ -454,21 +383,7 @@ Sachgebiete: 	33.99 ; Physik: Sonstiges
 \begin{tiny}
 \begin{verbatim}
 Titel: 	Einführung in die Struktur- und Darstellungstheorie der klassischen Gruppen 
-/ Wolfgang Hein
 Verfasser: 	Hein, Wolfgang
-Erschienen: 	Berlin [u.a.] : Springer, 1990
-Umfang: 	X, 255 S. : graph. Darst.
-Schriftenreihe: 	Hochschultext
-Anmerkung: 	Nebent.: Struktur- und Darstellungstheorie der klassischen Gruppen
-ISBN: 	3-540-50617-9
-0-387-50617-9
-Schlagwörter: 	*Klassische Gruppe / Struktur
-*Klassische Gruppe / Darstellungstheorie
-*Klassische Gruppe / Lie-Algebra
-Sachgebiete: 	31.21 ; Gruppentheorie
-31.23 ; Ideale, Ringe, Moduln, Algebren <Mathematik>
-31.61 ; Algebraische Topologie
-Link: 	http://www.zentralblatt-math.org/zmath/en/search/?an=0714.20028 [Zentralblatt MATH]
 \end{verbatim}
 \end{tiny}
 
@@ -506,57 +421,48 @@ $$\bigotimes_1^N L^2_q(\mathbb R^3)= \bigotimes_1^N(L^2(\mathbb R^3)\otimes \mat
 $$q_i=(x_i,\mu=\pm 1)$$
 $$(u_\Pi \circ f)(q_1,...,q_2):=f(q_{\Pi^{-1}(1)},...,q_{\Pi^{-1}(N)}) $$
 \subsubsection*{Beobachtung}
-Eine vollständige Beschreibung von $N$ Spin-$\frac{1}{2}$-Teilchen ist entweder ein $2^N$-Tupel $\{\psi_{\mu_1,...,\mu_N}(x_1,...x_N)\}$ oder man arbeitet auf einem erweiterten Konfigurationsraum, sprich $\psi(q_1,...,q_N)$
+Eine vollständige Beschreibung von $N$ Spin-$\frac{1}{2}$-Teilchen ist entweder ein $2^N$-Tupel $\{\psi_{\mu_1,...,\mu_N}(x_1,...x_N)\}$ oder man arbeitet auf einem erweiterten Konfigurationsraum, sprich $\psi(q_1,...,q_N)$.\\
 %\subsubsection*{Folgerung}
 %Im Fall von $N$ Elektronen besteht eine vollständige Wellenfunktion aus einem Tupel von $2^N$ einzelnen Wellenfunktionen, nämlich $f(x_1,...x_N,\mu_1, ... \mu_N)$ (Tensorkomp.)
+Spin-$\frac{1}{2}$-Teilchen $\ra$ allgemeine Wellenfunktion in $\otimes_1^N L^2(\R,\mu)$ $\ra$ $\psi(q_1,...,q_N)$ mit $q_i=(x_1,\mu_i)$, d.h. ein Zustand von $N$ Elektronen besteht (i.A.) aus $2^N$ Komponenten.
+\subsubsection*{Beobachtung In der Physik}
+\paragraph{Fermionen:} $N$-Teilchen-WFu für $N$ Spin -$\frac{1}{2}$-Teilchen (z.B. Elektronen) liegen im $\mathcal H_a^N=\{\psi(q_1,...,q_N)$ sodass $U_\Pi \psi=sgn(\Pi)\psi\}$ $\ra$ Pauliprinzip
+\paragraph{Bosonen:} ganzzahliger Spin $\ra$ $\psi \in \mathcal H_s^N=\{\psi$ sodass $U_\Pi \psi=\psi\}$ 
+\paragraph{Begründung:}
+Vollständige Begründung in QFT (Lüders-Dumino, Pauli,...) $\ra$ Spin-Statistik-Theorem
+
 
 \subsection{Eigenschaften von Projektoren, Spektraldarstellung von selbstadjungierten Operatoren}
 \subsubsection*{Definition (Projektor)}
-Ein beschränkter, selbstadjungierter Operator $P$ mit $P^2=P$ heißt Projektor auf dem Hilbertraum $\mathcal H$. $P$ projeziert auf den (abgeschlossenen) Untervektorraum $P \circ  \mathcal H$.
+Ein beschränkter, selbstadjungierter Operator $P$ mit $P^2=P=P*$ heißt Projektor auf dem Hilbertraum $\mathcal H$. $P$ projeziert auf den (abgeschlossenen) Untervektorraum $P \circ  \mathcal H$.
+$$\mathcal H \ni \psi \mapsto P \circ \psi \in P \circ \mathcal H$$
+$$P\circ \mathcal H \ni \psi \mapsto  P\psi=\psi$$
 \subsubsection*{Korollar}
 \begin{enumerate}
  \item Mit P ist auch $\Eins-P$ Projektor, $\Eins=P+(\Eins-P)$\\
-Beweis: $(1-P)^2=1-2P+P^2=1-P$
+Beweis: $(1-P)^2=1-2P+P^2=1-P$, $(1-P)*=1-P$
  \item $(1-P) \mathcal H \bot P \mathcal H$\\
-Beweis: $((1-P)\psi|P\psi)=(P(1-P)\Psi|\psi)=(P\psi-P\psi|\psi)=0$
+Beweis: $\psi,\phi \in \mathcal H$\\
+$((1-P)\psi|P\phi)=(P(1-P)\Psi|\phi)=(P\psi-P\psi|\phi)=0$\\
+$\ra \mathcal H = p \mathcal H \oplus (1-P)\mathcal H$
 \end{enumerate}
 \subsubsection*{Korollar}
-Zu jedem abgeschlossenen UVR $U$ gehört eindeutig ein Projektor $P$ mit $P \circ \mathcal H=U$
-(Riesz:) $\exists$ eine eindeutige Zerlegung von jedem $\psi \in \mathcal H$ in $u+v$, $u \in U$, $v \in \bot U$, $u+v=\psi$
-$\curvearrowright P: \psi \ra u$ 
+Zu jedem abgeschlossenen UVR $U \subset \mathcal H$ gehört eindeutig ein Projektor
+$P_U$ mit $P_U \circ \mathcal H=U$
+(Riesz:) $\exists$ eine eindeutige Zerlegung von jedem $\psi \in \mathcal H$ in $u+v$, $u \in U$, $v \in U^\bot$, $u+v=\psi$
+$\curvearrowright P_U: \psi \ra u$ 
 \subsubsection*{Literatur}
 \begin{tiny}
 \begin{verbatim}
-
- Titel: 	Foundations of quantum mechanics / Josef M. Jauch
+Titel: 	Foundations of quantum mechanics / Josef M. Jauch
 Verfasser: 	Jauch, Josef M.
-Ausgabe: 	2. printing.
-Erschienen: 	Reading, Mass. [u.a.] : Addison-Wesley, 1973
-Umfang: 	XII, 299 S. : graph. Darst.
-Schriftenreihe: 	Addison-Wesley series in advanced physics
-Anmerkung: 	Literaturangaben
-ISBN: 	0-201-03298-8
-Schlagwörter: 	*Quantenmechanik
-Sachgebiete: 	33.23 ; Quantenphysik
 \end{verbatim}
 \end{tiny}
 
 \begin{tiny}
 \begin{verbatim}
-
- Titel: 	Mathematische Grundlagen der Quantenmechanik / John von Neumann. Mit einem Geleitw. von Rudolf Haag
+Titel: 	Mathematische Grundlagen der Quantenmechanik / John von Neumann. Mit einem Geleitw. von Rudolf Haag
 Verfasser: 	Von Neumann, John *1903-1957*
-Ausgabe: 	2. Aufl., [Nachdr. der Ausg.] Berlin, Springer, 1932.
-Erschienen: 	Berlin [u.a.] : Springer, 1996 = 1932
-Umfang: 	262 S. : graph. Darst.
-Schriftenreihe: 	Grundlehren der mathematischen Wissenschaften ; 38
-Anmerkung: 	Literaturangaben
-ISBN: 	3-540-59207-5*hbk.
-Schlagwörter: 	*Mathematik / Quantenmechanik
-Sachgebiete: 	33.23 ; Quantenphysik
-31.80 ; Angewandte Mathematik
-Link: 	http://www.gbv.de/dms/goettingen/191891592.pdf [Inhaltsverzeichnis]
-http://www.zentralblatt-math.org/zmath/en/search/?an=0906.00006 [Zentralblatt MATH]
 \end{verbatim}
 \end{tiny}
 
@@ -575,7 +481,7 @@ $$A \leq B \Leftrightarrow \Langle \psi|A\psi\Rangle  \leq \Langle \psi|B\psi\Ra
  \item $P_1P_2=0 \Leftrightarrow P_1 \mathcal H \subset P_2 \mathcal H^\bot$
  \item $P_1P_2=0 \Leftrightarrow P_1+P_2=P$ ist Projektor auf $P_1\mathcal H \oplus  P_2 \mathcal H$
  \item $P_1P_2=P_2P_1 \Rightarrow P_1P_2$ ist Projektor auf $P_1\mathcal H \cap  P_2 \mathcal H$
- \item $P_1\leq P_2 \Rightarrow P_1P_2=P_2P_1=P_1$ und es gilt $P=P_2-P_1$ ist Projektor auf $P_2 \mathcal H \cap P_1 \mathcal H^\bot$
+ \item $P_1\leq P_2 \Leftrightarrow P_1P_2=P_2P_1=P_1$ und es gilt $P=P_2-P_1$ ist Projektor auf $P_2 \mathcal H \cap P_1 \mathcal H^\bot$
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %29.10.09
@@ -584,122 +490,101 @@ $$A \leq B \Leftrightarrow \Langle \psi|A\psi\Rangle  \leq \Langle \psi|B\psi\Ra
 \item[zu $P_1P_2=0  \Leftrightarrow P_2P_1=0$:] 
 $P_1P_2=0 \lra (P_1P_2)^*=0 \Leftrightarrow P_2P_1=0$
 \item[zu $P_1P_2=0 \lra P_1 \mathcal H \subset P_2 \mathcal H^\bot$:]
-($\Ra$) $P_1P_2=0$, $x \in P_1 \H \Ra x=P_1x \Ra P_2x=P_2P_1x=P_1P_2x=0 \Ra x \in (P_2\H)^\bot$\\
+($\Ra$) $P_1P_2=0$, $x \in P_1 \H \Ra x=P_1x \Ra P_2x=P_2P_1x=P_1P_2x=0 \Ra x \in (P_2\H)^\bot$ $\Ra$ $P_1 \H \subset P_2 \H^\bot$\\
 ($\La$) $P_1\H \subset (P_2 \H)^\bot \Ra (\mathrm{wegen} \ P_2(P_2\H)^\bot=0)\ \Ra P_2P_1=0$
 \item[zu $P_1P_2=0 \Leftrightarrow P_1+P_2=P$ ist Projektor auf $P_1\mathcal H \oplus  P_2 \mathcal H$:]
 ($\Ra$) $P_1P_2=0 \Ra P^2=(P_1+P_2)^2=P_1^2+P_2^2=P_1+P_2=P$\\
-$(P_1+P_2)^*=P_1+P_2$, und wegen 2.) projeziert $P$ auf $P_1\H \oplus P_2\H$\\
+$(P_1+P_2)^*=P_1+P_2$, und wegen 1.) projeziert $P$ auf $P_1\H \oplus P_2\H$\\
 ($\La$) $P=P_1+P_2$ Projektor $\Ra P_1P_2+P_2P_1=0 \Ra P_1P_2y=0$ für $y \in (P_1\H)^\bot$ und $P_1P_2x+P_2x=0$ für $x \in P_1\H$\\
 $\Ra P_1P_2x+P_1P_2x=2P_1P_2x=0 \Ra P_1P_2=0$  
 \end{description}
 \subsubsection*{Literatur}
 \begin{tiny}
-\begin{tiny}
 \begin{verbatim}
-
 Titel: 	Theorie der linearen Operatoren im Hilbert-Raum / N. I. Achieser; I. M. Glasmann
 Verfasser: 	Achiezer, Naum *1901-* ; Glazman, Izrail Markovic
-Sonst. Personen: 	Baumgärtel, Hellmuth
-Ausgabe: 	Lizenz[ausg.] der 8., erw. Aufl. / hrsg. von H. Baumgärtel
-Erschienen: 	Thun [u.a.] : Deutsch, 1981
-Umfang: 	496 S. : graph. Darst.
-Schriftenreihe: 	Mathematische Lehrbücher und Monographien : Abteilung 1, Mathematische Lehrbücher ; 4
-Einheitssachtitel: 	Teorija linejnych operatorov v gilbertovom prostranstve <dt.>
-Anmerkung: 	Literaturverz. S. 483 - 489
-ISBN: 	3-87144-601-7
+\end{verbatim}
+\begin{verbatim}
+Titel:	Maß- und Integrationstheorie
+Verfasser:	Bauer, Heinz
+\end{verbatim}
+\begin{verbatim}
+Titel:	Functional analysis
+Verfasser:	Reed, Michael ; Simon, Barry
 \end{verbatim}
 \end{tiny}
-
+\begin{tiny}
+\begin{verbatim}
+Titel: 	Mathematische Grundlagen der Quantenmechanik
+Verfasser: 	Von Neumann, John *1903-1957*
+\end{verbatim}
 \end{tiny}
+\subsubsection*{Interessante Beobachtung}
+4. ist ''klassisches'' Verhalten (klassische Wahrscheinlichkeitstheorie)
 
-\subsubsection*{Interessante Beobachtung FIXME}
-\textbf{Frage:} ($*$) $P_1P_2 \neq P_2P_1$, man hat $P_1\H$,$P_2\H \Ra P_1\H \cap P_2 \H$ (vgl. 4.):\\
-$P_1P_2=P_2P_1 \Ra P_1\cdot P_2$ Projektor und projeziert auf $P_1\H \cap P_2\H$\\
-offenbar projeziert ($*$) $P_1P_2$ bzw. $P_2P_1$ nicht auf $P_1\H \cap P_2\H$\\
-\textbf{Wissen:} $P_1\H \cap P_2\H$ UVR $\Ra$ es existieren Projektoren (''Funktionen'' von $P_1,P_2$)
+%\textbf{Frage:} ($*$) $P_1P_2 \neq P_2P_1$, man hat $P_1\H$,$P_2\H \Ra P_1\H \cap P_2 \H$ (vgl. 4.):\\
+%$P_1P_2=P_2P_1 \Ra P_1\cdot P_2$ Projektor und projeziert auf $P_1\H \cap P_2\H$\\
+%offenbar projeziert ($*$) $P_1P_2$ bzw. $P_2P_1$ nicht auf $P_1\H \cap P_2\H$\\
+%\textbf{Wissen:} $P_1\H \cap P_2\H$ UVR $\Ra$ es existieren Projektoren (''Funktionen'' von $P_1,P_2$)
 
-\subsubsection*{Satz FIXME}
-$s-\lim_{n \ra \infty} (P_1P_2)^n=$ Proj. auf $P_1\H \cap P_2\H$ (Realisation durch Filter)
+\subsubsection*{Satz: Starker Limes}
+$P_1 \H \cap P_2 \H$ ist UVR und Projektor $P$, der auf $P_1 \H \cap P_2 \H$ projeziert ist
+$$P=s-\lim_{n \ra \infty} (P_1P_2)^n$$
+d.h. $P\psi=lim_{n \ra \infty} (P_1P_2)^n \psi$ (Realisation durch Filter)
 
-\subsubsection*{Bemerkung}
-normaler Limes von Operatoren:\\
-$$A_n \ra A, \ \mathrm{d.h.} \ ||A-A_n|| \stackrel{n \ra \infty}{\ra}A $$
-s-Limes:\\
-$$\lim_{n \ra \infty}A_nx \ra Ax, x \in \H$$
-w-Limes:\\
-$$\lim_{n \ra \infty} (\Psi|A_n \Phi) \ra (\Psi|A \Phi), \forall \Psi, \Phi$$
-Wenn $P_1P_2=P_2P_1 \Ra (P_1P_2)^n=P_1P_2=P_2P_1$.
+\subsubsection*{Bemerkung (Hilbertraummathematik)}
+Für Operatoren:\\
+normaler Limes:\\
+$$A_n \stackrel{||\cdot||}{\ra} A, \ \mathrm{d.h.} \ ||A-A_n|| \stackrel{n \ra \infty}{\ra}0 $$
+$$||A||:= max \frac{||A\psi||}{||\psi||}$$
+s-Limes (starker Limes):\\
+$$A_n \stackrel{s}{\ra} A$$
+$$\lim_{n \ra \infty}A_nx \ra Ax, \forall x \in \H$$
+w-Limes (schwacher Limes, wichtig für Physik):\\
+$$A_n \stackrel{w}{\ra} A$$
+$$\lim_{n \ra \infty} (\Psi|A_n \Phi) \ra (\Psi|A \Phi), \forall \Psi, \Phi \in \H$$
+%Wenn $P_1P_2=P_2P_1 \Ra (P_1P_2)^n=P_1P_2=P_2P_1$.
+Für Vektoren:\\   
+s-Limes (starker Limes):\\
+$$\psi_n \stackrel{s,||\cdot||}{\ra} \psi$$         
+$$\lim_{n \ra \infty}||\psi-\psi_n||=0$$
+w-Limes (schwacher Limes):\\
+$$\psi_n \stackrel{w}{\ra} \psi$$
+$$(\psi_n|\phi) \stackrel{n \ra \infty}{\ra} (\psi| \phi)  \forall \phi \in \H$$
 
 \subsubsection*{Projektorwertige Maße}
 ''Normales'' Maß (Inhaltsbegriff) $\ra$ Zahlen zu Mengen
 \subsubsection*{Definition (Projektorwertiges Maß)}
-Zuordnung von Projektoren aus dem Hilbertraum zu Mengen $\subset \R^n$.\\
-Mengen mit vernünftigen Eigenschaften:\\
-Das System von zulässigen Mengen (''Borelmenge'') enthält abzählbare Durchschnitte und Vereinigungen solcher Mengen, $\R^n, \varnothing, S \ra \R^n \backslash S$.
-(Bauer: Maß- u Integrationstheorie, Wahrscheinlichkeitstheorie; Reed-Simmon I)\\
-Sei ${\Delta_i}$ ein Mengensystem auf $X=\R,\R^n$; zu jedem $\Delta_i$ gehört ein Projektor $P(\Delta_i)$ mit:
+%Zuordnung von Projektoren aus dem Hilbertraum zu Mengen $\subset \R^n$.\\
+%Mengen mit vernünftigen Eigenschaften:\\
+%Das System von zulässigen Mengen (''Borelmenge'' $\mathcal B$) enthält abzählbare Durchschnitte und Vereinigungen solcher Mengen: $\R, \varnothing, S \ra \R \backslash S$.
+Sei $\{\Delta_i\}=\mathcal B$ (Borel-Sigma-Algebra) ein Mengensystem auf $X=\R,\R^n$ mit $\Delta \in \mathcal B \ra \R \setminus \Delta \in \mathcal B, \varnothing, \R \in \mathcal B$ und abzählbaren Durchschnitten und Vereinigungen solcher Mengen \\
+Zu jedem $\Delta_i \in \mathcal B$ gehört ein Projektor $P(\Delta_i)$ im Hilbertraum mit:
 \begin{enumerate}
  \item $\forall i,j: \ P(\Delta_i),P(\Delta_j)$ vertauschen
- \item $P(\Delta_i)P(\Delta_j)=P(\Delta_i \cap \Delta_j)$
- \item ${\Delta_i}$ disjunkt $\ra \sum_iP(\Delta_i)=P(\cup_i\Delta_i)$
+ \item $P(\Delta_i)P(\Delta_j)=P(\Delta_i \cap \Delta_j)=P(\Delta_j)P(\Delta_i)$
+ \item $\{\Delta_i\}$ disjunkt $\ra \sum_iP(\Delta_i)=P(\cup_i\Delta_i)$
  \item $P(\Delta_i)+P(\Delta_j)=P(\Delta_i\cup \Delta_j)+P(\Delta_i\cap \Delta_j)$
- \item $P(\varnothing)=0,\ P(x)=1$
+ \item $P(\varnothing)=0,\ P(\R)=1 $
+ \item $\Delta' \supset \Delta \ra P(\Delta') \geq P(\Delta)$, d.h. $P(\Delta') \circ \H \supset P(\Delta) \circ \H$
 \end{enumerate}
-\textbf{Korollar:} Aus 4.) $\ra P(x-\Delta)=1-P(\Delta)$, $\ra P(\frac{\Delta_i}{\Delta_j})=P(\Delta_i)-P(\Delta_i \cap \Delta_j)$
-\subsubsection*{Bemerkung}
-Statt projektorwertigen Maßen $\ra$ ''Zerlegung der Einheit''
+\textbf{Korollar:} Aus 4.) $\ra P(\R-\Delta)=1-P(\Delta)$, $\ra P(\frac{\Delta_i}{\Delta_j})=P(\Delta_i)-P(\Delta_i \cap \Delta_j)$
 
-\subsubsection*{ÜBUNGSAUFGABEN}
-\begin{enumerate}
-\setcounter{enumi}{4}
-\item Stellen Sie die Wellenfunktionen eines Zwei-Teilchen-Systems mit Spin $\frac{1}{2}$ zunächst ohne Antisymmetriesierung 
-$$(**) \ \  \ \begin{pmatrix} \psi_1(x) \\ \psi_2(x)\end{pmatrix} \otimes \begin{pmatrix} \phi_i(y) \\ \phi_2(y)\end{pmatrix}$$
-in der Tensorbasis von $(L^2\otimes \C^2)\otimes(L^2\otimes \C^2)$ dar, d.h. die vier Komponenten $f(x,y,\mu_1, \mu_2), \mu_i=\pm 1$
-\item Symmetrisieren Sie $(**)$.
-\item Zeigen Sie, dass $(u_\Pi\circ f)(x_1, ...,x_n)=f(x_{\Pi^{-1}(1)},...,x_{\Pi^{-1}(N)})$, wenn andererseits für Monome der Tensorbasis:
-$$u_\Pi: \ f_{i_i}(x_1)\otimes... \otimes f_{i_n}(x_n) \mapsto f_{\Pi(i_i)}(x_1)\otimes... \otimes f_{\Pi(i_n)}(x_n)$$
-\end{enumerate}
-\ifthenelse{\boolean{lsg}}{
-\subsubsection*{LÖSUNG}
-$$f(x_1,..x_N)=\sum_{\{i_1,...i_N \}}c_{i_1,...,i_N}f_{i_i}(x_1)\cdot... \cdot f_{i_n}(x_n)$$
-\textbf{zu 5.}:\\
-$$(**)=\psi_1(x)\phi_1(y)\begin{pmatrix} 1 \\ 0\end{pmatrix}\otimes \begin{pmatrix} 1 \\ 0\end{pmatrix}+\psi_2(x)\phi_2(y)\begin{pmatrix} 0 \\ 1\end{pmatrix}\otimes \begin{pmatrix} 0 \\ 1\end{pmatrix}$$
-$$+\psi_1(x)\phi_2(y)\begin{pmatrix} 1 \\ 0\end{pmatrix}\otimes \begin{pmatrix} 0 \\ 1\end{pmatrix}+\psi_2(x)\phi_1(y)\begin{pmatrix} 0 \\ 1\end{pmatrix}\otimes \begin{pmatrix} 1 \\ 0\end{pmatrix}$$
-z.B. $\psi_2(x)\phi_1(y)\begin{pmatrix} 0 \\ 1\end{pmatrix}\otimes \begin{pmatrix} 1 \\ 0\end{pmatrix}=f(x,y,-1,+1)$\\
-Erinnerung:\\
-$L^2_q=\{(\begin{pmatrix} \psi_1 \\ \psi_2\end{pmatrix}) \}$ oder $\{ \psi(x,\mu=\pm1)=\psi(q) \}$\\
-\textbf{zu 6.}:\\
-$$A_2\begin{pmatrix} \psi_1 \\ \psi_2\end{pmatrix} \otimes \begin{pmatrix} \phi_1 \\ \phi_2\end{pmatrix}=\frac{1}{2} (\begin{pmatrix} \psi_1 \\ \psi_2\end{pmatrix}\otimes \begin{pmatrix} \phi_1 \\ \phi_2\end{pmatrix}-\begin{pmatrix} \phi_1 \\ \phi_2\end{pmatrix}\otimes \begin{pmatrix} \psi_1 \\ \psi_2\end{pmatrix})$$
+\subsubsection*{Definition}
+Dieses System von Projektoren heißt auch ''Zerlegung der Einheit''.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%05.11.09
-%V05
-\textbf{zu 7.}:\\
-$$f(x_1,..,x_N):=\sum_{f_{ij}}c_{i_1,...,i_N} f_{i_1}(x_1) \otimes ...\otimes f_{i_N}(x_N) \ \ (*)$$
-$f_{i_1} \otimes ...\otimes f_{i_N}$ Tensorbasis\\
-
-\textbf{Zeige:}
-$$(u_\Pi\circ f)(x_1,...,x_N)=f(x_{\Pi^{-1}(1)},...,x_{\Pi^{-1}(N)})$$
-obwohl: $(u_\Pi\circ f_{i_1}...f_{i_N})(x_1,...,x_N):=f_{i_{\Pi(1)}}(x_1)...f_{i_{\Pi(N)}}(x_N)$\\
-\textbf{Beweis:}
-$$u_\Pi \circ \sum_{i} c_{i_1,...,i_N}f_{i_1}(x_1)...f_{i_N}(x_N)=\sum_{i} c_{i_1,...,i_N}f_{i_{\Pi(1)}}(x_1)...f_{i_{\Pi(N)}}(x_N) $$
-\textbf{Merke:}\\
-Wodurch ist Entwicklung $(*)$ endeutig bestimmt?\\
-Die Anordnung von Enticklungskoeffizienten $c_{i_1,...,i_N}$ relativ zu $f_{i_1}(x_1)...f_{i_N}(x_N)$.
+%\subsubsection*{Idee}
+%Treppenfunktion $\sum_i f_i \cdot \chi(\Delta_i)$, $\Delta_i:=\{1\ \mathrm{wenn} \ \lambda \in \Delta_i \ (\lambda \in \R), 0 \ \mathrm{sonst} \}$\\
+%$\ra$ Integral $\int f(\lambda)d \lambda$\\
+%$\ra$ $\sum_i f_i P(\Delta_i) \in$ Beschränkte Gruppe über $\H$
+%$\ra$ Limes (stark, schwach): $\sum_i f_i P(\Delta_i) \ra \int f(\lambda)d \lambda\in$ Beschränkte Gruppe über $\H$
 
 \subsubsection*{Beobachtung}
-$\Pi$ ist Bijektion $\ra \exists \Pi(k_1)=1,\Pi(k_2)=2,...$\\
-$\ra$ Umordnen: $R.S.=\sum c_{i_1,...,i_N}f_{i_{\Pi^{-1}(k_1)}}(x_{k_1})...f_{i_{\Pi^{-1}(k_N)}}(x_{k_N})$ \\
-$\ra$ Folgerung: $(u_\Pi \circ f)(x_1, ... x_N)=f(x_{\Pi^{-1}(1)},...,x_{\Pi^{-1}(N)}) $
-}{}
-\subsubsection*{Projektorwertiges Maß}
-Borelmengen $\ni$ Mengen $\ra$ Projektoren $\in$ Operatoren auf dem Hilbertraum\\
-\textbf{Eigenschaften ($X=\R^n$):}\\
-$P(X)=1$, $P(\varnothing)=0$, $P(\mu_1 \cap \mu_2)=P(\mu_1)\cdot P(\mu_2)$, alle $P(\mu)$ vertauschen, $P(\cup_i \mu_i)=\sum_i P(\mu_i)$ wenn $\forall i\neq j: \mu_i \cap \mu_j=\varnothing$\\
-$P(\mu_1 \cup \mu_2)=P(\mu_1)+ P(\mu_2)-P(\mu_1 \cap \mu_2)$, $P(X\backslash \mu)=1-P(\mu)$
-\subsubsection*{Beobachtung}
-Man kann eine Integrationstheorie entwickeln:
-
+Man kann eine Integrationstheorie entwickeln:\\
+Treppenfunktion auf $\R$, Limes $\ra$ stetige Funktion $f(x) \ra \int f(x)dx$\\
+Entsprechend für Projektoren: $\{\Delta_i; \mu_i \in \R\} \mapsto \{P(\Delta_i), \mu_i \in \R \} \ra \sum_i \mu_i P(\Delta_i)$\\
+$\ra$ Limes (w,s-Limes) im Raum der Operatoren\\
+$\ra$ ''$\int f(\lambda)dP_\lambda$'' Operator über $\H$\\
 \begin{enumerate}
 \item Treppenfunktionen über $\R$, $f(x)=\sum_i f_i\chi_{\Delta_i}(x)$, $\chi_{\Delta_i}=\{1, $ falls  $x\in \Delta_i$; $0,$ sonst $\}$, $\Delta_i \cap \Delta_j=\varnothing$\\
 $f_i\chi_{\Delta_i}(x) \mapsto P(\Delta_i)\cdot f_i$\\
@@ -708,126 +593,80 @@ $\Ra$ operatorwertige Treppenfunktion: $\sum_i f_i P(\Delta_i)$
 $\Ra (*)$ $F_P:=''\int f(x)dP_x'' \la \sum_i f_i \chi_{\Delta_i}(x)$ 
 \end{enumerate}
 
-\subsubsection*{Satz: Spektraldarstellung}
-Jeder selbstadjungierte Operator $A$ besitzt eine Spaktraldarstellung, d.h. es existiert eine eindeutige Zerlegung der Einheit üder $\R$, d.h. $\{P(\Delta), \Delta \in \ \mathrm{Borelmenge}\}$ mit:\\
+\subsubsection*{Projektorwertiges Maß}
+Borelmengen $\ni$ Mengen $\ra$ Projektoren $\in$ Operatoren auf dem Hilbertraum\\
+\textbf{Eigenschaften ($X=\R^n$):}\\
+$P(X)=1$, $P(\varnothing)=0$, $P(\mu_1 \cap \mu_2)=P(\mu_1)\cdot P(\mu_2)$, alle $P(\mu)$ vertauschen, $P(\cup_i \mu_i)=\sum_i P(\mu_i)$ wenn $\forall i\neq j: \mu_i \cap \mu_j=\varnothing$\\
+$P(\mu_1 \cup \mu_2)=P(\mu_1)+ P(\mu_2)-P(\mu_1 \cap \mu_2)$, $P(X\backslash \mu)=1-P(\mu)$
+
+
+\subsubsection*{Satz: Spektraldarstellung (v. Neumann)}
+Jeder selbstadjungierte Operator $A$ (beschränkt oder unbeschränkt) besitzt eine Spektraldarstellung, d.h. es existiert eine eindeutige Zerlegung der Einheit über $\R$, d.h. $\{P(\Delta), \Delta \in \ \mathrm{Borelmenge}\}$ mit:\\
 Funktion: $f(x)=x \stackrel{(*)}{\ra} A$ mittels ($\lambda \in \R$) $A:=\int \lambda dP_\lambda$, wobei $dP_\lambda$ ''infinitesimales'' Interval, $dP_\lambda=P_{\lambda+0}-P_{\lambda}$ ist.\\
-Allgemeiner: $f(A)=\int f(\lambda) dp_\lambda$
+Allgemeiner: $f(A)=\int f(\lambda) dP_\lambda$
 
-\subsubsection*{Literatur}
-\begin{tiny}
-\begin{verbatim}
-
-Titel: 	Functional analysis
-Verfasser: 	Reed, Michael *1942-* ; Simon, Barry *1946-*
-Erschienen: 	New York, NY [u.a.] : Acad. Press, 1972
-Umfang: 	XVII, 325 S. : graph. Darst.
-Gesamttitel: 	Methods of modern mathematical physics / Michael Reed; Barry Simon ; 1
-Anmerkung: 	Includes bibliographical references and indexes
-ISBN: 	0-12-585001-8
-Schlagwörter: 	Functional analysis
-Mathematical physics
-Mehr zum Thema: 	Klassifikation der Library of Congress: QC20.7.F84
-Dewey Dezimal-Klassifikation: 530.1/5
-\end{verbatim}
-\end{tiny}
-
-\begin{tiny}
-\begin{verbatim}
-
-Titel: 	Mathematische Grundlagen der Quantenmechanik / John von Neumann. Mit einem Geleitw. von Rudolf Haag
-Verfasser: 	Von Neumann, John *1903-1957*
-Ausgabe: 	2. Aufl., [Nachdr. der Ausg.] Berlin, Springer, 1932.
-Erschienen: 	Berlin [u.a.] : Springer, 1996 = 1932
-Umfang: 	262 S. : graph. Darst.
-Schriftenreihe: 	Grundlehren der mathematischen Wissenschaften ; 38
-Anmerkung: 	Literaturangaben
-ISBN: 	3-540-59207-5*hbk.
-Schlagwörter: 	*Mathematik / Quantenmechanik
-Sachgebiete: 	33.23 ; Quantenphysik
-31.80 ; Angewandte Mathematik
-Link: 	http://www.gbv.de/dms/goettingen/191891592.pdf [Inhaltsverzeichnis]
-http://www.zentralblatt-math.org/zmath/en/search/?an=0906.00006 [Zentralblatt MATH]
-\end{verbatim}
-\end{tiny}
-
+\subsubsection*{Interpretation von $dP_\lambda$:}
+Definition von $A:=\int \lambda dP_\lambda$ (alternativ $A:=\int \lambda dP(\lambda)$) ist i.A. erklärt im starken oder schwachen Limes, d.h. \\
+Starker Limes:
+$$A \circ \psi=\int \lambda dP(\lambda)\circ \psi$$
+Schwacher Limes:
+$$(\phi| A \psi)=(\phi|\int \lambda dP(\lambda)\circ \psi)$$
 
 \subsubsection*{Etwas anschaulicher:}
-$\psi, \phi \in D(A) \Ra (\psi|A\phi)=(\psi|(\int \lambda dP_\lambda)\phi)=\int \lambda d(\psi|P_\lambda \phi)$. Dbaie ist $(\psi|P_\lambda \phi)$ ein echtes (Lebesque-stetiges) Maß: Menge $\ra \C$
+$\psi, \phi \in D(A) \Ra (\psi|A\phi)=(\psi|(\int \lambda dP_\lambda)\phi)=\int \lambda d(\psi|P_\lambda \phi)$. Dabei ist $(\psi|P_\lambda \phi)$ ein echtes (Lebesque-stetiges) Maß: Menge $\ra \C$\\
+$dP_\lambda=P(d\lambda)$ ist operatorwertiges Differenzial\\
+$(\phi| dP(\lambda)\psi)=d((\phi| P(\lambda)\psi)$ ist ein ''normales'' Differential
 
 \subsubsection*{Festlegung:}
-$P(-\infty, \lambda]=:P(\lambda)$ oder $P_\lambda$
-\subsubsection*{Beobachtung:}
-$dP(\lambda)$ ist operatorwertiges Differenzial (wie $dx$)
-\subsubsection*{Beobachtung und Definition (von Neumann):}
+$P(\Delta=(-\infty, \lambda])=:P(\lambda)$ oder $P_\lambda$\\
+$dP(\lambda)\stackrel{\epsilon \ra 0}{=} P(\lambda+\epsilon)-P(\lambda)\stackrel{\epsilon \ra 0}{=} P((\lambda,\lambda+\epsilon])$
+
+\subsubsection*{Funktion eines selbstadjungierten Operators (z.B. $H$):}
+$$A \ra \{P(\Delta)\}\ra f(\lambda) \ra f(A)=\int f(\lambda)dP(\lambda)$$
+Beispiel Polynome: $\sum_{i=1}^N c_i A^i\ra  \int \sum_{i=1}^N (c_i \lambda^i)dP(\lambda)$
+
+\subsubsection*{Zusammenhang $P(\lambda)$ und Spektralwerten (Beobachtbare Messwerte):}
 Man kann Eigenwerte von Operatoren (Physik) durch Eigenschaften der Zerlegung der Einheit klassifizieren:
 \begin{enumerate}
-\item $\lambda$ heißt Konstanzpunkt der Zerlegung der Eins, wenn gilt: $P(\lambda+\epsilon)-P(\lambda)=0, \epsilon>0$. (Beachte: $P(\lambda+\epsilon)-P(\lambda)$ ist ein Projektor, $P(\lambda+\epsilon):=P(-\infty,\lambda+\epsilon)$ für $\epsilon< \epsilon_0$)
-\item $\lambda$ heißt Wachstumspunkt, wenn $\nexists \epsilon_0>0$
-\item $\lambda$ heißt Sprungpunkt, wenn $P(\lambda+\epsilon)-P(\lambda) \stackrel{\epsilon \ra 0}{\ra} P(\lambda+0)-P(\lambda)\neq 0$
+\item $\lambda$ heißt Konstanzpunkt der Zerlegung der Eins, wenn gilt: $\exists |\epsilon|>0,$ sodass $P(\lambda+\epsilon)-P(\lambda)=0 \Ra P(\lambda+\epsilon')-P(\lambda)=0$ für $|\epsilon'|<|\epsilon|$. \\
+(Beachte: $P(\lambda+\epsilon)-P(\lambda)$ ist ein Projektor, $P(\lambda+\epsilon):=P(-\infty,\lambda+\epsilon)$ für $\epsilon< \epsilon_0$)
+\item $\lambda$ heißt Wachstumspunkt, wenn $\nexists |\epsilon|>0$ sodass 1., d.h. $P(\lambda+\epsilon)-P(\lambda)\neq 0 \ \forall \epsilon'<\epsilon$
+\item $\lambda$ heißt Sprungpunkt, wenn $lim_{\epsilon \ra 0}P(\lambda+\epsilon)-P(\lambda) \neq 0$ ($\ra (\phi|P(\lambda)\phi)\geq 0$ wächst monoton)
 \end{enumerate}
 \subsubsection*{Folgerung (ohne Beweis):}
 \begin{enumerate}
 \item Ist $\lambda$ Sprungpunkt $\lra $ $\lambda$ ist Eigenwert zu $A$, d.h. $\exists f_i: Af_i=\l f_i$ ($\l$ entartet oder nicht entartet; Punktspektrum, wenn nicht $\infty$-fach entartet)
-\item Ist $\lambda$ Konstanzpunkt $\lra$  $\lambda \notin$ Spektrum$(A)$, regulärer Punkt, $\l \in$ Resolventenmenge
-\item Ist $\l$ Wachstumspunkt $\lra$ $\l \in$ Spektrum$(A)$
-\item Ist $\l$ Wachstumspunkt und $\lim_{\epsilon \ra 0}(P(\l+\epsilon)-P(\l))=0$ $\ra$ stetiges Spektrum (nicht notmierbare Eigenfunktionen 
-\item Ist $\l$ Sprungpunktpunkt, aber links und rechts konstant $\ra$ isolierter Sprungpunkt $\ra$ diskrete Spektren (Atomphysik: Eigenwerte)
+\item Ist $\lambda$ Konstanzpunkt $\lra$  $\lambda \notin$ Spektrum$(A)$ (Kein Spektrum in Umgebung von $\lambda$), regulärer Punkt, $\l \in$ Resolventenmenge
+\item Ist $\l$ Wachstumspunkt aber $(\phi|P(\lambda \phi)$ stetig $\Ra$ kontinuierliche Spektren
+\item (WiSe 09/10) Ist $\l$ Wachstumspunkt $\lra$ $\l \in$ Spektrum$(A)$
+\item (WiSe 09/10) Ist $\l$ Wachstumspunkt und $\lim_{\epsilon \ra 0}(P(\l+\epsilon)-P(\l))=0$ $\ra$ stetiges Spektrum (nicht notmierbare Eigenfunktionen 
+\item Ist $\l$ Sprungpunkt, aber links und rechts lokal konstant $\ra$ isolierter Sprungpunkt $\ra$ diskrete Spektren (Atomphysik: Eigenwerte)
 \end{enumerate}
 
 \subsubsection*{Bemerkung:}
 \begin{enumerate}
-\item Punktspektrum kann dicht in $\R$ liegen! (z.B. rationale Zahlen)
-\item Punktspektrum kann in stetiges Spektrum eigebettet sein.
+\item $\exists$ Systeme wo die EW im Kontinuum liegen
+\item diskretes Punktspektrum kann dicht in $\R$ liegen! (z.B. rationale Zahlen, $\mathbb{Q} \subset \R$ dicht)
+\item Punktspektrum kann in stetiges Spektrum eingebettet sein.
 \end{enumerate}
-\subsubsection*{ÜBUNGSAUFGABEN}
-\begin{enumerate}
-\setcounter{enumi}{7}
-\item Man Zeige, dass $A_N*=A_N$ gilt, mit $(A_N \psi)(x_1,...,x_N)=\frac{1}{N!}\sum_\Pi sgn(\Pi) \psi(x_{\Pi^{-1}(1)},...,x_{\Pi^{-1}(N)})$
-\item Ein UVR $U \subset \H$ heißt abgeschlossen, wenn mit $\phi_N \stackrel{||\cdot||}{\ra} \phi$ auch $\phi \in U$ ist.\\
-Zeige: Ein Projektor projeziert auf einen abgeschlossenen UVR.
-\end{enumerate}
-\ifthenelse{\boolean{lsg}}{
-\subsubsection*{LÖSUNG}
-
-\begin{enumerate}
-\setcounter{enumi}{8}
-\item $$\phi_N \ra \phi \Ra P\phi_N \ra P\phi$$
-$$||P\phi - P\phi_N||=||P(\phi-\phi_N)|| \leq ||P|||\cdot ||\phi-\phi_N||=||\phi-\phi_N|| \ra 0$$
-Zeige: $U$ abgeschlossen\\
-$$U \ni \phi_N \ra P\phi_N=\phi_N$$
-Zeige: $\phi\in U=P\H$\\
-$$P\phi_N \ra P\phi \Ra P\phi=\phi$$
-also $U$ abgeschlossen.
-\end{enumerate}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%09.11.09
-%V06 23:20
-\begin{enumerate}
-\setcounter{enumi}{7}
-\item $(\phi|A_N\psi)=\int \overline \phi(x_1,...,x_N) \sum_\Pi sgn(\Pi) \psi(x_{\Pi^{-1}(1)},...,x_{\Pi^{-1}(N)}) d^{3N}x$
-\begin{enumerate}
-\item Für einzelne $\Pi$:
-$$(x_1,...,x_N) \ra (x_{\Pi^{-1}(1)},...,x_{\Pi^{-1}(N)}) $$
-ist bijktive Abbildung mit $|Det(Abb.)|=1$, d.h. wenn man eine Variablentransformation durchführt ist sie invariant
-\item Definition $\{y_i:=x_{\Pi^{-1}(i)}\}$:\\
-$\Ra (\phi|u_\Pi \psi)=\int \overline \phi(y_{\Pi(1)},...,y_{\Pi(N)})sgn(\Pi) \psi(y_i,...,y_N) d^{3N}y$
-\item $$(\phi,A_N \psi)=\int \overline{ \sum_{\Pi^{-1}}sgn(\Pi^{-1})\phi(y_{\Pi^{-1}(1)},...,y_{\Pi^{-1}(N)}) }\psi()y_1,...,y_N)d^{3N}y$$
-$$=(A_N\phi|\psi) \Ra A_N=A_N^*$$
-\end{enumerate}
-\end{enumerate}
-}{}
+\subsubsection*{Literatur}
+\begin{tiny}
+\begin{verbatim}
+Titel:	Speakable and unspeakable in quantum mechanics
+Verfasser:	Bell, John S. 
+\end{verbatim}
+\end{tiny}
 
 \subsection{Symmetrien in der Quantenmechanik}
-Quantenmechanik $\ra$ Beobachtungen: Zustände $ra$ reduzieren auf Projektoren\\
+Quantenmechanik $\ra$ Beobachtungen: Zustände reduzieren auf Projektoren\\
 $\Ra$ Konzentriere auf 1-dim. $P\psi$, $||\psi||=1$ $\Ra$ Detektor\\
 \textbf{v. Neumann}: Zu jedem selbstadjungierten Operator in $\H$ existiert eine Observable (Messgerät.)\\
 \subsubsection*{Übergangwahrscheinlichkeiten}
-$$|(\psi|\phi)|^2=||P_\psi \phi||^2=(\phi<P_\psi\phi)$$
+$$|(\psi|\phi)|^2=||P_\psi \phi||^2=(\phi|P_\psi\phi)$$
 $$P=P^2=P^*$$
 $$(||\psi||=||\phi||=1)$$
 \subsubsection*{Beobachtung}
-Ein Zustand ist durch seine Übergangswahrscheinlichkeiten \underline{eindeuting} festgelegt.
+Ein Zustand $\psi \in \H$ ist durch seine Übergangswahrscheinlichkeiten $|(\psi|\phi)|^2$ \underline{eindeutig} festgelegt.
 \subsubsection*{Definition (Schwache Symmetrie)}
 Eine (schwache) Symmetrie des Systems (QM) ist eine bijektive Abbildung $M$ auf den Einheitsstrahlen, sodass
 $$|(M\psi|M\phi)|^2=|(\psi|\phi)|^2$$
@@ -847,129 +686,180 @@ $$\{\psi=e^{i\alpha}\psi_0|\psi_0 \ \mathrm{fest}, ||\psi_0||=1\}$$
 \subsubsection*{Satz (Wigner, 1931)}
 Eine Symmetrie wird in $\H$ durch einen (anti)-unitären Operator $U$ dargestellt.
 \subsubsection*{Definition: unitär}
-Unitärer Operator $U$, d.h. $U^{-1}$ existiert und $U^{-1}=U^*$.
+Unitärer Operator $U$, d.h. $U^{-1}$ existiert und $U^{-1}=U^*$.\\
+$$(U\phi|U\psi)=(\phi|\psi)$$
 \subsubsection*{Folgerung}
-$(U\phi|U\psi)=(\phi|\psi)$, $|U|=supp_x \frac{||Ux||}{||x||}=1$
+$(U\phi|U\psi)=(\phi|\psi)$, $||U||=sup_x \frac{||Ux||}{||x||}=1$
 \subsubsection*{Definition: antiunitär}
 \begin{enumerate}
 \item $A$ heißt antilinear, wenn $A\l \psi=\overline{\l} A \psi$, $A(\l \phi_1+\mu \phi_2)=\overline{\l} A \phi_1+ \overline{\mu}A\phi_2$
-\item Adjungierter Operator eine antilinearen Operators $A$:
+\item Adjungierter Operator eines antilinearen Operators $A$:
 $$(\psi|A\phi)=\overline{(A^*\psi|\phi)}=(\phi|A^*\psi)$$
-Aus Konsistenzgründen ist $A^*$ wirder antilinear.
+Aus Konsistenzgründen ist $A^*$ wieder antilinear.
 \end{enumerate}
 $U$ ist antiunitär, wenn
 \begin{enumerate}
-\item $U$ antlinear
+\item $U$ antilinear
 \item $U^{-1}=U^*$ ($^*$ im Sinne antilinearer Operatoren)
 \end{enumerate}
+\subsubsection*{vegleich: unitär - antiunitär}
+antiunitär: $(U\psi|U\phi)=\overline{(\psi|\phi)}$\\
+unitär: $(U\psi|U\phi)=(\psi|\phi)$\\
+
 \textbf{Beispiel}:\\
 $$K: \psi \mapsto \overline{\psi}, \ K^2=\Eins$$
 $$K=K^*=K^{-1}$$
+$$(\psi|K\phi)=(\psi|\overline{\phi})=\overline{(\overline{\psi})|\phi)}=\overline{(K\psi|\phi)}$$
 \subsubsection*{Bemerkung}
-$U: \phi \mapsto U\psi$, $A \mapsto U \circ A \circ U^{-1} \Ra (\phi|A\psi)\stackrel{unitaer}{=}(U\phi|UAU^{-1}U\psi)=(\phi|A\psi)$
+$U: \phi \mapsto U\psi$, $A \mapsto U \circ A \circ U^{-1} \Ra (\phi|A\psi)\stackrel{unitaer}{=}(U\phi|UAU^{-1}U\psi)=(\phi|A\psi)$\\
 (Kovarianz: Zustände und Observablen transformieren)
 \subsubsection*{Wirkung von $K$}
+Für den Impulsoperator:
 $$\vec p:= \frac{\hbar}{i}\nabla_x \stackrel{K}{\mapsto} K \circ \vec p \circ K^{-1}=-\frac{\hbar}{i} \nabla_x=-\vec p$$
+$$K\circ \vec p \circ \psi= K \circ (\frac{\hbar}{i} \nabla_x )\circ \psi =-\frac{\hbar}{i} \nabla K \psi $$
+Für den Ortsoperator:
 $$Q \stackrel{K}{\mapsto}  Q$$
 \subsubsection*{Folgerung}
 $$K \circ H \circ K = H$$
 $H$ ist invariant, weil ''reeler'' Operator ($\vec p^2$ in $H$)
-\subsubsection*{Subtiler, wenn Zietentwicklung: Folgerung}
+\subsubsection*{Subtiler, wenn Zeitentwicklung: Folgerung}
 $$K(e^{-iHt}\phi)=K\int e^{-i\l t} dP_\l \phi$$
 (Spektraldarstellung von $e^{-iHt}$)\\
-Wenn $B$ mit $A$ vertauscht:\\
-$\ra$ $B$ vertaucht mit $f(A) \forall f$\\
-$\ra$ $B$ vertaucht mit $P(A)$, der Spektraldarstellung von $A$\\
+Wenn $B$ mit $H$ vertauscht:\\
+$\ra$ $B$ vertaucht mit $f(H) \forall f$\\
+$\ra$ $B$ vertaucht mit $P(H)=P_\lambda$, der Spektraldarstellung von $H$\\
 $\ra$ $K(e^{-iHt}\phi)=\int e^{-i\l t} dP_\l K\phi=e^{-iHt}K\phi$\\
-$\Ra$ $K(\phi(t))=(K\phi)(-t)$, d.h $K: \phi(t) \mapsto \overline{\phi(-t)}$
+$\Ra$ $\overline{\phi(t)}=K(\phi(t))=(K\phi)(-t)$, d.h $K: \phi(t) \mapsto \overline{\phi}(-t)$
+$$K\overline{\psi(t)}=\overline{K(\psi(t))}=K(e^{-iHt}\psi(0))=e^{iHt}\overline{\psi}(0)=\overline{\psi}(-t)$$
+$$Ke^{iHt}K=\int e^{it\lambda} K \circ dP_\lambda \circ K =\int e^{it\lambda} dP_\lambda$$
+
 \subsubsection*{Definition (Zeitspiegelung in der Quantenmechanik)}
 Mittels $K$ erklären wir die Zeitspeigelung wie folgt:
 $$\overline{i \hbar \partial_t \psi(t)}=\overline{H\psi(t)}$$
 $$\Ra -i\hbar \partial_t \overline{\psi(t)}=H \overline{\psi(t)}$$
 mit $t':=-t$
 $$\Ra i \hbar \partial_{t'}\overline{\psi(-t')}=H\overline{\psi(-t')}$$
-Erfüllt $\psi(t)$ die Schrödingergleichung $\Ra$ $(K\psi)(-t)=\overline{\psi}(-t)$ erfüllt ebenfalls dieSchrödingergleichung. Sie heißt die \underline{zeitgespiegelte} Lösung.
+Erfüllt $\psi(t)$ die Schrödingergleichung $\Ra$ $(K\psi)(-t)=\overline{\psi(-t)}$ erfüllt ebenfalls die Schrödingergleichung. Sie heißt die \underline{zeitgespiegelte} Lösung.
 \subsubsection*{Bemerkung}
-Besonders wichtig sind Symmetrien, die mit $H$ vertauschen. Diese vertauschen auch mit $e^{-iHt}$, d.h. $[u, e^{-iHt}]=0$ ($\ra [u,P(\l)]=0, \ P(\l)$ Spektralschar von $H$)
-\subsubsection*{Beispiele}
+Besonders wichtig sind Symmetrien, die mit $H$ vertauschen. Diese vertauschen auch mit $e^{-iHt}$, d.h. $[u, e^{-iHt}]=0$ ($\ra [u,P(\l)]=0, \ P(\l)$ Spektralschar von $H$)\\
+\textbf{Frage:} $\exists$ Operator für die Zeitspiegelung selbst?\\
+$$\psi(0) \stackrel{e^{-itH}}{\ra }\psi(t) \stackrel{T_t}{\ra} \overline{\psi(-t)} $$
+$$\psi(t) \stackrel{K}{\ra} \overline{\psi(t)} $$
+$\ra$ $T$ existiert, ist aber zeitabhängig
+
+\subsubsection*{Definition}
+Symmetrien, die mit $H$ vertauschen heißen starke Symmetrien.
 \begin{enumerate}
 \item $H\psi_E=E \psi_E \stackrel{[U,H]=0}{\ra} HU\psi_E=UH\psi_E=EU\psi_E \Ra U \psi_E$ is wieder Eigenfunktion zur Energie $E$
 \item $E$ nicht entartet:\\
 $\Ra U \psi_E=\psi_E$
+\item $[U,H]=0 \ra [U,e^{-iHt}]=0 \ra [U, P_\lambda]=0$
 \end{enumerate}
 \subsubsection*{Konzept}
 Symmetrie und Invarianz bzw. Erhaltungsgrößen (Emmy Noether)
 \subsubsection*{Bemerkung}
 Häufig bilden Symmetrien eine (kontinuierliche) bzw. Liegruppe.\\
-$\ra$ z.B. Drehgruppe, Trnaslationen, Lorentztransformation, Poincaregruppe,...
+$\ra$ z.B. Drehgruppe, Translationen, Lorentztransformation, Poincaregruppe,...
 \subsubsection*{Satz (Stone)}
 Sei $U(t)$ eine stark-stetige unitäre einparametrige Gruppe auf $\H$, d.h. $U(t)\psi \stackrel{t \ra t_0}{\ra} U(t_0)\psi$ in $||\cdot||$\\
 $\Ra$ es existiert ein selbstadjungierter Operator $A$, sodass $U(t)=e^{-itA}$, $\frac{d}{dt}|_{t_0}U(t)=-iAe^{-it_0A}$\\
 \textbf{Beispiel:} $H$ und $e^{-itH}$\\
-$A$ heißt der \underline{infinitesimale Generator} von $U(t)$.
-\subsubsection*{Beispiel (Drehungen)}
-Drehung $R$ charakterisiert durch Drehachse (Einheitsvektor $\vec e$) und Drehwinkel $\-pi \leq \alpha \leq \pi$.\\
-$\Ra$ Liegruppe (Drehung) $\ra$ Parameter auf Vollkugel: $||\l||\leq \pi$\\
-Infinitesimale Generatoren:\\
-$\vec J=(J_1,J_2,J_3)$, $J_1$ selbstadjungiert, Drehung um $\vec e=(e_1,e_2,e_3)$: $(*) U(t)=e^{-it(e_1J_1+e_2J_2+e_3J_3)}$
+$A$ heißt der \underline{infinitesimale Generator} von $U(t)$.\\
+$$[U(t),H]=0 \ra [A,H]=0 $$
+$\ra $ Drehgruppe
+
+\subsubsection*{Beispiel für eine Liegruppe: Drehungen auf $\R^3$}
+Drehung $R$ parametriesiert durch Drehachse (Einheitsvektor $\vec e$) und Drehwinkel $-\pi \leq \alpha \leq \pi$.\\
+$\Ra$ Liegruppe (Drehung) $\ra$ Parameter auf abgeschlossener Vollkugel mit Radius $\lambda$: $||\l||\leq \pi$\\
+\textbf{Infinitesimale Generatoren:}\\
+$\vec J=(J_1,J_2,J_3)$, $J_i$ selbstadjungiert\\
+Drehung um $\vec e=(e_1,e_2,e_3)$: $(*) \\
+U(t)=e^{-i\frac{\alpha}{\hbar}(e_1J_1+e_2J_2+e_3J_3)}$
 $$[J_i,J_j]=i\hbar \epsilon_{ijk} J_k$$
 \textbf{Vorsicht:} $(*)$ ist \underline{nicht} das Produkt der einzelnen $e^{ie_iJ_i}$!
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %12.11.09
 %V07 01:05
-\subsubsection*{Darstellung der Drehgruppe in der Quantenmechanik}
+\subsubsection*{Darstellung der Drehgruppe auf $L^2(\R^{3N})$ in der Quantenmechanik}
 \subsubsection*{Lie-Algebren}
 $$\vec J=(J_1,J_2,J_3), \ \ \vec e=(e_1,e_2,e_3)$$
 $$[J_i,J_j]=i\hbar \epsilon_{ijk} J_k$$
 $$U(s)=e^{i\frac{s}{\hbar}\sum_{i=1}^3 e_iJ_i}$$
-$$(U(\hat R)\circ \psi)(\vec x):= \psi(\hat R^{-1}\vec x)$$
+$$(U(\hat R)\circ \psi)(\vec x):= \psi(\hat R^{-1} \circ \vec x)$$
+
+\subsubsection*{Literatur}
+\begin{tiny}
+\begin{verbatim}
+Titel:	Analysis of operators
+Verfasser:	Reed, Michael *1942-* ; Simon, Barry *1946-*
+\end{verbatim}
+\begin{verbatim}
+Titel:	Quantenmechanik von Atomen und Molekülen
+Verfasser:	Thirring, Walter *1927-*
+Gesamttitel:	Lehrbuch der mathematischen Physik / Walter Thirring ; Bd. 3
+\end{verbatim}
+\begin{verbatim}
+Titel:	Anwendungen der Gruppentheorie in der Physik 
+Verfasser:	Ljubarskij, Grigorij Jakovlevic
+\end{verbatim}
+\end{tiny}
+
 \subsubsection*{Symmetrie von $H$ (d.h vertauschen mit $H$)}
-\subsubsection*{Anwendungen:}
+
+\subsubsection*{Anwendungen: Tensorprodukt und Symmetrien}
 \begin{enumerate}
 \item \textbf{Atom-Hamiltonian:}\\
-$$H=\sum_{i=1}^N \frac{1}{2m_e} \vec p_i^2+\sum_{i=1}^N \frac{Z e_+e_-}{||\vec x_i^2||}+\frac{1}{2} \sum_{i=1, i \neq j} \frac{e_-^2}{||\vec x_i^2|-\vec x_j^2|}$$
-(Literatur: Reed-Simon Band 4; Thirring Band 3)\\
-Beobachtung: $U(\hat R)$ vertauchen mit $H \mathrel{\widehat{=}} [\vec J,H]=0$\\
+komplexes Atom, $N$ Elektronen, Kernladung $Z$, Kern im Ursprung
+$$H=\sum_{i=1}^N \frac{1}{2m_e} \vec p_i^2+\sum_{i=1}^N \frac{Z e_+e_-}{|\vec x_i|}+\frac{1}{2} \sum_{i=1, i \neq j} \frac{e_-^2}{|\vec x_i-\vec x_j|}=H_0+H_I$$
+$$e_+=e, \ e_-=-e$$
+Beobachtung: $U(\hat R)$ vertauchen mit $H \mathrel{\widehat{=}} [\vec J,H]=0$ und $H_0$\\
+
 \textbf{Folgerung:} Es existieren gemeinsame Eigenfunktionen von $H$ und $\{\vec J_i\}$\\
-\item \textbf{Permutationsgruppe $S_2=\{\Eins, \Pi\}$:} Hamiltonoperator für Helium (ohne Spin):\\
+$H=H_0+H_I$, $H_I$ als Störung von $H_0$ $\ra$ Störungstheorie\\
+
+\item \textbf{Illustration der Permutationsgruppe $S_2=\{\Eins, \Pi\}$:} Hamiltonoperator für Helium (ohne Spin):\\
 In vereinfachter Form ($\hbar=m=e=1$, $r_i=||\vec x_i||$, $r_{12}=||\vec x_1^2-\vec x_2^2||$): $$H=\frac{1}{2}(\vec p_1^2+\vec p_2^2)-Z(\frac{1}{r_1}+\frac{1}{r_2})+\frac{1}{r_{12}}$$
-\textbf{Bemerkung:} Historisch war Helium der Anlass die alte QM (Bohr) zu verwerfen (Bahnvorstellung), weil sie das Spektrum von helium nicht erklären  konnte. Es sah so aus, als gäbe es 2 sorten Helium, Ortho- und Parahelium.\\
+\textbf{Bemerkung:} Historisch war Helium der Anlass die alte QM (Bohr) zu verwerfen (Bahnvorstellung), weil sie das Spektrum von Helium nicht erklären konnte. Es sah so aus, als gäbe es 2 Sorten Helium, Ortho- und Parahelium.\\
 $\ra S_2$ als Symmetriegruppe von $H$ $\ra [S_2,H]=0$ \\
 \end{enumerate}
+
 \subsubsection*{Beobachtung:}
 Hilbertraum $L_2(\R^6) \ni \psi(x_1,x_2)$, Darstellung der $S_2$ auf $\H$:
 $$(v_\Pi \circ \psi)(x_1,x_2):=\psi(x_2,x_1)$$
-Sieht: es gibt 2 irreduzoble Darstellungen der $S_2$ auf $\H$:
+Wegen $v_\Pi^2=\Eins \ra \exists $ zwei UVR in $L^2(\R^6)$: $L^2_+, L^2_-$, sodass $L^2=L^2_+ \oplus L^2_-$\\ 
+Deshalb gibt es 2 irreduzible Darstellungen der $S_2$ auf $\H$:
 \begin{enumerate}
-\item $\psi$, sodass $(v_\Pi\circ \psi)(x_1,x_2)=\psi(x_2,x_1)=psi(x_1,x_2)$, d.h. $V_\Pi=:V_+=1$\\
+\item $\psi$, sodass $(v_\Pi\circ \psi)(x_1,x_2)=\psi(x_2,x_1)=\psi(x_1,x_2)$, d.h. $V_\Pi=:V_+=1$\\
 UVR der symmetrischen Funktionen $\psi(x_1,x_2)=\psi(x_2,x_1)=:L_+^2$
-\item $\psi$, sodass $(v_\Pi\circ \psi)(x_1,x_2)=\psi(x_2,x_1)=-psi(x_1,x_2)$, d.h. $V_\Pi=:V_-=-1$\\
+\item $\psi$, sodass $(v_\Pi\circ \psi)(x_1,x_2)=\psi(x_2,x_1)=-\psi(x_1,x_2)$, d.h. $V_\Pi=:V_-=-1$\\
 UVR der antisymmetrischen Funktionen $\psi(x_1,x_2)=-\psi(x_2,x_1)=:L_-^2$
 \end{enumerate}
 \subsubsection*{Lemma:}
 Zu $L_2(\R^3)\otimes L_2(\R^3)=L_2(\R^{2\cdot 3})$ ist $L_2(\R^6)=L_2^+\oplus L_2^-$\\
 $\Ra$ $V_+$ operiert in $L_2^+$, $V_-$ operiert in $L_2^-$, $V_\Pi=V_++V_-$\\
-(Literatur: Lyubarski, Darstellungstheorie von Gruppen)\\
 Zu symmetrisch, antisymmetrisch in $L^2(\R^6)=L^2(\R^3)\otimes L^2(\R^3)$\\
 Basis in $L^2 \otimes L^2$: $\{f_i \otimes f_j, \{f_i\}$ Basis von $L^2(\R^3)\}$
-$$(*) S_2 (f_i(x)\otimes f_j(y))=\frac{1}{2}(f_i(x)\otimes f_j(y)+ f_j(x)\otimes f_i(y))$$
-$$(*) A_2 (f_i(x)\otimes f_j(y))=\frac{1}{2}(f_i(x)\otimes f_j(y)- f_j(x)\otimes f_i(y))$$
+$$S_2 (f_i(x)\otimes f_j(y))=\frac{1}{2}(f_i(x)\otimes f_j(y)+ f_j(x)\otimes f_i(y))$$
+$$A_2 (f_i(x)\otimes f_j(y))=\frac{1}{2}(f_i(x)\otimes f_j(y)- f_j(x)\otimes f_i(y))$$
 
-\subsubsection*{ÜBUNGSAUFGABEN}
-Zeige, $L^2(\R^6)$ wird durch $(*)$ aufgespannt.
 \subsubsection*{Bemerkung}
 Für $n>2$ ist $L_+^2 \oplus L_-^2 \subsetneqq L^2(\R^{3N})$.
 \subsubsection*{Beobachtung}
 $H$ vertauscht mit $V_\Pi$! 
 $\Ra $ er lässt auch $L_+^2$ bzw. $L_-^2$ invariant, da $L_+^2$ und $L_-^2$ sind die Eigenräume von $V_\Pi$ zu den Eigenwerten $\pm 1$.
 \subsubsection*{Lemma}
-$V_\Pi$ ist selbstadjungiert, d.h. $V_\Pi=V_\Pi^{-1}=V_\Pi^*$.
+$V_\Pi$ ist selbstadjungiert, d.h. $V_\Pi=V_\Pi^{-1}=V_\Pi^*$.\\
+$\Ra$ Spektraldarstellung: $V_\Pi=P_+-P_-$
 \subsubsection*{Folgerung}
 Es existieren Projektoren auf $L_+^2, L_-^2$:
 \begin{enumerate}
 \item $P_+:=\frac{1}{2}(1+V_\Pi)$
 \item $P_-:=\frac{1}{2}(1-V_\Pi)$
+\item $\Eins=P_++P_-$
+\item $[V_\Pi,P_\pm]=0$, $P_+\circ P_- - P_- \circ P_+=0$
 \end{enumerate}
 \subsubsection*{Satz}
 $H$ lässt $L_2^+=P_+ \circ \H$, $L_2^-=P_- \circ \H$ invariant.
@@ -977,31 +867,21 @@ $H$ lässt $L_2^+=P_+ \circ \H$, $L_2^-=P_- \circ \H$ invariant.
 Für $H_{He}$ existieren (aufgrund unserer Analyse) symmetrische und antisymmetrische Eigenfunktionen. Werden durch Zeitentwicklung \underline{nicht} gemischt, da $H$ und $V_\Pi$ vertauschen.\\
 $\Ra$ 2 separate Unterräume, in $L_2^+$ liegen Eigenfunktionen mit Eigenwerten, in $L_2^-$\\
 $\Ra$ die Eigenwerte in $L_2^+$ und $L_2^-$sind verschieden.\\
-$\Ra$ Es sieht so aus, als gäbe es zwei Sorten Helium (Ortho.- und Parahelium)\\
+$\Ra$ Es sieht so aus, als gäbe es zwei Sorten Helium (Ortho- und Parahelium)\\
 $$H=H_+ \oplus H_-$$
-\subsubsection*{ÜBUNGSAUFGABEN}
-\begin{enumerate}
-\setcounter{enumi}{9}
-\item Mittels der Spektraldarstellung von Operatoren und den Eigenschaften der Spektralsatzen zeige man ($A=A^*$):\\
-$$f(a) \cdot g(a)=\int f(\l) dP(\l) \cdot \int g(\l') dP(\l')=\int f(\l) g(\l) dP(\l)=(f \circ g)(A)$$
-\item Man zeige, dass für einen antilinearen Operator $A$ das $A^*$ wie folgt definiert wird $(\psi|A\phi):=\overline{(A^*\psi|\phi)}$; genauer: Man zeige, dass $A^*$, so definiert, wieder antilinear ist.
-\item Ein Zustand $\psi$ ist eindeutig festgelegt durch die Übergangswahrscheinlichkeiten $|(\psi|\phi)|^2, \psi \in \H, ||\psi||=1$, m. a. W. auf der Menge der Projektoren $\{P_\psi\}$.
-\item Erinnerung: $P(\Delta_1)\cdot P(\Delta_2)=P(\Delta_1 \cap \Delta_2)$, d.h. $\Delta_1 \cap \Delta_2=\varnothing \ra P(\Delta_1)\cdot P(\Delta_2)=0$
-\end{enumerate}
-Heursitisch:
-$$dP(\l_1)\cdot dP(\l_2)=\delta(\l_1-\l_2)dP(\l_1)$$
-$$\Ra \int \int f(\l) g(\l') dP(\l)dP(\l')=\int f(\l)g(\l) dP(\l)$$
-$$H\cdot H=H^2=\int \l dP(\l)\cdot \int \l dP(\l)=\int \l^2 dP(\l)=H^2$$
+
 %end 1:56
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %16.11.09
 %V08 5:20-6:10
+
+
 \subsection{Tensorprodukt, Austauschwechselwirkung, Schrödingergleichung und Spin}
 \subsubsection*{Pauliprinzip}
 $N$ Teilchen (mit oder ohne Spin, d.h. Spin $=\frac{1}{2}\hbar$)\\
 Wellenfunktionwn $(*)$ $\psi(q_1,...,q_N)$, mit $q_i=(x_i,\mu_i=\pm 1)$ oder $q_i=x_i$
 \subsubsection*{Physik:}
-Quantenteilchen gleichen Typs sollen ununterscheidbar, d.h. in $(*)$ darf der \underline{physiklaische} Zustand (d.h. Ergebnisse von Beobachtungen) nicht davon abhängen, welches der $N$ Teilche die Koordinate $q_i$ hat \\
+Quantenteilchen gleichen Typs sollen ununterscheidbar, d.h. in $(*)$ darf der \underline{physikalische} Zustand (d.h. Ergebnisse von Beobachtungen) nicht davon abhängen, welches der $N$ Teilche die Koordinate $q_i$ hat \\
 $\Ra$ \underline{Freiheiten} in der mathematischen Struktur von $\Psi(..)$?\\
 Beobachtungen $\mathrel{\widehat{=}}$ Erwartungswerte\\
 \subsubsection*{Folgerung:}
@@ -1012,29 +892,33 @@ $$\Ra e^{i\alpha=\pm 1}$$
 \subsubsection*{Pauliprinzip:}
 \begin{enumerate}
 \item Fermionen (Spin z.B. $\frac{1}{2}\hbar$) haben $-1$ (antivertauschen unter Transposition)
-\item Bosonen (Spin z.B. $1..\hbar$) haben $1$ (symmetrisch)
+\item Bosonen (Spin z.B. $0,1,2..\hbar$) haben $1$ (symmetrisch)
 \end{enumerate}
 \subsubsection*{Bemerkung:}
-(Tieferliegendes Resultat der QFT) Spin-Statistik-Theorem (Pauli, Lders, Zumino)
-\subsubsection*{Anwendung: 2-Tailchen-System und Spin $\frac{1}{2}\hbar$:}
+(Tieferliegendes Resultat der QFT) Spin-Statistik-Theorem (Pauli, Lüders, Zumino)
+
+\subsubsection*{Anwendung: 2-Teilchen-System und Spin $\frac{1}{2}\hbar$:}
+kanonische Basis:\\
 $V=2$-dim$=\C^2$, Basis $\begin{pmatrix}1 \\ 0 \end{pmatrix}=|\uparrow\rangle$,$\begin{pmatrix}0 \\ 1 \end{pmatrix}=|\downarrow\rangle$\\
 $V\otimes V \ra$ Basis $\{\begin{pmatrix}1 \\ 0 \end{pmatrix} \otimes \begin{pmatrix}1 \\ 0 \end{pmatrix}, \begin{pmatrix}0 \\ 1 \end{pmatrix} \otimes \begin{pmatrix}0 \\ 1 \end{pmatrix}, \begin{pmatrix}1 \\ 0 \end{pmatrix} \otimes \begin{pmatrix}0 \\ 1 \end{pmatrix}, \begin{pmatrix}0 \\ 1 \end{pmatrix} \otimes \begin{pmatrix}1 \\ 0 \end{pmatrix} \} (**)$
+
 \subsubsection*{Drehimpuls (Spin) des 2-Teilchensystems:}
-Paulimatrizen: $\sigma_x=\begin{pmatrix}0 & 1 \\ 1 & 0 \end{pmatrix}$, $\sigma_y=\begin{pmatrix}0 & -i \\ 1i& 0 \end{pmatrix}$, $\sigma_z=\begin{pmatrix}1 & 0 \\ 0 & -1 \end{pmatrix}$, $\Eins$
-Die vier Matrizen bilden die Basis im Vektorraum der komplexen 2x2-Matrizen (Idee: $\begin{pmatrix}0 & 1 \\ 0 & 0 \end{pmatrix}=...,$, $\begin{pmatrix}1 & 0 \\ 0 & 0 \end{pmatrix}=...,$)\\
+Paulimatrizen: $\sigma_x=\begin{pmatrix}0 & 1 \\ 1 & 0 \end{pmatrix}$, $\sigma_y=\begin{pmatrix}0 & -i \\ i& 0 \end{pmatrix}$, $\sigma_z=\begin{pmatrix}1 & 0 \\ 0 & -1 \end{pmatrix}$ und $\Eins$\\
+Diese vier Matrizen bilden die Basis im Vektorraum der komplexen 2x2-Matrizen (Idee: $\begin{pmatrix}0 & 1 \\ 0 & 0 \end{pmatrix}=...,$, $\begin{pmatrix}1 & 0 \\ 0 & 0 \end{pmatrix}=...,$)\\
 Bemerkung: Spin-Matrizen: $\{ s_i=\frac{\hbar}{2}\sigma_i \}$
 \subsubsection*{Eigenschaften der Paulimatrizen:}
 \begin{enumerate}
+\item $\sigma_i^2=\Eins$
 \item $\sigma_k^*=\sigma_k=\sigma_k^{-1}$
 \item $Spur(\sigma_k)=0$
 \item $\{\sigma_i, \sigma_k\}_{i\neq k}=[\sigma_i, \sigma_k]_+=0$ (Antikommutatot)
-\item (Darstellung der Drehimpulsalgebra)
-$$[s_i,s_k]=\hbar \epsilon_{ijk} s_k$$
+\item Darstellung der Drehimpulsalgebra (Lie-Algebra SO(3) auf $\R^3$:
+$$[s_i,s_j]=\hbar \epsilon_{ijk} s_k$$
 \end{enumerate}
 \subsubsection*{Bemerkung:}
 $(**)$ nennt man die kanonische Basis. Es existiert eine andere Basis\\
 J.Bell: Speakable and unspeakable in QM
-\subsubsection*{Bell-States:}
+\subsubsection*{Bell-States (Basis in $V\otimes V$):}
 \begin{enumerate}
 \item $\frac{1}{\sqrt{2}}(|\uparrow>|\downarrow>-|\downarrow>|\uparrow>)=\zeta_0$
 \item $\frac{1}{\sqrt{2}}(|\uparrow>|\uparrow>+|\downarrow>|\downarrow>)=\zeta_1$
@@ -1043,18 +927,19 @@ J.Bell: Speakable and unspeakable in QM
 \end{enumerate}
 \subsubsection*{Beobachtung:}
 \begin{enumerate}
-\item ist ''Singulett-Darstellung'' der Spin-Matrizen, d.h. Gesamtspin$=0$, $\forall \sigma_i \cdot \zeta_0=0 \Ra $ Drehungen $\equiv 1$
-\item ist die Triplett-Darstellung (Spin=1)\\
+\item Bell-States sind Basis in $V\otimes V$
+\item $\zeta_0$ ist ''Singulett-Darstellung'' $D_0$ der Spin-Matrizen, d.h. Gesamtspin$=0$, $\forall \sigma_i \cdot \zeta_0=0 \Ra $ Drehungen $\equiv 1$
+\item $\{\zeta_1, \zeta_2, \zeta_3\}$ ist die Triplett-Darstellung $D_1$ (Spin=1)\\
 $\sigma_z=\sigma_z^{(1)}\otimes \Eins+\Eins\otimes \sigma_z^{(2)}$ hat die Eigenwerte $\{-1,0,1\}$
 \end{enumerate}
-\subsubsection*{Bemerkung:}
+\subsubsection*{Darstellung der Drehgruppe in $V\otimes V$:}
 $s_z=s_z^{(1)}\otimes \Eins+\Eins\otimes s_z^{(2)}$
 
 \subsubsection*{Beispiel für Zusammenspiel von Drehimpuls, Permutationsgruppe und Pauliprinzip:}
 \subsubsection*{Beobachtung:}
 Wenn der Hamiltonoperator unabhängig vom Spin $\ra$ in $V$ bzw. $L^2(\R^3)\otimes \C^2$\\
 $\overline{H}=\begin{pmatrix}H & 0 \\ 0 & H \end{pmatrix}$ angewendet auf $\begin{pmatrix}\psi_1(x) \\ \psi_2(x) \end{pmatrix}$ in $(L^2\otimes \C^2)\otimes(L^2\otimes \C^2) \ni \begin{pmatrix}\psi_1 \\ \psi_2 \end{pmatrix} \otimes \begin{pmatrix}\psi_1' \\ \psi_2' \end{pmatrix}$\\
-$\ra$ in kanonischer Basis
+$\ra$ in kanonischer Basis ($q_x=(x,1), \ q_y=(y,-1)$)
 $$\hat \psi(q_x,q_y)=\psi_{11}(x,y)\cdot \begin{pmatrix}1 \\ 0 \end{pmatrix}\otimes \begin{pmatrix}1 \\ 0 \end{pmatrix}+\psi_{12}(x,y)\cdot \begin{pmatrix}1 \\ 0 \end{pmatrix}\otimes \begin{pmatrix}0 \\ 1 \end{pmatrix}+\psi_{21}(x,y)\cdot \begin{pmatrix}0 \\ 1 \end{pmatrix}\otimes \begin{pmatrix}1 \\ 0 \end{pmatrix}+\psi_{22}(x,y)\cdot\begin{pmatrix}0 \\ 1 \end{pmatrix}\otimes \begin{pmatrix}0 \\ 1 \end{pmatrix}$$
 $$=\phi_0(x,y)+\sum_{i=1}^3 \phi_i(x,y)\zeta_i$$
 \subsubsection*{Pauli-Prinzip}
@@ -1062,10 +947,10 @@ $$\hat \psi(q_x,q_y)=- \hat \psi(q_y,q_x)$$
 \subsubsection*{Beobachtung:}
 In Basis von Bell-States:\\
 \begin{enumerate}
-\item Die $\zeta_i$: $\zeta_0$ ist antisymmetrisch unter $V_\Pi$ $\Ra \phi_0(x,y)=\phi_0(y,x)$
-\item Die $\zeta_i, i>0$: sind symmetrisch unter $V_\Pi$ $\Ra \phi_i(x,y)=-\phi_i(y,x), \ i=1,2,3$
+\item $\zeta_0$ ist antisymmetrisch unter $V_\Pi$ $\Ra \phi_0(x,y)=\phi_0(y,x)$ symmetrisch
+\item Die $\zeta_i, i>0$: sind symmetrisch unter $V_\Pi$ $\Ra \phi_i(x,y)=-\phi_i(y,x), \ i=1,2,3$ antisymmetrisch
 \end{enumerate}
-$H \ra$ Eugenfunktionen von $H$ $\Ra$ aus Analyse: \\
+$H \ra$ Eigenfunktionen von $H$ $\Ra$ aus Analyse: \\
 Zustand mit Spin$=0$ hat symmetrische Wellenfunktion $\phi_0$\\
 Zustand mit Spin$=1$ hat antisymmetrische Wellenfunktionen $\phi_i, \ i=1,2,3$\\
 \subsubsection*{Folgerung:}
@@ -1075,7 +960,8 @@ In $L^2(\R^3) \otimes L^2(\R^3)$ kommen \underline{nicht} alle Eigenwerte bzw. E
 \item nur antisymmetrische Eigenfunktionen und ihre Eigenwerte
 \end{enumerate}
 aber $\overline{H}$ hat sowohl antisymmetrische und symmetrische Eigenfunktionen, $\overline{H}$ unabhängig vom Spin
-\subsubsection*{Austuschwechselwirkung:}
+
+\subsubsection*{Austauschwechselwirkung:}
 2 Elektronen (in Atom) $\ra$ $V(x_1,x_2)=\gamma\frac{e^2}{|x_1-x_2|}$\\
 Beispiel: $S=0$ bzw. $S=1$ $\ra$ Erwartungswert von $V$ in 1) bzw. für Fkt. $\phi_1(x_1)\cdot \phi_2(x_2)$\\
 $\Ra$ 1), 2): $\frac{1}{\sqrt{2}}(\phi_1(x_1)\phi_2(x_2)\pm\phi_1(x_2)\phi_2(x_1))$\\
@@ -1083,98 +969,108 @@ $\Ra$ $(1 | V(x_1,x_2) 1)$ bzw. $(2 | V(x_1,x_2) 2)=A\pm J$
 $$A=\int \int V(x_1,x_2)|\phi_1(x_1)|^2|\phi_2(x_2)|^2dx_1dx_2$$
 $$J=\int \int V(x_1,x_2)\phi_1(x_1)\overline{\phi_1(x_2)}\phi_2(x_2)\overline{\phi_2(x_1)}dx_1dx_2$$
 $J$ heißt auch das Austauschintegral.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %19.11.09
 %19:55-21:05
+
+
 \subsection{Der statistische Operator:}
-Literatur: v. Neumann, Landau\\
-\subsubsection*{Bisher:}
-Zustände entsprechen Einheitsstrahlen im Hilbertraum (d.h. $\{e^{i\alpha}\psi, \ \alpha \in \R \}$)\\
-Sei $A$ Observable (d.h. selbstadjungieter Operator) $\Ra$ Erwartungswert $\psi \ra (\psi|A\psi)$, mathematisch ein lineares Funktional auf der Algebra der Operatoren(bervablen
+Literatur: v. Neumann, Landau
+
+\subsubsection*{Bisher (normale QM):}
+Zustände entsprechen Einheitsstrahlen im Hilbertraum (d.h. $\{e^{i\alpha}\psi, \ \alpha \in \R \, \ ||\psi||=1$)\\
+Sei $A$ Observable (d.h. selbstadjungieter Operator) $\Ra$ Erwartungswert $\psi \ra (\psi|A\psi)$, mathematisch ein lineares Funktional auf der Algebra der Operatoren (Observablen)\\
+$\Ra$ Zustand $ \mathrel{\widehat{=}}$ Erwartungswert
+
 \subsubsection*{Erkenntnis:}
-Es gibt allg. Typen eines quantenmechabnischen Zustands
+Es gibt allgemeine Typen eines quantenmechanischen Zustands
 \subsubsection*{Vorbemerkung:}
-Begriff der \underline{Spur}: Gegeben sei ein VDNS in $\H$ , d.h $\{\psi_i\} \Ra \sum_i(\psi_i|A\psi_i) \ra Spur(A)=Tr(A)$\\
+Begriff der \underline{Spur}: Gegeben sei ein VONS (vollständiges Orthonormalsystem) in $\H$ , d.h $\{\psi_i\} \Ra \sum_i(\psi_i|A\psi_i) \ra Spur(A)=Tr(A)$\\
 (Erinnerung: Matrizen $\ra \sum_{i=1}^N a_{ii}$)\\
-Ohne Einschränkung an $A$ $Tr(A)=\infty$ sein oder schlecht definiert (später)
+Ohne Einschränkung an $A$ kann $Tr(A)=\infty$ sein oder schlecht definiert (später)
+
 \subsubsection*{Beobachtung:}
 $Tr(A)$ ist Größe, die zu $A$ gehört (Invariante), d.h. unabhängig von der Auswahl der Basis.\\
 \textbf{Beweis:}\\
 Neben $\{\psi_i\}$ wähle $\{\phi_j\}$, $\psi_i=\sum_j (\psi_i|\phi_j)\phi_j \ra Tr_\psi (A)=\sum (\psi_i|A\psi_i)=\sum_i \sum_{j,j'} (\phi_j|A\phi_{j'})\overline{\overline{(\phi_j|\psi_i)}}\overline{(\phi_{j'}|\psi_i)}$\\
 $=\sum_{j,j'} (\phi_j|A\phi_j)\sum_i (\phi_j|\psi_i)(\psi_i|\phi_{j'})=\sum_{j,j'} (\phi_j|A\phi_j)\delta_{j,j'}=\sum_j(\phi_j|A\phi_j)=Tr_\phi(A).$
+
+\subsubsection*{Beobachtung:}
+$$\Eins=\sum_i |\psi_i><\psi_i|$$
+
 \subsubsection*{Eigenschaften der Spur:}
 \begin{enumerate}
 \item $Tr(AB)=Tr(BA)$
-\item $Tr(Proj_M)=dim(M)$
+\item $Tr(Proj_M)=dim(M)$, $M$ UVR
 \item $U$ unitärer Operator $\ra Tr(UAU^{-1})=Tr(A)$
+\item Invarianz der Spur unter zyklischen Vertauschungen
+\item invariant unter Basistransformationen
 \end{enumerate}
 \textbf{Beweis:}
 \begin{enumerate}
-\item $Tr(AB)=\sum_{i}(\phi_i|AB|\phi_i)=\sum_i (\phi_i|A \cdot \Eins \cdot B \phi_i)=\sum_{i,j} \phi_i|A\psi_j)(\psi_j|B\phi_i)=\sum_{i,j} (\Psi_j|B\phi_i)(\phi_i|A\psi_j)=\sum_j (\psi_j|BA\psi_j)=Tr(BA))$
+\item $Tr(AB)=\sum_{i}(\phi_i|AB|\phi_i)=\sum_i (\phi_i|A \cdot \Eins \cdot B \phi_i)=\sum_{i,j} (\phi_i|A\psi_j)(\psi_j|B\phi_i)=\sum_{i,j} (\psi_j|B\phi_i)(\phi_i|A\psi_j)=\sum_j (\psi_j|BA\psi_j)=Tr(BA))$
+\item Übung (FIXME)
+\item $$Tr(UAU^{-1})=Tr(UU^{-1}A)=Tr(A)=$$
+$$Tr(UAU^{-1})=\sum_i (\phi_i|UAU^{-1}\phi_i)=\sum_i (U^{-1}\phi_i|AU^{-1}\phi_i)\stackrel{\psi_i=U^{-1}\phi_i}{=}\sum_i (\psi_i|A|\psi_i)=Tr(A)$$
 \end{enumerate}
+
 \subsubsection*{Bemerkung:}
-Bisher keine Konergenzbedingungen. Wählen $A$ selbstadjungiert, d.h. $||A|| < \infty \Ra A=\int_{-\infty}^\infty \l dP_\l$
+Bisher keine Konvergenzbedingungen. Wählen $A$ selbstadjungiert, d.h. $||A|| < \infty \Ra A=\int_{-\infty}^\infty \l dP_\l$
 \subsubsection*{Definition:}
 $|A|:= \int |\l|dP_\l$
+
 \subsubsection*{Folgerung:}
-$|A|$ ist positiver Operator, d.h. $(\phi|A\phi)\geq 0, \ \forall \phi\in \H$\\
+$|A|$ ist positiver Operator, d.h. $(\phi| |A|\phi)\geq 0, \ \forall \phi\in \H$\\
 \textbf{Beweis:}
 $$(\phi|\int |\l| dP_\l \phi)=\int |\l| d(\phi|P_\l \phi) \geq 0$$
-$d(\phi|P_\l \phi)$ ist ein positives Maß.
+$|\l|\geq 0$, $d(\phi|P_\l \phi) >0$\\
+$\Ra d(\phi|P_\l \phi)$ ist ein positives Maß.
+
 \subsubsection*{Bemerkung (Zusammenhang von $|A|$ und $A$):}
 $$|\l \in \R| \ra |\l|^2=\l^2 \ra |A| \cdot |A|=\int |\l| dp_\l \cdot \int |\l'|dP_{\l'}=\int \int \delta(\l-\l') |\l||\l'|dP_\l dP_{\l'}=\int |\l^2|dP_\l=A^2$$
 \subsubsection*{Allgemein:}
 $A$ nicht notwending selbstadjungiert $\Ra |A|:= \sqrt{A^*A}$, wobei $A^*A$ selbstadjungiert ist $\ra$ Spektraldarstellung\\
 $A^*A=\int \mu dP_\mu$ positiv $\ra \int_0^\infty \ra \sqrt{A^*A}=\int_0^\infty \sqrt{\mu}dP_\mu$, $A$ positiv $\ra$ Spektrum $\subset [0,\infty)$, d.h. Messwerte $\geq 0$.\\
 Bsp. $H_0=\frac{\hbar^2}{2m}\vec p^2$
+
 \subsubsection*{Folgerung:}
-Für positive Operatoren sind wie ind er klassischen Integrationstheorie die Konvergenzfragen harmlos.
+Für positive Operatoren sind wie in der klassischen Integrationstheorie die Konvergenzfragen harmlos.
+
 \subsubsection*{Definition:}
 Man nennt $A$ \underline{Spurklasse}, wenn $Tr(|A|)< \infty$
+
 \subsubsection*{Folgerung:}
-Für $A=A^*$: $Tr(A) \leq Tr(|A|) \geq 0$\\
-\textbf{Beweis (FIXME: fragwürdig):}\\
+
+Für $A=A^*$: $|Tr(A)| \leq Tr(|A|) \geq 0$\\
+Wenn $|A|$ eine endliche Spur hat $\Ra$ $A$ hat endliche Spur.\\
+
+\textbf{Beweis:}\\
 $|A|$ positiv $\ra$ $\forall \phi_i: (\phi_i| |A| \phi_i)\geq 0$\\
+$$A=\int \l dP_\l$$
+$$|A|=\int |\l| dP_\l$$
+$$\Ra -|\l| \leq \l \leq |\l|$$
+
 $$\Ra Tr(A)=\sum_i (\phi_i|A\phi_i)=\sum_{i_1}(\phi_{i_1}|A\phi_{i_1})+\sum_{i_2}(\phi_{i_2}|A\phi_{i_2})$$
 $i_1$ mit $(..)\geq 0$, $i_2$ mit $(..)< 0$, 
 $$(*)=\sum_{i_1}(\phi_{i_1}|A\phi_{i_1}) \leq Tr(A)$$
 $$|\sum_{i_2}(\phi_{i_2}|A\phi_{i_2})| \leq Tr(A)-(*)$$
 $$\Ra |Tr(A)| \leq Tr(A)$$
+
+$$(\phi_i| |A| \phi_i) \leq (\phi_i|A|\phi_i)\leq (\phi_i ||A| \phi_i)$$
+$$\Ra |Tr(A)| \leq Tr(|A|)$$
+
 \subsubsection*{Satz:}
 Das Spektrum eines Spurklasse-Operators kann kein kontinuierlisches Spektrum enthalten, ferner keine Häufungspunkte $\neq 0$.\\
 \textbf{Beweis (Idee):}\\
-Annahme: es existiert ein kontnuierliches Spektrum $\ra$ z.B. in $I \subset \R$, existieren unendlich viele orthonormale Wellenpackete mit Spektrum in $I$ $\ra$ zu Basis erweitern $\ra Tr(A)=\infty$, analog für zweite Aussage
+Annahme: es existiert ein kontinuierliches Spektrum $\ra$ z.B. in $I \subset \R$, existieren unendlich viele orthonormale Wellenpackete mit Spektrum in $I$ $\ra$ zu Basis erweitern $\ra Tr(A)=\infty$, analog für zweite Aussage
 \subsubsection*{Bemerkung:}
 Solche Operatoren nennt man auch ''vollstetig'' (früher), heute auch \underline{kompakte} Operatoren. Spurklasse $\subset$ kompl. Operatoren
-\subsubsection*{ÜBUNGSAUFGABEN}
-\begin{enumerate}
-\setcounter{enumi}{12}
-\item Man begründe, dass $H=\sum_{i=1}^N\frac{1}{2m_e} \vec p_i^2+\sum_{i=1}^N \frac{Ze_+e_-}{||\vec x_i||}+\frac{1}{2}\sum_{i\neq j} \gamma \frac{e^2}{||x_i-x_j||}$ rotationsinvariant ist, d.h. $D_R \circ(H\psi)(x_1,...,x_N)=(H\psi)(R^{-1}x_1,...,R^{-1}x_N))$, bzw. $D_R \circ H=H \circ D_R$ oder $D_R \circ H \circ D_R^{-1}=H$.
-\item In $L^2 \otimes L^2$ kann man jede Funktion als Summe einer symmetrischen und einer antisymmetrischen darstellen. Man Zeige, dass dies für $n>2$ nicht mehr geht.\\
-Idee: Zeige. dass $f_1(x_1)f_x(x_2)f_3(x_3), f_i \in$ ON-System $\neq \sum$ symmetrisch $+$ antisymmetrisch.
-\item Man zeige, dass im Raum $V\otimes V, V=\C^2$, $\hat \sigma_z=\sigma_z\otimes \Eins+ \Eins \otimes \sigma_z, \sigma_z= \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$:
-$$\hat \sigma_z (\begin{pmatrix} 1 \\0 \end{pmatrix}\otimes \begin{pmatrix} 0 \\1 \end{pmatrix}- \begin{pmatrix} 0 \\1 \end{pmatrix}\otimes \begin{pmatrix} 1 \\0 \end{pmatrix})\equiv 0$$
-$$\forall \sigma \ \mathrm{auch}$$
-\end{enumerate}
-\begin{enumerate}
-\setcounter{enumi}{13}
-\item Zeige, dass $D_R$ angewendet auf $H$:\\
-	\begin{enumerate}
-	\item $x_i \ra R^{-1}x_i$
-	\item $\nabla_{x_i} \ra  \nabla_{R^{-1}x_i}$
-	\end{enumerate}
-	\begin{enumerate}
-	\item Potentiale rotationsinvariant
-	\item Fouriertransformation $\ra \frac{\hbar}{i}\nabla_{x_i} \ra \hbar \vec p_i$, evident, dass $\vec p^2$ rotationsinvariant ist
-	\end{enumerate}
-\item Nehme Tensorprodukt, das von $f_1,f_2,f_3$ aufgespannt wird, d.h. 6 Basisvektoren $\Ra$ Vektorraum ist 6-dimensional
-\begin{enumerate}
-\item symmetrischer Zustand, d.h $\frac{1}{3!} \sum_\Pi f_{\Pi(1)}(x_1)\cdot ... \cdot f_{\Pi(3)}(x_3)$, ist eindimensional
-\item antiymmetrischer Zustand, d.h $\frac{1}{3!} \sum_\Pi sgn(\Pi) ...$, ist eindimensional
-\end{enumerate}
-$\Ra$ echter Unterraum
-\item $$\hat \sigma_z(...)=\begin{pmatrix} 1 \\0 \end{pmatrix} \otimes \begin{pmatrix} 0 \\1 \end{pmatrix}+\begin{pmatrix} 0 \\1 \end{pmatrix}\otimes \begin{pmatrix} 1 \\0 \end{pmatrix}-\begin{pmatrix} 1 \\0 \end{pmatrix} \otimes \begin{pmatrix} 0 \\1 \end{pmatrix}-\begin{pmatrix} 0 \\1 \end{pmatrix}\otimes \begin{pmatrix} 1 \\0 \end{pmatrix}=0$$
-\end{enumerate}
+
+\subsubsection*{Wichtiges Beispiel:}
+$H \mathrel{\widehat{=}} $ Hamiltonoperator $\ra$ $e^{-\beta H}$ (Bem. $e^{-\beta H}=\int e^{-\beta \l}dP_\l$)
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %23.11.09
 %22:25-23:25
@@ -1184,7 +1080,7 @@ $$Tr(|A|)=\sum_i (\psi_i||A|\psi_i)< \infty$$
 \subsubsection*{Wissen:}
 $\H \ni \psi, ||\psi||=1 \ra$ lineares Funktional: $(\psi|A\psi)$ auf $B(\H)\ \ (A\in B(\H))$
 \subsubsection*{Beobachtung:}
-$\psi \ra P\psi$ (Projektor auf $\psi$) $\ra !!! (\psi|A\psi)=Tr(P_\psi A))$
+$\psi \ra P\psi$ (Projektor auf $\psi$) $\ra !!! (\psi|A\psi)=Tr(P_\psi A))$\\
 \textbf{Beweis:}\\
 $\psi \ra$ erweitern zu ON-Basis mit $\psi=\psi_1, \psi_2,...$ \\
 $$P_{\psi_1}\psi_i=\delta_{1i}\psi_1$$
@@ -1312,35 +1208,7 @@ Maß für fehlende Information
 \item Ein reiner Zustand $W=P_\psi$ hat Entropie$=0$.
 \item Zustand maximaler Entropie int $W$ mit $\l_i=\frac{1}{N}$, wenn $H$ endl. Dim. $=N$ (Übungsaufgabe: Variationsprinzip, Lagrange-Mult., da $\sum_i \l_i=1$)
 \end{enumerate}
-\subsubsection*{ÜBUNGSAUFGABEN}
-\begin{enumerate}
-\setcounter{enumi}{15}
-\item Gegeben sei statistischer Operator $W$ in 2-dim. Hilbertraum, aufgespannt von $\psi1, \psi_2$.\\
-$$W:= \l_1P_{\psi_1}+\l_2 P_{\psi_2}, \ ||\psi_i||=1, \ \l_1+ \l_2=1, \ \l_i>0$$
-Man finde die Spektraldarstellung.
-\item Beweise: Sei $P_M$ Projektor aud endl.-dim. UVR $\ra$ $Tr(P_M)=dim(M)$
-\item Zeige, dass $Tr(W)=Tr(UWU^{-1})$ mit $U$ als unitären Operator.
-\end{enumerate}
-\ifthenelse{\boolean{lsg}}{
-\subsubsection*{LÖSUNG}
-\begin{enumerate}
-\setcounter{enumi}{15}
-\item EV $\phi_1,\phi_2$ für die EW $E_1,E_2$ zu $W$ 
-$$W(\alpha \psi_1 + \beta\psi_2)=E(\alpha \psi_1 + \beta\psi_2)$$
-$$\Ra \l_1 \alpha+\l_2\beta(\psi_1|\psi_2)=E\alpha$$
-$$\Ra \l_2 \overline{(\psi_1|\psi_2)} \alpha+\l_2\beta=E\beta$$
-$$\ra \begin{pmatrix} \l_1-E & \l_1(\psi_1|\psi_2) // \l_2\overline{(\psi_1|\psi_2)} & \l_2-E \end{pmatrix}\begin{pmatrix}\alpha \\ \beta \end{pmatrix}=0$$
-$$\ra det( \ )=0 \Ra E^2-(\l_1+\l_2)+\l_1\l_2(1-(\psi_1|\psi_2)^2)=0 \Ra E_{1,2}$$
-Einsetzen $\ra \alpha_{1,2}, \beta_{1,2} \Ra$ Spektraldarstellung
-\item Wählen ON-Basis in $M$ $\psi_1,...,\psi_m$ setzen diese fort auf ganz $\H$: $\psi_1,...,\psi_m,\psi_{m+1},...$
-$$\Ra Tr(P_M)=\sum_{i=1}^m (\psi_i|P_m\psi_i)+\sum_{m+1}^\infty (\psi_j|P_M \psi_j)=\sum_{i=1}^m (\psi_i|\psi_i)=m$$
-\item $$Tr(UWU^{-1})=sum_i (\psi|UWU^{-1}\psi_i)$$
-$U$ bildet Basen auf Basen ab, $Tr$ ist unabhängi von Basiswahl:
-$$Tr(UWU^{-1})=\sum_i (U^{-1}\psi_i|WU^{-1}\psi_i)=Tr(W)$$
-oder:
-$$Tr(UWU^{-1})=Tr(UU^{-1}W)=Tr(W)$$
-\end{enumerate}
-}{}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %30.11.09
 %15:20-16:20
@@ -1511,36 +1379,7 @@ Mit $v_{i_j}=v_{i_j'}=v_k$ $\ra$ Transposition $\Pi_{j,j'} \ra sign(\Pi)=-1$\\
 $\Ra$ $-1$ aber Zustand der selbe\\
 $\Ra$ Widerspruch außer wenn alle $v_{i_\nu}$ verschieden\\
 $\Ra$ Im fermionischen Fall ist $N_{(...)}=\sqrt{n!}$ $\Ra$ $|n_1,...>=\sqrt{n!}A_n \circ ({v_{i_1}\otimes ... \otimes v_{i_n}})$ mit $n_i=1$ oder $n_i=0$.
-\subsubsection*{ÜBUNGSAUFGABEN}
-\begin{enumerate}
-\setcounter{enumi}{18}
-\item \begin{enumerate}
-\item Sei $|v>$ ein EV von $N=a^+a$ zu EW $v\in \R$, $[a,a^+]=1$. Man zeige: $v=0 \Ra a|v>=0$.
-\item Wenn $v>0 \Ra a|v>\neq 0$ mit Norm $v<v|v>=v$ und ist EV zu $N$ mit EW $v-1$. (Man benutze $[N,a]=-a$)
-\end{enumerate}
-\item Man Zeige, unter Ausnutzung der Vertauschungsrelationen, dass $<(a^+)^n|0>|(a^+)^m|0>>=0$, wenn $n\neq m$.
-\end{enumerate}
 
-\ifthenelse{\boolean{lsg}}{
-\subsubsection*{LÖSUNG}
-\begin{enumerate}
-\setcounter{enumi}{18}
-\item \begin{enumerate}
-\item $Na|0>=a(N-1)|0>=(0-1)a|0>=-a|0> \ra a|0>$ ist EV zu $N$ zum EW $-1$, $N$ positiv $\ra$ Widerspruch $\Ra a|0>=0$. ($N$ positiv: $(\psi|a^+a\psi)=(a\psi,a\psi)\geq 0$)
-\item $Na|v>=a(N-1)|v>=(v-1)a|v> \ra$ EV zu $(v-1)$\\
-$(a|v>|a|v>=(|v>|a^+a|v>)=v<v|v>$
-\end{enumerate}
-\item O.B.d.A. $n>m$:\\
-\textbf{1. Schritt:}\\
-$a^+$ auf r.S.\\
-$$<(a^+)^n|0>|(a^+)^m|0>>=<(a^+)^{n-1}|a(a^+)^m|0>>$$
-$$\stackrel{[a,a^+]=1}{\Ra} a \underbrace{a^+...a^+}_{m}|0>=a^+a(a^+)^{m-1}|0>+(a^+)^{m-1}|0>$$
-Endergebnis für ein $a^+$:\\
-Vektor $a|0>=0$ $+$ Vektor mit $a^+$ weniger\\
-\textbf{2. Schritt:}\\
-alle $a^+$ auf r.S.: $n>m$ alle $a^+$ werden vernichtet $\Ra <..|..>=0.$
-\end{enumerate}
-}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %07.12.09
@@ -1708,12 +1547,6 @@ $$\int \hat \psi^+(x) \circ {f}(x) d^dx=\sum_i \int \overline{\psi_i}(x) {f}(x) 
 \begin{verbatim}
 Titel: 	Verallgemeinerte Funktionen und das Rechnen mit ihnen / von I. M. Gelfand und G. E. Shilow
 Verfasser: 	Gelfand, Izrail M. *1913-2009* ; Silov, Georgij E.
-Ausgabe: 	2. Aufl.
-Erschienen: 	Berlin : Dt. Verl. der Wiss., 1967
-Umfang: 	364 S. : graph. Darst.
-Gesamttitel: 	Verallgemeinerte Funktionen ; 1
-Schriftenreihe: 	Hochschulbücher für Mathematik ; 47
-Anmerkung: 	Literaturverz. S. [358] - 359
 \end{verbatim}
 \end{tiny}
 )\\
@@ -1723,42 +1556,7 @@ $$\ra \int \hat \psi(x) \circ \overline{\psi_{i_0}}(x) d^dx=\sum \underbrace{(\p
 \subsubsection*{Bemerkung}
 $(*)$ ist bisher nur in Besetzungszahldarstellung bekannt. Wie wirkt er auf allg. Funktionen $\psi(x_1,...x_n) \in S_n\H_n$?
 
-\subsubsection*{ÜBUNGSAUFGABEN}
-\begin{enumerate}
-\setcounter{enumi}{20}
-\item Zeige, dass mit $a_k|n_1,..>:=\sqrt{n_k}|...,n_k-1,...>$ $a_k^+=(a_k)^*$ ist.
-\item Beweise, dass die Vertauschungsrelation $[a_k,a_k^+]=1$ gilt.
-\item \begin{enumerate}
-\item Zeige ${b_k,b_k^+}=1$
-\item Zeige ${b_{k_1},b_{k_2}}=0$ für $k_1 \neq k_2$
-\end{enumerate}
-\end{enumerate}
-\ifthenelse{\boolean{lsg}}{
-\subsubsection*{LÖSUNG}
-\begin{enumerate}
-\setcounter{enumi}{20}
-\item $$(<n_1',...,n_k',...>|a_k|n_1,...,n_k,...>)=\sqrt{n_k}(|...><...,n_k-1,...>)$$
-$\ra$ nur $\neq 0$, wenn 
-\begin{enumerate}
-\item $n_k'=n_k-1, n_j=n_j'$ für alle $j \neq k$
-\item 0, sonst
-\end{enumerate}
-$\Ra$ $$(a_k^+|...n_k-1...>|...n_k...>)=\sqrt{n_k-1+1}(|...n_k,...>|...n_k..>)=\sqrt{n_k}$$
-$$\ra a_k^+=(a_k)^*$$
-\item $$a_ka_k^+|...n_k...>=\sqrt{n_k+1}^2<...n_k...>$$
-$$a_k^+a_k|...n_k...>=\sqrt{n_k}^2<...n_k...>$$
-$$\Ra (a_ka_k^+-a_k^+a_k)|...n_k...>=|...n_k...>$$
-\item \begin{enumerate}
-\item $$b_kb_k^+|....n_k=1...>=0$$
-$$b_k^+b_k|....n_k=1...>=(-1)^{s_k}(-1)^{s_k}|...n_k=1...>$$
-$\ra (b_kb_k^++b_k^+b_k)=1$ etc.
-\item $k_1<k_2$
-$$b_{k_1}b_{k_2}|....n_{k_1}=1...n_{k_2}=1...>=(-1)^{s_{k_1}}(-1)^{s_{k_2}}|...>=(-1)^{s_{k_2}s_{k_1}}|...>$$
-$$b_{k_2}b_{k_1}|....n_{k_1}=1...n_{k_2}=1...>=(-1)^{s_{k_1}}(-1)^{s_{k_2}-1}|...>=-(-1)^{s_{k_2}s_{k_1}}|...>$$
-$\ra (b_{k_1}b_{k_2}+b_{k_2}b_{k_1})=0$ 
-\end{enumerate}
-\end{enumerate}
-}{}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %14.12.09
 %15:20 16:20
@@ -1819,39 +1617,15 @@ $$\Phi \in \F_S: (\psi^+(f)\Phi)_n=\sqrt{n} S_n(f \otimes \Phi_m)_1 $$
 \subsubsection*{Literatur bzgl QFT:}
 \begin{tiny}
 \begin{verbatim}
-
 Titel: 	Local quantum physics : fields, particles, algebras / Rudolf Haag
 Verfasser: 	Haag, Rudolf
-Ausgabe: 	2., rev. and enl. ed.
-Erschienen: 	Berlin [u.a.] : Springer, 1996
-Umfang: 	XV, 390 S. : graph. Darst. ; 25 cm
-Schriftenreihe: 	Texts and monographs in physics
-Anmerkung: 	Literaturverz. S. [349] - 353
-ISBN: 	3-540-61049-9 (Pp.) : DM 58.00
-3-540-61451-6*hbk
-Schlagwörter: 	*Quantenfeldtheorie / Algebraische Methode
-Quantum theory
-Quantum field theory
-Sachgebiete: 	33.23 ; Quantenphysik
-33.24 ; Quantenfeldtheorie
-Mehr zum Thema: 	Klassifikation der Library of Congress: QC174.12
-Dewey Dezimal-Klassifikation: 530.12
-Link: 	http://www.loc.gov/catdir/enhancements/fy0812/96018937-d.html [Publisher description]
-http://www.loc.gov/catdir/enhancements/fy0812/96018937-t.html [Table of contents only]
-http://www.zentralblatt-math.org/zmath/en/search/?an=0857.46057 [Zentralblatt MATH]
-
 \end{verbatim}
 \end{tiny}
 
 \begin{tiny}
 \begin{verbatim}
-
 Titel: 	PCT, spin and statistics, and all that / R.F. Streater; A.S. Wightman
 Verfasser: 	Streater, R.F. ; Wightman, A.S.
-Ausgabe: 	2. print., with add. and corr.
-Erschienen: 	Reading, Mass. u.a., 1978
-Umfang: 	207 S.
-ISBN: 	0-8053-9252-1
 \end{verbatim}
 \end{tiny}
 
@@ -1877,45 +1651,16 @@ $$\frac{1}{\sqrt{n}}\sum \mathrel{\widehat{=}} \sqrt{n} S_n(\delta_x(x_1)\otimes
 \subsubsection*{Literatur:}
 \begin{tiny}
 \begin{verbatim}
-
 Titel: 	QED and the men who made it : Dyson, Feynman, Schwinger and Tomonaga / Silvan S. Schweber
 Verfasser: 	Schweber, Silvan S. *1929-*
-Erschienen: 	Princeton, NJ : Princeton Univ. Press, 1994
-Umfang: 	XXVIII, 732 S. : Ill., graph. Darst.
-Schriftenreihe: 	Princeton series in physics
-Princeton paperbacks
-Anmerkung: 	Literaturverz. S. [672] - 723
-ISBN: 	0-691-03685-3
-0-691-03327-7
-Schlagwörter: 	*Quantenelektrodynamik / Feynman, Richard Phillips / Dyson, Freeman J. / Schwinger, Julian Seymour / Tomonaga, Shin'ichiro / Geschichte
-Quantum electrodynamics / History
-Physicists / Biography
-Sachgebiete: 	33.01 ; Geschichte der Physik
-33.23 ; Quantenphysik
-Mehr zum Thema: 	Klassifikation der Library of Congress: QC680
-Dewey Dezimal-Klassifikation: 537.67 ; 537.6/7/09
-Link: 	http://www.zentralblatt-math.org/zmath/en/search/?an=0815.01011 [Zentralblatt MATH]
 \end{verbatim}
 \end{tiny}
 
 
 \begin{tiny}
 \begin{verbatim}
-
 Titel: 	Conceptual developments of 20th century field theories / Tian Yu Cao
 Verfasser: 	Cao, Tian Yu
-Ausgabe: 	1. paperback ed (with corrections).
-Erschienen: 	Cambridge [u.a.] : Cambridge Univ. Press, 1998
-Umfang: 	XX, 434 S. ; 25 cm
-Anmerkung: 	Literaturangaben
-ISBN: 	0-521-63420-2*(pbk)
-0-521-43178-6*(hdc)
-Schlagwörter: 	*Einheitliche Feldtheorie / Geschichte : 1900-2000
-*Unified field theories
-Sachgebiete: 	33.52 ; Feldtheorien
-33.02 ; Philosophie der Physik
-Mehr zum Thema: 	Dewey Dezimal-Klassifikation: 530.140904
-Link: 	http://www.zentralblatt-math.org/zmath/en/search/?an=0871.01008 [Zentralblatt MATH]
 \end{verbatim}
 \end{tiny}
 
@@ -1976,27 +1721,7 @@ $(*)$ benutzen: $\Phi(x,x_1,...,x_{n-1}=\Phi(x_1,...,x_{k-1},x,x_{k+1},...,x_n)$
 \subsubsection*{Erinnerung:}
 $$\hat \psi^+(x) \cdot (\sqrt{n}\Phi_n(x,x_1,...,x_{n-1})=\frac{1}{\sqrt{n}} \sum_k \delta_x(x_k) \Phi_n(x_1,...,x_{k-1},x,x_{k+1},...,x_{n-1})$$
 
-\subsubsection*{ÜBUNGSAUFGABEN}
-\begin{enumerate}
-\setcounter{enumi}{23}
-\item Beweise die Vertauschungsrelation $[\hat \psi(f),\hat \psi^+(g)]=(f|g)$
-\item Man gebe den Zustand $\hat \psi^+(g)\hat \psi^+(f)|0>$ an (Bosonischer Fall).
-\item Man gebe den Zustand $\hat \psi^+(g)\hat \psi^+(f)|0>$ an (Fermionischer Fall).
-\end{enumerate}
-\ifthenelse{\boolean{lsg}}{
-\subsubsection*{LÖSUNG}
-\begin{enumerate}
-\setcounter{enumi}{23}
-\item $$\hat \psi(f)=\sum_k (f|\psi_k) a_k$$
-$$\hat \psi^+(g)=\sum_k (\psi_k|g) a_k^+$$
-$$[a_k,a_{k'}^+]=\delta_{k,k'}$$
-$$\Ra [\hat \psi(f),\hat \psi^+(g)]=\sum_k (f|\underbrace{\psi_k)(\psi_k}_{\Eins} |g)[a_k,a_k^+]=(f|g)$$
-\item $$\hat\psi^+(f)|0>=f(x_1)$$
-$$\hat \psi^+(g)\circ \hat \psi^+(f)|0>=\frac{1}{\sqrt{2}}(g(x_1)f(x_2)+f(x_1)g(x_2)) $$
-\item $$\hat\psi^+(f)|0>=f(x_1)$$
-$$\hat \psi^+(g)\circ \hat \psi^+(f)|0>=\frac{1}{\sqrt{2}}(g(x_1)f(x_2)-f(x_1)g(x_2)) $$
-\end{enumerate}
-}{}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %21.12.09
 % 
@@ -2050,41 +1775,20 @@ $\hat H \stackrel{s.a.}{\ra} e^{-\frac{i\hat H t}{\hbar}}$ (Zeitentwicklung auf 
 $$\hat \psi^{(+)}(q,t)=e^{\frac{i\hat H t}{\hbar}} \hat \psi^{(+)}(q)e^{-\frac{i\hat H t}{\hbar}}$$
 In Vielteilchenphysik:
 $$<0|\hat\psi^{(+)}(q_1,t_1)\cdot ... \cdot\hat\psi^{(+)}(q_n,t_n)|0> $$
-$n-$Punktfunktionen, $n-$Tailchen-Korrelationsfunktionen, Greensfunktionen\\
+$n-$Punktfunktionen, $n-$Teilchen-Korrelationsfunktionen, Greensfunktionen\\
 \subsubsection*{Literatur:}
 \begin{tiny}
 \begin{verbatim}
-
 Titel: 	Elementare Quantenfeldtheorie / von Ernest M. Henley und Walter Thirring
 Verfasser: 	Henley, Ernest M. *1924-* ; Thirring, Walter E.
-Erschienen: 	Mannheim [u.a.] : B.I.-Wissenschaftsverl., 1975
-Umfang: 	336 S. : graph. Darst.
-Einheitssachtitel: 	Elementary quantum field theory <dt.>
-Anmerkung: 	Literaturangaben
-ISBN: 	3-411-01486-5
-Schlagwörter: 	*Quantenfeldtheorie
-*Quantenfeldtheorie
-Sachgebiete: 	33.24 ; Quantenfeldtheorie
-Link: 	http://www.gbv.de/dms/ilmenau/toc/021516693.PDF [Inhaltsverzeichnis]
 \end{verbatim}
 \end{tiny}
 
 
 \begin{tiny}
 \begin{verbatim}
-
 Titel: 	Quantum theory of many-particle systems / Alexander L. Fetter; John Dirk Walecka
 Verfasser: 	Fetter, Alexander L. *1937-* ; Walecka, John Dirk *1932-*
-Erschienen: 	New York, NY [u.a.] : McGraw-Hill, 1971
-Umfang: 	XIV, 601 S. : graph. Darst.
-Schriftenreihe: 	International series in pure and applied physics
-ISBN: 	0-07-020653-8
-Falsche ISBN: 	*07-020653-8
-Schlagwörter: 	*Quantentheorie / Einteilchenmodell
-Sachgebiete: 	33.40 ; Kernphysik
-33.50 ; Physik der Elementarteilchen und Felder: Allgemeines
-33.56 ; Elementarteilchenphysik
-Mehr zum Thema: 	Dewey Dezimal-Klassifikation: 530.1/44
 \end{verbatim}
 \end{tiny}
 
@@ -2152,14 +1856,8 @@ $\ra$ (Schrödinger) \underline{nichtrelativistische Approximation} $\ra$ Schrö
 \subsubsection*{Literatur}
 \begin{tiny}
 \begin{verbatim}
-
 Titel	Wellenmechanik: Einführung und Originaltexte
-Volume 55 von Wissenschaftliche Taschenbücher
 Autor	Günther Ludwig
-Ausgabe	2
-Verlag	Akademie-Verlag, 1969
-ISBN	3528060557, 9783528060558
-Länge	264 Seiten
 \end{verbatim}
 \end{tiny}
 
@@ -2294,51 +1992,32 @@ Historisch zunächst verworfen, aber später (Pauli-Weisskopf 1934) Reinterpreat
 \subsubsection*{Literatur}
 \begin{tiny}
 \begin{verbatim}
-
 Titel: 	An introduction to relativistic quantum field theory / Silvan S. Schweber. Forew. by Hans A. Bethe
 Verfasser: 	Schweber, Silvan S. *1929-*
-Ausgabe: 	First printing.
-Erschienen: 	New York [u.a.] : Harper & Row [u.a.], 1964
-Umfang: 	XIV, 913 S. : graph. Darst.
-Schriftenreihe: 	A Harper international student reprint
-Schlagwörter: 	*Relativistische Quantenfeldtheorie
-Quantum field theory
-Sachgebiete: 	33.24 ; Quantenfeldtheorie
-33.52 ; Feldtheorien
-Mehr zum Thema: 	Klassifikation der Library of Congress: QC174.45
-Dewey Dezimal-Klassifikation: 530.143
 \end{verbatim}
 \end{tiny}
 
 
 \begin{tiny}
 \begin{verbatim}
-
 Titel: 	Relativistische Quantenfeldtheorie / von James D. Bjorken und Sidney D. Drell
 Verfasser: 	Bjorken, James D. ; Drell, Sidney David
-Erschienen: 	Mannheim [u.a.] : Bibliogr. Inst., 1967
-Umfang: 	409 S. : graph. Darst.
-Schriftenreihe: 	BI-Hochschultaschenbücher ; 101/101a
-Einheitssachtitel: 	Relativistic quantum fields <dt.>
-Schlagwörter: 	*Relativistische Quantenfeldtheorie
-*Relativistische Quantenfeldtheorie
-Sachgebiete: 	33.52 ; Feldtheorien
-Link: 	http://www.gbv.de/dms/ilmenau/toc/042007984.PDF [Inhaltsverzeichnis]
 \end{verbatim}
 \end{tiny}
 
+\begin{tiny}
+\begin{verbatim}
+Titel: 	Quantenmechanik
+Teil: 	Bd. 1
+Verfasser: 	Messiah, Albert
+\end{verbatim}
+\end{tiny}
 
 \begin{tiny}
 \begin{verbatim}
-
-Titel: 	Quantenmechanik / Albert Messiah. Aus dem Franz. übers. von Joachim Streubel
+Titel: 	Quantenmechanik
 Teil: 	Bd. 2
 Verfasser: 	Messiah, Albert
-Ausgabe: 	3., verb. Aufl.
-Erschienen: 	Berlin [u.a.] : de Gruyter, 1990
-Umfang: 	585 S. : graph. Darst.
-ISBN: 	3-11-012669-9
-Link: 	http://www.gbv.de/dms/ilmenau/toc/124695124.PDF [Inhaltsverzeichnis]
 \end{verbatim}
 \end{tiny}
 
@@ -2359,31 +2038,7 @@ $\gamma^\nu$ konst. Matrizen $\Ra$ $\gamma^\nu \partial_\nu=\partial_\nu \gamma^
 \subsubsection*{Folgerung}
 Die $\gamma^\nu$ erfüllen:
 $$(\gamma^\nu\gamma^\mu+\gamma^\mu\gamma^\nu)=2 \eta^{\nu\mu}\Eins$$
-\subsubsection*{ÜBUNGSAUFGABEN}
-\begin{enumerate}
-\setcounter{enumi}{26}
-\item Man gebe den Zustand $\psi^+(h)\psi^+(g)\psi^+(f)|0>$ an, für bosonische Teilchen, $h,g,f \in L^2(\R^d)$.
-\item $c=\hbar=1$. Man zeige, dass 
-$$\psi(\vec x,t):= \int \frac{d^3k}{\sqrt{(2\pi)^3 w_k^2}}(e^{i\vec k \cdot \vec x-iw_kt}\tilde \psi(\vec k)+e^{-i\vec k \cdot \vec x+iw_kt}\overline{\tilde \psi}(\vec k))$$
-eine Lösung von $i\partial t \psi=\sqrt{(-i\nabla)^2+m^2}\psi$ ist, $w_k=\sqrt{\vec k^2 +m^2}$\\
-Methode: Fouriertransformation bzw. Spektraldartsellung, d.h. $\sqrt{...}$ im Fourier-/Impulsraum.
-\item Entsprechend zeige man, dass
-$$\psi(\vec x,t):= \int \frac{d^3k}{\sqrt{(2\pi)^3 w_k^2}}(e^{i\vec k \cdot \vec x-iw_kt}\tilde \psi(\vec k)+e^{-i\vec k \cdot \vec x+iw_kt}\overline{\tilde \psi}(\vec k))$$
-eine Lösung der Klein-Gordon-Gleichung ist.
-\end{enumerate}
-\ifthenelse{\boolean{lsg}}{
-\subsubsection*{LÖSUNG}
-\begin{enumerate}
-\setcounter{enumi}{26}
-\item $$\psi^+(h)\psi^+(g)\psi^+(f)|0>=\frac{1}{\sqrt{3!}}\sum_{\Pi(1,2,3)}...$$
-$$=\frac{1}{\sqrt{3!}}(h(x_1)g(x_2)f(x_3)+g(x_1)h(x_2)f(x_3)+f(x_1)g(x_2)h(x_3)$$
-$$+h(x_1)f(x_2)g(x_3)+g(x_1)f(x_2)h(x_3)+f(x_1)h(x_2)g(x_3)$$
-\item $\sqrt{(-i\nabla)^2+m^2}$ im $k$-Raum: $\ra \sqrt{\vec k^2+m^2}$
-$$\psi(\vec x,t)=\int \frac{d^3k}{\sqrt{(2\pi)^3 w_k^2}}e^{i\vec k \cdot \vec x-iw_kt}$$
-$$i\partial_t \psi=\int ... w_k \tilde{\psi}=\int (\vec k^2+m^2)\tilde{\psi}$$
-\item $$\psi(\vec x,t):= \int \frac{d^3k}{\sqrt{(2\pi)^3 w_k^2}}(e^{i\vec k \cdot \vec x-iw_kt}\tilde \psi(\vec k)+e^{-i\vec k \cdot \vec x+iw_kt}\overline{\tilde \psi}(\vec k))$$
-\end{enumerate}
-}{}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %14.01.10
 % 
@@ -2531,7 +2186,6 @@ Finde $S(\L)$, die die Diracgleichung forminvariant lassen.
 \subsubsection*{Literatur zur Darstellunsgtheorie:}
 \begin{tiny}
 \begin{verbatim}
-
 Lynbarski: Darstellungstheorie von Gruppen (FIXME nicht gefunden)
 \end{verbatim}
 \end{tiny}
@@ -2539,22 +2193,8 @@ Lynbarski: Darstellungstheorie von Gruppen (FIXME nicht gefunden)
 
 \begin{tiny}
 \begin{verbatim}
-
-Titel: 	Einführung in die Struktur- und Darstellungstheorie der klassischen Gruppen / Wolfgang Hein
+Titel: 	Einführung in die Struktur- und Darstellungstheorie der klassischen Gruppen
 Verfasser: 	Hein, Wolfgang
-Erschienen: 	Berlin [u.a.] : Springer, 1990
-Umfang: 	X, 255 S. : graph. Darst.
-Schriftenreihe: 	Hochschultext
-Anmerkung: 	Nebent.: Struktur- und Darstellungstheorie der klassischen Gruppen
-ISBN: 	3-540-50617-9
-0-387-50617-9
-Schlagwörter: 	*Klassische Gruppe / Struktur
-*Klassische Gruppe / Darstellungstheorie
-*Klassische Gruppe / Lie-Algebra
-Sachgebiete: 	31.21 ; Gruppentheorie
-31.23 ; Ideale, Ringe, Moduln, Algebren <Mathematik>
-31.61 ; Algebraische Topologie
-Link: 	http://www.zentralblatt-math.org/zmath/en/search/?an=0714.20028 [Zentralblatt MATH]
 \end{verbatim}
 \end{tiny}
 
@@ -2586,28 +2226,7 @@ Ebenso wie $O(3)$ die Überlagerungsgruppe $SU(2)[\ra$ Spinoren$]$, so hat $L$ d
 \subsubsection*{Folgerung:}
 Viererspinoren (oben) zerlegen in Zweierspinore.
 
-\subsubsection*{ÜBUNGSAUFGABEN}
-\begin{enumerate}
-\setcounter{enumi}{29}
-\item Zeige für z.B. $\gamma^1, \gamma^2$ die Relationen $\gamma^1\gamma^2+\gamma^2\gamma^1=2\eta^{12} \circ \Eins$.
-\item Man berechne $\gamma^5:=\gamma^0\gamma^1\gamma^2\gamma^3$.
-\item Zeige $\gamma^\mu\circ \gamma_\mu=4 \circ \Eins$
-\end{enumerate}
-\ifthenelse{\boolean{lsg}}{
-\subsubsection*{LÖSUNG}
-\begin{enumerate}
-\setcounter{enumi}{29}
-\item $\gamma^1=\begin{pmatrix}0 & \sigma^1 \\ -\sigma^1 & 0\end{pmatrix}$, $\gamma^2=\begin{pmatrix}0 & \sigma^2 \\ -\sigma^2 & 0\end{pmatrix}$\\
-$$\gamma^1\gamma^2+\gamma^2\gamma^1=-\begin{pmatrix}\sigma^1\sigma^2+\sigma^2\sigma^1 & 0 \\ 0 &\sigma^1\sigma^2+\sigma^2\sigma^1 \end{pmatrix}$$
-$$\sigma^1\sigma^2+\sigma^2\sigma^1=1-1=0$$
-\item $$\gamma^5=\begin{pmatrix}0 & -\sigma^1\sigma^2\sigma^3 \\ -\sigma^1\sigma^2\sigma^3 & 0 \end{pmatrix}$$
-$\sigma^1=\begin{pmatrix}0 & 1 \\ 1 &0\end{pmatrix}$, $\sigma^2=\begin{pmatrix}0 & -i \\ i &0\end{pmatrix}$, $\sigma^3=\begin{pmatrix}1 & 0 \\ 0 &-1\end{pmatrix}$\\
-$$\ra \sigma^1\sigma^2\sigma^3=\begin{pmatrix}i & 0 \\ 0 &i\end{pmatrix}$$
-$$\Ra \gamma^5=-i\begin{pmatrix}0 & \Eins \\ \Eins &0\end{pmatrix}$$
-\item $\gamma_0=\gamma^0$, $\gamma_k=-\gamma^k$, $(\gamma^0)^2=1$, $(\gamma^k)^2=-1$\\
-$$(\gamma^0)^2-\sum_{k=1}^3 (\gamma^k)^2=4$$
-\end{enumerate}
-}{}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %21.01.10
 % 
@@ -2775,30 +2394,7 @@ $(S\gamma^0 S^+ \gamma^0)$ vertauscht mit allen $\gamma^\mu$, da die $(\gamma^\m
 \end{enumerate}
 \subsubsection*{Folgerung}
 In $L_+^\uparrow$ ist $b=1$ $\Ra S^{-1}=\gamma^0 S^+ \gamma^0$
-\subsubsection*{ÜBUNGSAUFGABEN}
-\begin{enumerate}
-\setcounter{enumi}{32}
-\item Wähle Transformation in einer Ebene. Zeige, dass wegen $SS^{-1}=1$ infinitesimal gilt:
-$$\L^{-1}(w_{\mu\nu})=\Eins-w_{\mu\nu}M^{\mu \nu}$$
-wenn $\L(w_{\mu\nu})=1+ w_{\mu\nu}M^{\mu \nu}$ ist.
-\item Zeige, dass Darstellungen des Lorentzboosts nicht unitär sind (Hilfe: wenn unitär, $U=e^{\alpha M} \Ra M$ schiefsymmetrisch)\\
-z.B. Boost in 1-Richrung, d.h. Ebene(01)
-\end{enumerate}
-\ifthenelse{\boolean{lsg}}{
-\subsubsection*{LÖSUNG}
-\begin{enumerate}
-\setcounter{enumi}{32}
-\item $$\L(w_{\mu\nu})=1+M_{\mu\nu}w^{\mu\nu}+...$$
-(Potenzreihenentwicklung bis zur 1. Ordnung in Parameter $w_{\mu\nu}$)
-$$\L^{-1}(w_{\mu\nu})\L(w_{\mu\nu})=\Eins$$
-(in erster Ordnung)
-$$(1-M_{\mu\nu}w^{\mu\nu})(1+M_{\mu'\nu'}w^{\mu'\nu'})=1-M_{\mu\nu}M_{\mu'\nu'}w^{\mu'\nu'}w^{\mu\nu}=1+\mathcal{O}(w^2)$$
-\item z.B. (01)-Ebene (Boost in 1-Richtung)
-$$S(\L(01))=e^{\alpha D_{01}}$$
-$$D_{01}=\frac{1}{4}[\gamma^0,\gamma^1]=\frac{1}{4} \cdot 2 \begin{pmatrix}0 & \sigma^1 \\ \sigma^1 & 0  \end{pmatrix}$$
-$\Ra$ $D_{01}$ ist \underline{nicht} schiefsymmetrisch, aber symmetrisch $\ra$ $S$ ist \underline{nicht} unitär 
-\end{enumerate}
-}{}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %28.01.10
 % 
@@ -2948,6 +2544,432 @@ Bild bestätigt durch Anderson: 1932 fand er das Antiteilchen zu Elektron: das P
 Paarerzeugung (Elektron-Positron)
 \subsubsection*{Übergang}
 $ \psi(x) \Ra$ Feldoperatoren 
+
+\part{Übungsaufgaben}
+
+\subsubsection*{ÜBUNGSAUFGABEN}
+\begin{enumerate}
+ \item Im Tensorprodukt $\mathcal H_1 \otimes \mathcal H_2$ zeige man, dass $\begin{cases}
+  A:= A_1\otimes \Eins+ \Eins \otimes A_2\\
+  B:= B_1\otimes \Eins+ \Eins \otimes B_2\\
+\end{cases}$ vertauschen, wenn $[A_1,B_1]=[A_2,B_2]=0.$
+ \item Sei $\psi_1$ Eigenzustand von $H_2$ zum Eigenwert $E_0$ und $\psi_2$ Eigenzustand von $H_2$ zum Eigenwert $E_2$.
+Zeige: $$H(\psi_1 \otimes \psi_2)=(E_1+E_2)(\psi_1 \otimes \psi_2)$$
+$$H=H_1\otimes \Eins+ \Eins \otimes H_2$$
+ \item Zeige, dass $L^2(\mathbb R^3)\oplus L^2(\mathbb R^3)\cong L^2(\mathbb R^3)\otimes \mathbb C^2$.
+ \item Zeige: $u_\Pi(A_N \psi)=sgn(\Pi)(A_N \psi)$, $\psi$ e.g. Monom ($\nu_i \otimes ... \otimes \nu_N$), beachte:
+$$sign(\Pi \Pi')=sign(\Pi)\cdot sign(\Pi')$$
+$$sign(\Pi )=sign(\Pi^{-1})$$
+$$u_\Pi(\nu_1 \otimes ... \otimes \nu_N):=\nu_{\Pi(1)}\otimes ... \otimes \nu_{\Pi(N)}$$
+\end{enumerate}
+\ifthenelse{\boolean{lsg}}{
+\subsubsection*{LÖSUNG}
+\begin{enumerate}
+\item 
+\begin{align*}
+A&=A_1\otimes \Eins+ \Eins \otimes A_2\\
+B&=B_1\otimes \Eins+ \Eins \otimes B_2\\
+AB&=A_1B_1 \otimes \Eins+ B_1 \otimes A_2 +A_1 \otimes B_2+\Eins \otimes A_2B_2\\
+BA&=B_1A_1 \otimes \Eins+ A_1 \otimes B_2 +B_1 \otimes A_2+\Eins \otimes B_2A_2\\
+AC &= CA, \ \mathrm{wenn} \ [A_1,B_1]=[A_2,B_2]=0
+\end{align*}
+%\begin{align*}
+%A&=A\otimes \Eins+ \Eins \otimes A\\
+%C&=C_1\otimes C_2\\
+%AC&=(A_1 \otimes \Eins)(C_1 \otimes C_2)+(\Eins\otimes A_2)(C_1 \otimes C_2)\\
+%&=A_1 C_1 \otimes C_2+C_1 \otimes A_2 C_2\\
+%CA&=(C_1 \otimes C_2)(A_1 \otimes \Eins)+(C_1 \otimes C_2)(\Eins\otimes A_2)(C_1 \otimes C_2)\\
+%&=C_1 A_1 \otimes C_2+C_1 \otimes C_2A_2\\
+%AC &\neq CA, \ \mathrm{da} \ [C_1,A_1] \stackrel{i.A.}{\neq}0\stackrel{i.A.}{\neq} [C_2,A_2]
+%\end{align*}
+\item \begin{align*}
+H&=H_1\otimes \Eins+ \Eins \otimes H_2\\
+H(\psi_1 \otimes \psi_2)&=H_1(\psi_1 \otimes \Eins)+H_2(\Eins \otimes \psi_2)\\
+&=E_1(\psi_1 \otimes \Eins)+E_2(\Eins \otimes \psi_2)\\
+&=(E_1+E_2)(\psi_1 \otimes \psi_2)\\
+\end{align*}
+\item
+$$\psi_1,\psi_2 \in L^^2(\mathbb R^3), \psi \in L^2(\mathbb R^3) \oplus L^2(\mathbb R^3)$$
+$$\psi=\begin{pmatrix} \psi_1 \\ \psi_2 \end{pmatrix}=\begin{pmatrix} \psi_1 \\ 0 \end{pmatrix}+\begin{pmatrix} 0 \\ \psi_2 \end{pmatrix}$$
+$$=\psi_1\cdot\begin{pmatrix} 1 \\ 0 \end{pmatrix}+\psi_2 \cdot\begin{pmatrix} 0 \\ 1 \end{pmatrix} $$
+$\begin{pmatrix} 1 \\ 0 \end{pmatrix}$, $\begin{pmatrix} 0 \\ 1 \end{pmatrix}$ ist eine Basis in $\mathbb C^2$\\
+Mit dem Isomorphismus auf den Basisvektoren:
+$$\psi_1\begin{pmatrix} 1 \\ 0 \end{pmatrix}+\psi_2\begin{pmatrix} 0 \\ 1 \end{pmatrix} \mapsto \psi_1 \otimes\begin{pmatrix} 1 \\ 0 \end{pmatrix}+\psi_2\otimes \begin{pmatrix} 0 \\ 1 \end{pmatrix}$$
+gilt $\psi \in L^2(\mathbb R^3) \otimes \mathbb C^2$ und damit $L^2(\mathbb R^3) \oplus L^2(\mathbb R^3) \cong L^2(\mathbb R^3) \otimes \mathbb C^2$
+\item 
+Beweis für Monom $\psi_{1} \otimes ... \otimes \psi_{N}$:
+\begin{align}
+u_\Pi(A_N\psi)&= u_\Pi (\frac{1}{N!} \sum_{\Pi'} sign(\Pi') \psi_{\Pi'(1)} \otimes ... \otimes \psi_{\Pi'(N)})\\
+&=\frac{1}{N!} \sum_{\Pi'} sgn(\Pi') \psi_{\Pi''=\Pi \circ \Pi'(1)} \otimes ... \otimes \psi_{\Pi \circ \Pi'(N)} \\
+&=\frac{1}{N!} \sum_{\Pi''} sgn(\Pi^{-1}\Pi'') \psi_{\Pi''(1)} \otimes ... \otimes \psi_{\Pi''(N)} \\
+&=\frac{1}{N!}  sgn(\Pi) \sum_{\Pi''} sgn(\Pi'') \psi_{\Pi''(1)} \otimes ... \otimes \psi_{\Pi''(N)} \\
+&=sgn(\Pi) A_N \circ (\psi_{\Pi''(1)} \otimes ... \otimes \psi_{\Pi''(N)})\\
+&=sign(\Pi) A_N \psi. \Box
+\end{align}
+Sym$_N$ ist eine Gruppe; ferner ist $\Pi \ra sgn(\Pi)$ eine ''Darstellung'' von Sym$_N$, d.h. 
+$$sgn(\Pi \circ \Pi')= sgn(\Pi)\cdot sgn(\Pi')$$
+$$sgn(\Pi^{-1})=sgn(\Pi)$$
+\end{enumerate}
+}{}
+
+\subsubsection*{ÜBUNGSAUFGABEN}
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item Stellen Sie die Wellenfunktionen eines Zwei-Teilchen-Systems mit Spin $\frac{1}{2}$ zunächst ohne Antisymmetriesierung 
+$$(**) \ \  \ \begin{pmatrix} \psi_1(x) \\ \psi_2(x)\end{pmatrix} \otimes \begin{pmatrix} \phi_1(y) \\ \phi_2(y)\end{pmatrix}$$
+in der Tensorbasis von $(L^2\otimes \C^2)\otimes(L^2\otimes \C^2)$ dar, d.h. die vier Komponenten $f(x,y,\mu_1, \mu_2), \mu_i=\pm 1$
+\item Symmetrisieren Sie $(**)$.
+\item Zeigen Sie, dass $(u_\Pi\circ f)(x_1, ...,x_n)=f(x_{\Pi^{-1}(1)},...,x_{\Pi^{-1}(N)})$, wenn andererseits für Monome der Tensorbasis:
+$$u_\Pi: \ f_{i_i}(x_1)\otimes... \otimes f_{i_n}(x_n) \mapsto f_{\Pi(i_i)}(x_1)\otimes... \otimes f_{\Pi(i_n)}(x_n)$$
+\end{enumerate}
+\ifthenelse{\boolean{lsg}}{
+
+\subsubsection*{LÖSUNG}
+\textbf{zu 5.}:\\
+$$(**)=\psi_1(x)\phi_1(y)\begin{pmatrix} 1 \\ 0\end{pmatrix}\otimes \begin{pmatrix} 1 \\ 0\end{pmatrix}+\psi_2(x)\phi_2(y)\begin{pmatrix} 0 \\ 1\end{pmatrix}\otimes \begin{pmatrix} 0 \\ 1\end{pmatrix}$$
+$$+\psi_1(x)\phi_2(y)\begin{pmatrix} 1 \\ 0\end{pmatrix}\otimes \begin{pmatrix} 0 \\ 1\end{pmatrix}+\psi_2(x)\phi_1(y)\begin{pmatrix} 0 \\ 1\end{pmatrix}\otimes \begin{pmatrix} 1 \\ 0\end{pmatrix}$$
+z.B. $\psi_2(x)\phi_1(y)\begin{pmatrix} 0 \\ 1\end{pmatrix}\otimes \begin{pmatrix} 1 \\ 0\end{pmatrix}=f(x,y,-1,+1)$\\
+Erinnerung:\\
+$L^2_q=\{(\begin{pmatrix} \psi_1 \\ \psi_2\end{pmatrix}) \}$ oder $\{ \psi(x,\mu=\pm1)=\psi(q) \}$\\
+\textbf{zu 6.}:\\
+$$A_2\begin{pmatrix} \psi_1 \\ \psi_2\end{pmatrix} \otimes \begin{pmatrix} \phi_1 \\ \phi_2\end{pmatrix}=\frac{1}{2} (\begin{pmatrix} \psi_1 \\ \psi_2\end{pmatrix}\otimes \begin{pmatrix} \phi_1 \\ \phi_2\end{pmatrix}-\begin{pmatrix} \phi_1 \\ \phi_2\end{pmatrix}\otimes \begin{pmatrix} \psi_1 \\ \psi_2\end{pmatrix})$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%05.11.09
+%V05
+\textbf{zu 7.}:\\
+$$f(x_1,..,x_N):=\sum_{f_{ij}}c_{i_1,...,i_N} f_{i_1}(x_1) \otimes ...\otimes f_{i_N}(x_N) \ \ (*)$$
+$f_{i_1} \otimes ...\otimes f_{i_N}$ Tensorbasis\\
+\textbf{Merke:}\\
+Wodurch ist Entwicklung $(*)$ endeutig bestimmt?\\
+Die Anordnung von Enticklungskoeffizienten $c_{i_1,...,i_N}$ relativ zu $f_{i_1}(x_1)...f_{i_N}(x_N)$.
+
+\textbf{Zeige:}
+$(u_\Pi\circ f)(x_1,...,x_N)=f(x_{\Pi^{-1}(1)},...,x_{\Pi^{-1}(N)})$ (auf Variablen)\\
+obwohl: $(u_\Pi\circ f_{i_1}\otimes...\otimes f_{i_N})(x_1,...,x_N):=f_{i_{\Pi(1)}}(x_1)\otimes...\otimes f_{i_{\Pi(N)}}(x_N)$ (auf Basiselementen)\\
+\textbf{Beweis:}
+$$u_\Pi \circ \sum_{i} c_{i_1,...,i_N}f_{i_1}(x_1)\cdot...\cdot f_{i_N}(x_N)=\sum_{i} c_{i_1,...,i_N}f_{i_{\Pi(1)}}(x_1)\cdot...\cdot f_{i_{\Pi(N)}}(x_N) $$
+$$(u_\Pi \circ f)(x_1,...,x_N)=\sum_{i} c_{i_1,...,i_N}f_{i_1}(x_{\Pi^{-1}(1)})\cdot...\cdot f_{i_N}({\Pi^{-1}(N)})$$
+
+\subsubsection*{Beobachtung}
+$\Pi$ ist Bijektion $\ra \exists \Pi(k_1)=1,\Pi(k_2)=2,...$\\
+$\ra$ Umordnen: $R.S.=\sum c_{i_1,...,i_N}f_{i_{\Pi^{-1}(k_1)}}(x_{k_1})...f_{i_{\Pi^{-1}(k_N)}}(x_{k_N})$ \\
+$\ra$ $f_{i_{\Pi(k_1)}}(x_{k_1})=f_{i_1}(x_{\Pi^{-1}(1)})$\\
+$\ra$ Folgerung: $(u_\Pi \circ f)(x_1, ... x_N)=f(x_{\Pi^{-1}(1)},...,x_{\Pi^{-1}(N)}) $
+}{}
+
+
+\subsubsection*{ÜBUNGSAUFGABEN}
+\begin{enumerate}
+\setcounter{enumi}{7}
+\item Man Zeige, dass $A_N*=A_N$ gilt, mit $(A_N \psi)(x_1,...,x_N)=\frac{1}{N!}\sum_\Pi sgn(\Pi) \psi(x_{\Pi^{-1}(1)},...,x_{\Pi^{-1}(N)})$
+\item Ein UVR $U \subset \H$ heißt abgeschlossen, wenn mit $\phi_N \stackrel{||\cdot||}{\ra} \phi$ auch $\phi \in U$ ist.\\
+Zeige: Ein Projektor projeziert auf einen abgeschlossenen UVR.
+\end{enumerate}
+\ifthenelse{\boolean{lsg}}{
+\subsubsection*{LÖSUNG}
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+\item $$\phi_N \ra \phi \Ra P\phi_N \ra P\phi$$
+$$||P\phi - P\phi_N||=||P(\phi-\phi_N)|| \leq ||P||\cdot ||\phi-\phi_N||=||\phi-\phi_N|| \ra 0$$
+Zeige: $U$ abgeschlossen\\
+$$U \ni \phi_N \ra P\phi_N=\phi_N$$
+Zeige: $\phi\in U=P\H$\\
+$$P\phi_N \ra P\phi \Ra P\phi=\phi$$
+also $U$ abgeschlossen.
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%09.11.09
+%V06 23:20
+\begin{enumerate}
+\setcounter{enumi}{7}
+\item $(\phi|A_N\psi)=\int \overline{\phi(x_1,...,x_N)} \sum_\Pi sgn(\Pi) \psi(x_{\Pi^{-1}(1)},...,x_{\Pi^{-1}(N)}) d^{3N}x$
+\begin{enumerate}
+\item Für einzelne $\Pi$:
+$$(x_1,...,x_N) \ra (x_{\Pi^{-1}(1)},...,x_{\Pi^{-1}(N)}) $$
+ist bijktive Abbildung mit $|Det(Abb.)|=1$, d.h. wenn man eine Variablentransformation durchführt ist sie invariant.
+\item Definition $\{y_i:=x_{\Pi^{-1}(i)}\}$:\\
+$\Ra (\phi|u_\Pi \psi)=\frac{1}{N!}\int \overline{\phi(y_{\Pi(1)},...,y_{\Pi(N)})}sgn(\Pi) \psi(y_i,...,y_N) d^{3N}y$
+\item $$(\phi,A_N \psi)=\frac{1}{N!}\int \overline{ \sum_{\Pi^{-1}}sgn(\Pi^{-1})\phi(y_{\Pi^{-1}(1)},...,y_{\Pi^{-1}(N)}) }\psi(y_1,...,y_N)d^{3N}y$$
+$$=(A_N\phi|\psi) \Ra A_N=A_N^*$$
+\end{enumerate}
+\end{enumerate}
+}{}
+\subsubsection*{ÜBUNGSAUFGABEN}
+Basis in $L^2 \otimes L^2$: $\{f_i \otimes f_j, \{f_i\}$ Basis von $L^2(\R^3)\}$
+$$(*) S_2 (f_i(x)\otimes f_j(y))=\frac{1}{2}(f_i(x)\otimes f_j(y)+ f_j(x)\otimes f_i(y))$$
+$$(*) A_2 (f_i(x)\otimes f_j(y))=\frac{1}{2}(f_i(x)\otimes f_j(y)- f_j(x)\otimes f_i(y))$$
+Zeige: $L^2(\R^6)$ wird durch $(*)$ aufgespannt.
+
+\ifthenelse{\boolean{lsg}}{
+\subsubsection*{LÖSUNG}
+$\{f_{i_1}(x_1)\otimes f_{j_2}(x_2 \}$ vollständiges System in $L^2(\R^3)\otimes L^2(\R^3)=L^2(\R^6)$
+$$f_1 \otimes f_2=\frac{1}{2}(f_1 \otimes f_2+ f_2 \otimes f_1)+\frac{1}{2}(f_1 \otimes f_2 - f_2 \otimes f_1)$$
+$$\frac{1}{2}(f_1 \otimes f_2+ f_2 \otimes f_1) \in L^2_+$$
+$$\frac{1}{2}(f_1 \otimes f_2- f_2 \otimes f_1) \in L^2_-$$
+}{}
+
+
+
+
+
+\subsubsection*{ÜBUNGSAUFGABEN}
+\begin{enumerate}
+\setcounter{enumi}{9}
+\item Mittels der Spektraldarstellung von Operatoren und den Eigenschaften der Spektralsatzen zeige man ($A=A^*$):\\
+$$f(a) \cdot g(a)=\int f(\l) dP(\l) \cdot \int g(\l') dP(\l')=\int f(\l) g(\l) dP(\l)=(f \circ g)(A)$$
+\item Man zeige, dass für einen antilinearen Operator $A$ das $A^*$ wie folgt definiert wird $(\psi|A\phi):=\overline{(A^*\psi|\phi)}$; genauer: Man zeige, dass $A^*$, so definiert, wieder antilinear ist.
+\item Ein Zustand $\psi$ ist eindeutig festgelegt durch die Übergangswahrscheinlichkeiten $|(\psi|\phi)|^2, \psi \in \H, ||\psi||=1$, m. a. W. auf der Menge der Projektoren $\{P_\psi\}$.
+\end{enumerate}
+\ifthenelse{\boolean{lsg}}{
+\subsubsection*{LÖSUNG}
+\begin{enumerate}
+\setcounter{enumi}{9}
+\item
+Heursitisch:
+$$dP(\l_1)\cdot dP(\l_2)=\delta(\l_1-\l_2)dP(\l_1)$$
+$$\Ra \int \int f(\l) g(\l') dP(\l)dP(\l')=\int f(\l)g(\l) dP(\l)$$
+$$H\cdot H=H^2=\int \l dP(\l)\cdot \int \l dP(\l)=\int \l^2 dP(\l)=H^2$$
+Erinnerung: $P(\Delta_1)\cdot P(\Delta_2)=P(\Delta_1 \cap \Delta_2)$, d.h. $\Delta_1 \cap \Delta_2=\varnothing \ra P(\Delta_1)\cdot P(\Delta_2)=0$\\
+$$\int f(\l) dP(\l)=lim_{n\ra \infty}\sum_{i=1}^n f(\l_i)P(\Delta_i)$$
+$$\int g(\l') dP(\l')=lim_{n\ra \infty}\sum_{i=1}^n g(\l_i)P(\Delta_i)$$
+$$\Ra (\sum f(\l_i) P(\Delta_i))\cdot (\sum g(\l_i) P(\Delta_i))=\sum f(\l_1)g(\l_i)P(\Delta_i)$$
+\item missing
+\item missing
+\end{enumerate}
+}{}
+
+
+
+\subsubsection*{ÜBUNGSAUFGABEN}
+\begin{enumerate}
+\setcounter{enumi}{12}
+\item Man begründe, dass $H=\sum_{i=1}^N\frac{1}{2m_e} \vec p_i^2+\sum_{i=1}^N \frac{Ze_+e_-}{||\vec x_i||}+\frac{1}{2}\sum_{i\neq j} \gamma \frac{e^2}{||x_i-x_j||}$ rotationsinvariant ist, d.h. $D_R \circ(H\psi)(x_1,...,x_N)=(H\psi)(R^{-1}x_1,...,R^{-1}x_N))$, bzw. $D_R \circ H=H \circ D_R$ oder $D_R \circ H \circ D_R^{-1}=H$.
+\item In $L^2 \otimes L^2$ kann man jede Funktion als Summe einer symmetrischen und einer antisymmetrischen darstellen. Man Zeige, dass dies für $n>2$ nicht mehr geht.\\
+Idee: Zeige. dass $f_1(x_1)f_x(x_2)f_3(x_3), f_i \in$ ON-System $\neq \sum$ symmetrisch $+$ antisymmetrisch.
+\item Man zeige, dass im Raum $V\otimes V, V=\C^2$, $\hat \sigma_z=\sigma_z\otimes \Eins+ \Eins \otimes \sigma_z, \sigma_z= \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$:
+$$\hat \sigma_z (\begin{pmatrix} 1 \\0 \end{pmatrix}\otimes \begin{pmatrix} 0 \\1 \end{pmatrix}- \begin{pmatrix} 0 \\1 \end{pmatrix}\otimes \begin{pmatrix} 1 \\0 \end{pmatrix})\equiv 0$$
+$$\forall \sigma \ \mathrm{auch}$$
+\end{enumerate}
+\ifthenelse{\boolean{lsg}}{
+\subsubsection*{LÖSUNG}
+\begin{enumerate}
+\setcounter{enumi}{12}
+\item Zeige, dass $D_R$ angewendet auf $H$:\\
+	\begin{enumerate}
+	\item $x_i \ra R^{-1}x_i$
+	\item $\nabla_{x_i} \ra  \nabla_{R^{-1}x_i}$
+	\end{enumerate}
+	\begin{enumerate}
+	\item Potentiale rotationsinvariant
+	\item Fouriertransformation $\ra \frac{\hbar}{i}\nabla_{x_i} \ra \hbar \vec p_i$, evident, dass $\vec p^2$ rotationsinvariant ist
+	\end{enumerate}
+\item Nehme Tensorprodukt, das von $f_1,f_2,f_3$ aufgespannt wird, d.h. 6 Basisvektoren $\Ra$ Vektorraum ist 6-dimensional
+\begin{enumerate}
+\item symmetrischer Zustand, d.h $\frac{1}{3!} \sum_\Pi f_{\Pi(1)}(x_1)\cdot ... \cdot f_{\Pi(3)}(x_3)$, ist eindimensional
+\item antiymmetrischer Zustand, d.h $\frac{1}{3!} \sum_\Pi sgn(\Pi) ...$, ist eindimensional
+\end{enumerate}
+$\Ra$ echter Unterraum
+\item $$\hat \sigma_z(...)=\begin{pmatrix} 1 \\0 \end{pmatrix} \otimes \begin{pmatrix} 0 \\1 \end{pmatrix}+\begin{pmatrix} 0 \\1 \end{pmatrix}\otimes \begin{pmatrix} 1 \\0 \end{pmatrix}-\begin{pmatrix} 1 \\0 \end{pmatrix} \otimes \begin{pmatrix} 0 \\1 \end{pmatrix}-\begin{pmatrix} 0 \\1 \end{pmatrix}\otimes \begin{pmatrix} 1 \\0 \end{pmatrix}=0$$
+\end{enumerate}
+}{}
+
+\subsubsection*{ÜBUNGSAUFGABEN}
+\begin{enumerate}
+\setcounter{enumi}{15}
+\item Gegeben sei statistischer Operator $W$ in 2-dim. Hilbertraum, aufgespannt von $\psi1, \psi_2$.\\
+$$W:= \l_1P_{\psi_1}+\l_2 P_{\psi_2}, \ ||\psi_i||=1, \ \l_1+ \l_2=1, \ \l_i>0$$
+Man finde die Spektraldarstellung.
+\item Beweise: Sei $P_M$ Projektor aud endl.-dim. UVR $\ra$ $Tr(P_M)=dim(M)$
+\item Zeige, dass $Tr(W)=Tr(UWU^{-1})$ mit $U$ als unitären Operator.
+\end{enumerate}
+
+\ifthenelse{\boolean{lsg}}{
+\subsubsection*{LÖSUNG}
+\begin{enumerate}
+\setcounter{enumi}{15}
+\item EV $\phi_1,\phi_2$ für die EW $E_1,E_2$ zu $W$ 
+$$W(\alpha \psi_1 + \beta\psi_2)=E(\alpha \psi_1 + \beta\psi_2)$$
+$$\Ra \l_1 \alpha+\l_2\beta(\psi_1|\psi_2)=E\alpha$$
+$$\Ra \l_2 \overline{(\psi_1|\psi_2)} \alpha+\l_2\beta=E\beta$$
+$$\ra \begin{pmatrix} \l_1-E & \l_1(\psi_1|\psi_2) // \l_2\overline{(\psi_1|\psi_2)} & \l_2-E \end{pmatrix}\begin{pmatrix}\alpha \\ \beta \end{pmatrix}=0$$
+$$\ra det( \ )=0 \Ra E^2-(\l_1+\l_2)+\l_1\l_2(1-(\psi_1|\psi_2)^2)=0 \Ra E_{1,2}$$
+Einsetzen $\ra \alpha_{1,2}, \beta_{1,2} \Ra$ Spektraldarstellung
+\item Wählen ON-Basis in $M$ $\psi_1,...,\psi_m$ setzen diese fort auf ganz $\H$: $\psi_1,...,\psi_m,\psi_{m+1},...$
+$$\Ra Tr(P_M)=\sum_{i=1}^m (\psi_i|P_m\psi_i)+\sum_{m+1}^\infty (\psi_j|P_M \psi_j)=\sum_{i=1}^m (\psi_i|\psi_i)=m$$
+\item $$Tr(UWU^{-1})=sum_i (\psi|UWU^{-1}\psi_i)$$
+$U$ bildet Basen auf Basen ab, $Tr$ ist unabhängi von Basiswahl:
+$$Tr(UWU^{-1})=\sum_i (U^{-1}\psi_i|WU^{-1}\psi_i)=Tr(W)$$
+oder:
+$$Tr(UWU^{-1})=Tr(UU^{-1}W)=Tr(W)$$
+\end{enumerate}
+}{}
+
+\subsubsection*{ÜBUNGSAUFGABEN}
+\begin{enumerate}
+\setcounter{enumi}{18}
+\item \begin{enumerate}
+\item Sei $|v>$ ein EV von $N=a^+a$ zu EW $v\in \R$, $[a,a^+]=1$. Man zeige: $v=0 \Ra a|v>=0$.
+\item Wenn $v>0 \Ra a|v>\neq 0$ mit Norm $v<v|v>=v$ und ist EV zu $N$ mit EW $v-1$. (Man benutze $[N,a]=-a$)
+\end{enumerate}
+\item Man Zeige, unter Ausnutzung der Vertauschungsrelationen, dass $<(a^+)^n|0>|(a^+)^m|0>>=0$, wenn $n\neq m$.
+\end{enumerate}
+
+\ifthenelse{\boolean{lsg}}{
+\subsubsection*{LÖSUNG}
+\begin{enumerate}
+\setcounter{enumi}{18}
+\item \begin{enumerate}
+\item $Na|0>=a(N-1)|0>=(0-1)a|0>=-a|0> \ra a|0>$ ist EV zu $N$ zum EW $-1$, $N$ positiv $\ra$ Widerspruch $\Ra a|0>=0$. ($N$ positiv: $(\psi|a^+a\psi)=(a\psi,a\psi)\geq 0$)
+\item $Na|v>=a(N-1)|v>=(v-1)a|v> \ra$ EV zu $(v-1)$\\
+$(a|v>|a|v>=(|v>|a^+a|v>)=v<v|v>$
+\end{enumerate}
+\item O.B.d.A. $n>m$:\\
+\textbf{1. Schritt:}\\
+$a^+$ auf r.S.\\
+$$<(a^+)^n|0>|(a^+)^m|0>>=<(a^+)^{n-1}|a(a^+)^m|0>>$$
+$$\stackrel{[a,a^+]=1}{\Ra} a \underbrace{a^+...a^+}_{m}|0>=a^+a(a^+)^{m-1}|0>+(a^+)^{m-1}|0>$$
+Endergebnis für ein $a^+$:\\
+Vektor $a|0>=0$ $+$ Vektor mit $a^+$ weniger\\
+\textbf{2. Schritt:}\\
+alle $a^+$ auf r.S.: $n>m$ alle $a^+$ werden vernichtet $\Ra <..|..>=0.$
+\end{enumerate}
+}{}
+
+\subsubsection*{ÜBUNGSAUFGABEN}
+\begin{enumerate}
+\setcounter{enumi}{20}
+\item Zeige, dass mit $a_k|n_1,..>:=\sqrt{n_k}|...,n_k-1,...>$ $a_k^+=(a_k)^*$ ist.
+\item Beweise, dass die Vertauschungsrelation $[a_k,a_k^+]=1$ gilt.
+\item \begin{enumerate}
+\item Zeige ${b_k,b_k^+}=1$
+\item Zeige ${b_{k_1},b_{k_2}}=0$ für $k_1 \neq k_2$
+\end{enumerate}
+\end{enumerate}
+\ifthenelse{\boolean{lsg}}{
+\subsubsection*{LÖSUNG}
+\begin{enumerate}
+\setcounter{enumi}{20}
+\item $$(<n_1',...,n_k',...>|a_k|n_1,...,n_k,...>)=\sqrt{n_k}(|...><...,n_k-1,...>)$$
+$\ra$ nur $\neq 0$, wenn 
+\begin{enumerate}
+\item $n_k'=n_k-1, n_j=n_j'$ für alle $j \neq k$
+\item 0, sonst
+\end{enumerate}
+$\Ra$ $$(a_k^+|...n_k-1...>|...n_k...>)=\sqrt{n_k-1+1}(|...n_k,...>|...n_k..>)=\sqrt{n_k}$$
+$$\ra a_k^+=(a_k)^*$$
+\item $$a_ka_k^+|...n_k...>=\sqrt{n_k+1}^2<...n_k...>$$
+$$a_k^+a_k|...n_k...>=\sqrt{n_k}^2<...n_k...>$$
+$$\Ra (a_ka_k^+-a_k^+a_k)|...n_k...>=|...n_k...>$$
+\item \begin{enumerate}
+\item $$b_kb_k^+|....n_k=1...>=0$$
+$$b_k^+b_k|....n_k=1...>=(-1)^{s_k}(-1)^{s_k}|...n_k=1...>$$
+$\ra (b_kb_k^++b_k^+b_k)=1$ etc.
+\item $k_1<k_2$
+$$b_{k_1}b_{k_2}|....n_{k_1}=1...n_{k_2}=1...>=(-1)^{s_{k_1}}(-1)^{s_{k_2}}|...>=(-1)^{s_{k_2}s_{k_1}}|...>$$
+$$b_{k_2}b_{k_1}|....n_{k_1}=1...n_{k_2}=1...>=(-1)^{s_{k_1}}(-1)^{s_{k_2}-1}|...>=-(-1)^{s_{k_2}s_{k_1}}|...>$$
+$\ra (b_{k_1}b_{k_2}+b_{k_2}b_{k_1})=0$ 
+\end{enumerate}
+\end{enumerate}
+}{}
+\subsubsection*{ÜBUNGSAUFGABEN}
+\begin{enumerate}
+\setcounter{enumi}{23}
+\item Beweise die Vertauschungsrelation $[\hat \psi(f),\hat \psi^+(g)]=(f|g)$
+\item Man gebe den Zustand $\hat \psi^+(g)\hat \psi^+(f)|0>$ an (Bosonischer Fall).
+\item Man gebe den Zustand $\hat \psi^+(g)\hat \psi^+(f)|0>$ an (Fermionischer Fall).
+\end{enumerate}
+\ifthenelse{\boolean{lsg}}{
+\subsubsection*{LÖSUNG}
+\begin{enumerate}
+\setcounter{enumi}{23}
+\item $$\hat \psi(f)=\sum_k (f|\psi_k) a_k$$
+$$\hat \psi^+(g)=\sum_k (\psi_k|g) a_k^+$$
+$$[a_k,a_{k'}^+]=\delta_{k,k'}$$
+$$\Ra [\hat \psi(f),\hat \psi^+(g)]=\sum_k (f|\underbrace{\psi_k)(\psi_k}_{\Eins} |g)[a_k,a_k^+]=(f|g)$$
+\item $$\hat\psi^+(f)|0>=f(x_1)$$
+$$\hat \psi^+(g)\circ \hat \psi^+(f)|0>=\frac{1}{\sqrt{2}}(g(x_1)f(x_2)+f(x_1)g(x_2)) $$
+\item $$\hat\psi^+(f)|0>=f(x_1)$$
+$$\hat \psi^+(g)\circ \hat \psi^+(f)|0>=\frac{1}{\sqrt{2}}(g(x_1)f(x_2)-f(x_1)g(x_2)) $$
+\end{enumerate}
+}{}
+
+\subsubsection*{ÜBUNGSAUFGABEN}
+\begin{enumerate}
+\setcounter{enumi}{26}
+\item Man gebe den Zustand $\psi^+(h)\psi^+(g)\psi^+(f)|0>$ an, für bosonische Teilchen, $h,g,f \in L^2(\R^d)$.
+\item $c=\hbar=1$. Man zeige, dass 
+$$\psi(\vec x,t):= \int \frac{d^3k}{\sqrt{(2\pi)^3 w_k^2}}(e^{i\vec k \cdot \vec x-iw_kt}\tilde \psi(\vec k)+e^{-i\vec k \cdot \vec x+iw_kt}\overline{\tilde \psi}(\vec k))$$
+eine Lösung von $i\partial t \psi=\sqrt{(-i\nabla)^2+m^2}\psi$ ist, $w_k=\sqrt{\vec k^2 +m^2}$\\
+Methode: Fouriertransformation bzw. Spektraldartsellung, d.h. $\sqrt{...}$ im Fourier-/Impulsraum.
+\item Entsprechend zeige man, dass
+$$\psi(\vec x,t):= \int \frac{d^3k}{\sqrt{(2\pi)^3 w_k^2}}(e^{i\vec k \cdot \vec x-iw_kt}\tilde \psi(\vec k)+e^{-i\vec k \cdot \vec x+iw_kt}\overline{\tilde \psi}(\vec k))$$
+eine Lösung der Klein-Gordon-Gleichung ist.
+\end{enumerate}
+\ifthenelse{\boolean{lsg}}{
+\subsubsection*{LÖSUNG}
+\begin{enumerate}
+\setcounter{enumi}{26}
+\item $$\psi^+(h)\psi^+(g)\psi^+(f)|0>=\frac{1}{\sqrt{3!}}\sum_{\Pi(1,2,3)}...$$
+$$=\frac{1}{\sqrt{3!}}(h(x_1)g(x_2)f(x_3)+g(x_1)h(x_2)f(x_3)+f(x_1)g(x_2)h(x_3)$$
+$$+h(x_1)f(x_2)g(x_3)+g(x_1)f(x_2)h(x_3)+f(x_1)h(x_2)g(x_3)$$
+\item $\sqrt{(-i\nabla)^2+m^2}$ im $k$-Raum: $\ra \sqrt{\vec k^2+m^2}$
+$$\psi(\vec x,t)=\int \frac{d^3k}{\sqrt{(2\pi)^3 w_k^2}}e^{i\vec k \cdot \vec x-iw_kt}$$
+$$i\partial_t \psi=\int ... w_k \tilde{\psi}=\int (\vec k^2+m^2)\tilde{\psi}$$
+\item $$\psi(\vec x,t):= \int \frac{d^3k}{\sqrt{(2\pi)^3 w_k^2}}(e^{i\vec k \cdot \vec x-iw_kt}\tilde \psi(\vec k)+e^{-i\vec k \cdot \vec x+iw_kt}\overline{\tilde \psi}(\vec k))$$
+\end{enumerate}
+}{}
+
+\subsubsection*{ÜBUNGSAUFGABEN}
+\begin{enumerate}
+\setcounter{enumi}{29}
+\item Zeige für z.B. $\gamma^1, \gamma^2$ die Relationen $\gamma^1\gamma^2+\gamma^2\gamma^1=2\eta^{12} \circ \Eins$.
+\item Man berechne $\gamma^5:=\gamma^0\gamma^1\gamma^2\gamma^3$.
+\item Zeige $\gamma^\mu\circ \gamma_\mu=4 \circ \Eins$
+\end{enumerate}
+\ifthenelse{\boolean{lsg}}{
+\subsubsection*{LÖSUNG}
+\begin{enumerate}
+\setcounter{enumi}{29}
+\item $\gamma^1=\begin{pmatrix}0 & \sigma^1 \\ -\sigma^1 & 0\end{pmatrix}$, $\gamma^2=\begin{pmatrix}0 & \sigma^2 \\ -\sigma^2 & 0\end{pmatrix}$\\
+$$\gamma^1\gamma^2+\gamma^2\gamma^1=-\begin{pmatrix}\sigma^1\sigma^2+\sigma^2\sigma^1 & 0 \\ 0 &\sigma^1\sigma^2+\sigma^2\sigma^1 \end{pmatrix}$$
+$$\sigma^1\sigma^2+\sigma^2\sigma^1=1-1=0$$
+\item $$\gamma^5=\begin{pmatrix}0 & -\sigma^1\sigma^2\sigma^3 \\ -\sigma^1\sigma^2\sigma^3 & 0 \end{pmatrix}$$
+$\sigma^1=\begin{pmatrix}0 & 1 \\ 1 &0\end{pmatrix}$, $\sigma^2=\begin{pmatrix}0 & -i \\ i &0\end{pmatrix}$, $\sigma^3=\begin{pmatrix}1 & 0 \\ 0 &-1\end{pmatrix}$\\
+$$\ra \sigma^1\sigma^2\sigma^3=\begin{pmatrix}i & 0 \\ 0 &i\end{pmatrix}$$
+$$\Ra \gamma^5=-i\begin{pmatrix}0 & \Eins \\ \Eins &0\end{pmatrix}$$
+\item $\gamma_0=\gamma^0$, $\gamma_k=-\gamma^k$, $(\gamma^0)^2=1$, $(\gamma^k)^2=-1$\\
+$$(\gamma^0)^2-\sum_{k=1}^3 (\gamma^k)^2=4$$
+\end{enumerate}
+}{}
+
+\subsubsection*{ÜBUNGSAUFGABEN}
+\begin{enumerate}
+\setcounter{enumi}{32}
+\item Wähle Transformation in einer Ebene. Zeige, dass wegen $SS^{-1}=1$ infinitesimal gilt:
+$$\L^{-1}(w_{\mu\nu})=\Eins-w_{\mu\nu}M^{\mu \nu}$$
+wenn $\L(w_{\mu\nu})=1+ w_{\mu\nu}M^{\mu \nu}$ ist.
+\item Zeige, dass Darstellungen des Lorentzboosts nicht unitär sind (Hilfe: wenn unitär, $U=e^{\alpha M} \Ra M$ schiefsymmetrisch)\\
+z.B. Boost in 1-Richrung, d.h. Ebene(01)
+\end{enumerate}
+\ifthenelse{\boolean{lsg}}{
+\subsubsection*{LÖSUNG}
+\begin{enumerate}
+\setcounter{enumi}{32}
+\item $$\L(w_{\mu\nu})=1+M_{\mu\nu}w^{\mu\nu}+...$$
+(Potenzreihenentwicklung bis zur 1. Ordnung in Parameter $w_{\mu\nu}$)
+$$\L^{-1}(w_{\mu\nu})\L(w_{\mu\nu})=\Eins$$
+(in erster Ordnung)
+$$(1-M_{\mu\nu}w^{\mu\nu})(1+M_{\mu'\nu'}w^{\mu'\nu'})=1-M_{\mu\nu}M_{\mu'\nu'}w^{\mu'\nu'}w^{\mu\nu}=1+\mathcal{O}(w^2)$$
+\item z.B. (01)-Ebene (Boost in 1-Richtung)
+$$S(\L(01))=e^{\alpha D_{01}}$$
+$$D_{01}=\frac{1}{4}[\gamma^0,\gamma^1]=\frac{1}{4} \cdot 2 \begin{pmatrix}0 & \sigma^1 \\ \sigma^1 & 0  \end{pmatrix}$$
+$\Ra$ $D_{01}$ ist \underline{nicht} schiefsymmetrisch, aber symmetrisch $\ra$ $S$ ist \underline{nicht} unitär 
+\end{enumerate}
+}{}
+
 \subsubsection*{ÜBUNGSAUFGABEN}
 \begin{enumerate}
 \setcounter{enumi}{34}
@@ -2970,10 +2992,6 @@ $$c^2 \vec p^2=E_p^2-m^2c^4$$
 \end{enumerate}
 }{}
 
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %04.02.10
 % 
@@ -2982,7 +3000,7 @@ $$c^2 \vec p^2=E_p^2-m^2c^4$$
 \item Zusammengesetzte Systeme, tensorprodukt, Hamiltonoperator, Eigenzustände, Bsp.: He-Atom
 \item Symmetriesierungs- und Antisymmetriesierungsoperator, z.B. hermitesch
 \item Schreibe $f(A)$, $A$ selbstadjungiert, mittels Spektralschar von $A$
-\item 2 Spin -$\frac{1}{2}$-Tailchen, Basis im Hjilbertraum, antisymetrischer Zustand, z-Spin$=0$
+\item 2 Spin -$\frac{1}{2}$-Teilchen, Basis im Hjilbertraum, antisymetrischer Zustand, z-Spin$=0$
 \item Begriff der Spur, unabhängig von Auswahl des ON-Systemsm $tr(AB)=tr(BA)$
 \item Besetzungszahldarstellung (z.B. System von $N$ Bosonen), Erzeuger- und Vernichter-Operatoren (Vertauschungsrelationen), Fockraum
 \item Feldoperatoren, Vertauschungsrelationen
