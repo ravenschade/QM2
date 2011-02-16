@@ -15,7 +15,7 @@
 \usepackage[arrow, matrix, curve]{xy}
 \usepackage{verbatim}
 \usepackage{type1cm}
-\usepackage{embedfile}
+%\usepackage{embedfile}
 \usepackage{ulem}
 \usepackage{hyperref}
 \usepackage{ifthen}
@@ -88,7 +88,7 @@
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-\embedfile[id={skript}]{skript.tex}
+%\embedfile[id={skript}]{skript.tex}
 
 \clearpage
 \thispagestyle{empty}
@@ -1964,14 +1964,21 @@ $$\int f(q) \hat \psi^+(q)d^dq$$
 
 \section{Die Diracgleichung}
 \subsection{Relativistische Wellengleichungen}
+
 $$i\hbar \partial_t \psi=H\psi$$
 $$H=\frac{\hat{\vec p}^2}{2m}+V$$
 $$\hat{\vec p}:=\frac{\hbar}{i}\nabla_x$$
+
 \subsubsection*{Bemerkung}
+
 Schrödingergleichung ist \underline{nicht} kovariant im Sinne der SRT.
+
 \subsubsection*{Ziel}
+
 SRT$\cup$QM
+
 \subsubsection*{Idee (deBroglie, Schrödinger)}
+
 \begin{enumerate}
 \item \textbf{Korrespondenzprinzip:}
 $$E \rightsquigarrow i\hbar \partial_t$$
@@ -2034,39 +2041,53 @@ $(*)$ in Indexschreibweise: $\L_k^i \eta_{il} \L_m^l=\eta_{km}$
 \item $(\Phi,\vec A)=(A^0,A^1,A^2,A^3)$ Elektromagnetisches Viererpotential
 \end{enumerate}
 \subsubsection*{Beobachtung}
-Vierervektor $\ra$ Minkowskikalarprodukt ist erhaltenen
+Vierervektor $\ra$ Minkowskiskalarprodukt ist erhaltenen
 $$\ra (\frac{E}{c})^2-\vec p^2=m^2c^2$$
 $$p_ip^i=m^2c^2 \ra E=\sqrt{c^2\vec p^2+m^2c^4}$$
 
 \subsubsection*{Definition}
 \begin{enumerate}
-\item Ein Vierervektor $(A^i)$ heißt kontravariant, wenn er sich unter Lorentztransformation, d.h. untzer Bezugssystemwechsel $S \ra S'$, transformiert wie $(x^i)=(ct,\vec x)$, d.h. ${A^i}'=\L_k^iA^k$.
+\item Ein Vierervektor $(A^i)$ heißt kontravariant, wenn er sich unter Lorentztransformation, d.h. unter Bezugssystemwechsel $S \ra S'$, transformiert wie $(x^i)=(ct,\vec x)$, d.h. ${A^i}'=\L_k^iA^k$.
 \item Er heißt kovariant $(A_i)$, wenn er sich mit der Transponiert-Inversen von $\L$, d.h. mit $(\L^T)^{-1}=(\L^{-1})^T$ transformiert, d.h. $A_i'=((\L^T)^{-1})^k_i A_k$.
 \end{enumerate}
-Häufig:
-$((\L^{-1})^T)^k_i=\L_i^k$, d.h. $A_i') \L_i^k A_k$
+Häufig: $((\L^{T})^{-1})^k_i=\L_i^k$, d.h. $A_i'= \L_i^k A_k$
+$$A_i=\eta_{ik}A^k$$
+$$\eta_{ik}=\begin{pmatrix}1 \\ & -1 \\ & & -1 \\ & & & -1\end{pmatrix}$$
+$$A^i=\eta_{ik}A_k$$
+$$g^{ik}g_{kj}=\delta_j^i$$
+Mathematisch:
+$$A'^i$$
+
 \subsubsection{Die relativistische Klein-Gordon-Gelichung}
 (eigentlich Schrödinger)\\
-$\frac{E}{c}, \vec p)$ kontravarianter Vierervektor $\ra$ Korrespondenzprinzip:\\ $\frac{E}{c} \ra i\hbar \partial_{x^0}, \ x^0=ct, \ \vec p \ra -i \hbar \nabla_x$
+$(p^i)=(\frac{E}{c}, \vec p)$ kontravarianter Vierervektor $\ra$ Korrespondenzprinzip:\\ $\frac{E}{c} \ra i\hbar \partial_{x^0}, \ x^0=ct, \ \vec p \ra -i \hbar\nabla_x$\\
+Beweis: $(p^i)=m_0(u^i)$, $(u^i)$ 4er-Geschwindigkeit entspricht $\frac{dx^i}{ds}$, $s=c\tau$, $\tau$ Eigenzeit\\
+$$(p_i)=(\frac{E}{c},-\vec p)$$
+
 \subsubsection*{Folgerung}
-$(x^i)$ kontravariant $\stackrel{\mathrm{Kettenregel}}{\ra} (\partial x^i)$ ist \underline{kovarianter} Vierervektor, aber $(\partial x_i)$ ist kontravarianter Vierervektor
+$$i \hbar (\partial_{x_k})\entspricht i \hbar(\frac{\partial}{\partial (ct)},-\nabla_{\vec x})$$
+$$i \hbar (\partial_{x^k})\entspricht i \hbar(\frac{\partial}{\partial (ct)},\nabla_{\vec x})$$
+$(x^i)$ kontravariant $\stackrel{\mathrm{Kettenregel}}{\ra} (\partial x^i)$ ist \underline{kovarianter} Vierervektor, aber $(\partial x_i)$ ist kontravarianter Vierervektor\\
+$$f(x), \ \ x'(x) \ra f(x')$$
+$$\frac{\partial}{\partial x''}f(x')=\frac{\partial x^k}{\partial x'^i}\frac{\partial}{\partial x^k}f(x)$$
 \subsubsection*{Schreibweise}
 $(\frac{\partial}{\partial x^i})$ bzw. $(\frac{\partial}{\partial x_i})\entspricht \nabla_i, \ \nabla^i$ oder $\partial_i,\partial^i$
+
 \subsubsection*{Folgerung}
 Der Wellenoperator (d'Alembert-Operator):
-$$\Box:= \frac{1}{c^2} \frac{\partial^2}{\partial t^2}-\nabla^2=\nabla_i\nabla^i=\eta_{ik} \nabla^k \nabla^i$$
-ist lorentzinvarianter Differentialoperator (wegen Minkowskiskalarprodukt).\\
-Übersetzung (aus Korrespondenzprinzip):
-$$(\frac{E}{c})^2-\vec p^2=m^2c^2$$
+$$\Box:= \frac{1}{c^2} \frac{\partial^2}{\partial t^2}-\vec \nabla^2=\nabla_i\nabla^i=\eta_{ik} \nabla^k \nabla^i$$
+ist lorentzinvarianter Differentialoperator (wegen Minkowskiskalarprodukt $x_ix^i=\eta_{ik}x^ix^k=(x_0^2-\vec x^2)$ invariant unter Lorentztransformation).\\
+Übersetzung (aus Korrespondenzprinzip, im Ruhesystem):
+$$\left (\frac{E}{c} \right)^2-\vec p^2=m^2c_o^2$$
 \subsubsection*{Folgerung}
 $$[\Box+(\frac{mc}{\hbar})^2] \psi(x^i)=0$$
 heißt Klein-Gordon-Gleichung, $\psi(x^i)$ ist ein \underline{skalares Feld} mit Werten in $\C$.
 \subsubsection*{Bemerkung}
 Mit Potenzial $(\Phi,\vec A)$ ist die Klein-Gordon-Gleichung (in etwa) das Analogon zur Schrödingergleichung in der SRT.
 \subsubsection*{Beobachtung}
-$(*)$ (Eiegntlich $i\hbar \partial_t \psi=H\psi$)\\
+$(*)$ (Eigentlich $i\hbar \partial_t \psi=H\psi$)\\
 $\ra$ Korrespondenzprinzip: $E=+\sqrt{c^2\vec p^2+m^2c^4}$
-$$\ra (**) i\hbar \partial_t \psi= \sqrt{-\hbar^2c^2\nabla^2+n^2c^4}\psi $$
+$$\ra (**) i\hbar \partial_t \psi= \sqrt{-\hbar^2c^2\nabla^2+m^2c^4}\psi $$
 wäre das Analogon.
 \subsubsection*{Beobachtung}
 Funktionalanalytisch ist $\sqrt{\cdot}$ aus selbstadjungierten Operatoren wohldefiniert (falls psitiv), aber:
@@ -2098,24 +2119,26 @@ Lösungen nagetiver Energie sind Dauerproblem in relativistischer Quantentheorie
 $t=0$: $\psi$ endlich lokalisiert (Anfangsbedingung) $\ra$ Lösungen von $(**)$ haben für jedes $t>0$ im wesentlichen Träger im ganzen $\R^3$
 \subsubsection*{Bemerkung}
 Mit Vierervektorpotential $A^i=(\underbrace{\Phi}_{\mathrm{Skalarprodukt}},\underbrace{\vec A}_{\mathrm{Vektorprodukt}})$ $\Ra$ Klein-Gordon-Gleichung mit Wechselwirkung:
-$$[(i\hbar \frac{\partial}{\partial (ct)}-q \Phi)^2-(\frac{\hbar}{i}\nabla -e \vec A)^2]\psi=\frac{m^2c^2}{\hbar^2}\psi$$
+$$[(i\hbar \frac{\partial}{\partial (ct)}-q \Phi)^2-(\frac{\hbar}{i}\nabla -e \vec A)^2]\psi=m_0^2c^2\psi$$
 $(\frac{\hbar}{i}\nabla -e \vec A)^2$ bzw. $(\vec p-e \vec A)^2$ heißt auch \underline{minimale Ankopplung} (auch schon in klassischer Mechanik vorhanden)
 
 \subsubsection*{Das eigentliche Problem der Klein-Gordon-Gleichung}
 \subsubsection*{Konzeption der Quantentheorie}
 $\psi$ und Wahrscheinlichkeitsinterpretation, d.h. erhaltener Wahrscheinlichkeitsstrom 
-$$\partial_t \rho+\nabla \vec j\equiv 0 \ra \int d^3x \rho(x)\equiv \mathrm{const.}$$
+$$\partial_t \rho+\nabla \vec j\equiv 0 \ra \int d^3x \rho(x)\equiv \mathrm{const.}=1$$
 $\ra$ \textbf{Aufgabe:} Suche $(\rho,\vec j)$ für die Klein-Gordon-Gleichung.
 \subsubsection*{Methode $(\rho,\vec j)$ zu finden:}
-$$\overline{\psi}|\Box+(\frac{mc}{\hbar})^2]\psi\equiv0$$
+$$\overline{\psi}[\Box+(\frac{mc}{\hbar})^2]\psi\equiv0$$
 entsprechend:
-$${\psi}|\Box+(\frac{mc}{\hbar})^2]\overline{\psi}\equiv0$$
+$${\psi}[\Box+(\frac{mc}{\hbar})^2]\overline{\psi}\equiv0$$
 subtrahieren:
-$$\overline{\psi}|\Box+(\frac{mc}{\hbar})^2]\psi-{\psi}|\Box+(\frac{mc}{\hbar})^2]\overline{\psi}\equiv 0$$
+$$\overline{\psi}[\Box+(\frac{mc}{\hbar})^2]\psi-{\psi}[\Box+(\frac{mc}{\hbar})^2]\overline{\psi}\equiv 0$$
 $$=\nabla^i(\overline{\psi}\nabla_i \psi-\psi\nabla_i \overline{\psi})$$
 $$\nabla_i=\partial_i=(\frac{\partial}{\partial (ct)},\nabla)$$
 $$\nabla^i=(\frac{\partial}{\partial (ct)},-\nabla)$$
-Wenn im nicht-relativistischen Grenzfall: $\ra$ Wahrscheinlichkeitsstrom der Schrödingergleichung, $\ra$ ergänzt mit Vorfaktor $\frac{i\hbar}{2m}$
+$\ra$ ergänzt mit Vorfaktor $\frac{i\hbar}{2m}$
+Wenn im nicht-relativistischen Grenzfall: $\ra$ Wahrscheinlichkeitsstrom der Schrödingergleichung
+
 \subsubsection*{Folgerung}
 Mit $j^k:=\frac{i\hbar}{2m}(\overline{\psi}\nabla^k\psi-\nabla^k \overline{\psi} \psi)$ gilt $\nabla_k j^k=\nabla^kj_k=0$.\\
 Mit $(\partial_t,\nabla)$:
@@ -2137,6 +2160,10 @@ Verfasser: 	Schweber, Silvan S. *1929-*
 
 
 \begin{tiny}
+\begin{verbatim}
+Titel:	Mathematical methods of classical mechanics / V.I. Arnold. Transl. by K. Vogtmann ...
+Verfasser:	Arnol'd, Vladimir I. *1937-2010*
+\end{verbatim}
 \begin{verbatim}
 Titel: 	Relativistische Quantenfeldtheorie / von James D. Bjorken und Sidney D. Drell
 Verfasser: 	Bjorken, James D. ; Drell, Sidney David
@@ -2213,9 +2240,11 @@ $$\sigma^2=\begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}$$
 $$\sigma^3=\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$$
 \subsubsection*{Lemma:}
 Die Paulimatrizen erfüllen $(\sigma^k)^2=1$, $\sigma^i\sigma^k+\sigma^k\sigma^i=0$ für $i\neq k$ (Cliffordalgebra).
+
 \subsubsection*{Lemma:}
 $$(\gamma^0)^2=1, \quad (\gamma^k)^2=-1, \ k=1,2,3$$
 $$(\gamma^0)^*=\gamma^0, \quad (\gamma^k)^*=-\gamma^k, \ ^*\ra \mathrm{adj.}$$
+$$\gamma_\mu=\eta_{\mu\nu} \gamma^\nu$$
 \subsubsection*{Bemerkung:}
 Physik: $^*$ (adj.) $\entspricht ^+$
 \subsubsection*{Beweis:}
@@ -2228,7 +2257,7 @@ $$\gamma^0=\begin{pmatrix} 0& \Eins \\ \Eins & 0\end{pmatrix}$$
 $$\gamma^k=\begin{pmatrix} 0& \sigma^k \\ -\sigma^k & 0\end{pmatrix}$$
 $$\gamma^5=i\begin{pmatrix} \Eins & 0 \\ 0 & \Eins \end{pmatrix}$$
 \subsubsection*{Beobachtung}
-Alle physikalischen Kosequenzen sind unabhängig von der Form der Darstellung.
+Alle physikalischen Konsequenzen sind unabhängig von der Form der Darstellung.
 \subsubsection*{Satz (ohne Beweis)}
 Alle Systeme von Diracmatrizen (d.h. 4x4) die $(*)$ erfüllen sind durh eine nicht-singuläre Transformation verknüpft, d.h. $\gamma'=S\gamma S^{-1}$ (nicht trivial, gilt auch nicht immer.)
 \subsubsection*{Folgerung}
@@ -2240,15 +2269,25 @@ In vielen alten Werken wird $(ict,\vec x)$ verwendet $\ra$ Einfluss auf Form der
 \item B. Thaller: ''The Dirac Equation'' p. 74 f.
 \item Algebraischer Beweis (über die Darstellung von Algebren, etc.) $\ra$ H. Boerner: ''Darstellung von Gruppen'', p. 267 (Cliffordalgebra und Dichtematrizen p. 68)
 \end{enumerate}
+
 \subsubsection*{Abkürzung für Diracgleichung (Feynman-Dagger)}
-$$\xout{p}:=\gamma^\mu p_\mu=\gamma^0p^0-\vec \gamma \circ\vec p, \ \ \vec \gamma=(\gamma^1,\gamma^2,\gamma^3)$$
+$$\xout{p}:=\gamma^\mu p_\mu=\gamma_\mu p^\mu=\gamma^0p^0-\vec \gamma \circ\vec p, \ \ \vec \gamma=(\gamma^1,\gamma^2,\gamma^3)$$
 $$\xout{\partial}:=\gamma^\mu \partial_\mu=\gamma^0\partial^0+\vec \gamma \circ \nabla$$
+$$\partial_\mu \ra \frac{\partial }{\partial x^\mu}$$
 Vorzeichen:
-$$(\frac{E}{c},\vec p)\entspricht i\hbar(\frac{\partial}{\partial (ct)},-\nabla)\entspricht (p^\mu)$$
-$$\gamma_\mu:0 \eta_{\mu\nu}\gamma^\nu$$
+$$(\frac{E}{c},\vec p)\entspricht i\hbar(\frac{\partial}{\partial (ct)},-\nabla_x)\entspricht (p^\mu)$$
+$$(\frac{E}{c},-\vec p)\entspricht i\hbar(\frac{\partial}{\partial (ct)},\nabla_x)\entspricht (p_\mu)$$
+$$\gamma_\mu= \eta_{\mu\nu}\gamma^\nu$$
+$$(-i \xout{\partial}+\frac{mc}{\hbar})\psi=0$$
+$$(\xout{p}-mc)\psi=0$$
+$$\hat p^\mu:=i\hbar \frac{\partial}{\partial x_\mu}$$
+$$(\xout{p}-\frac{e\xout{A}}{c}-mc)\psi=0$$
+
 \subsubsection*{Bemerkung}
-Mit $(\gamma^0)^2=1 \ra i \hbar \partial_t \psi=c(\gamma^0\gamma^k)(\frac{\hbar}{i})\partial_k \psi+mc^2\gamma^0 \psi$\\
+Mit $(\gamma^0)^2=1$
+$$ \ra i \hbar \partial_t \psi=c(\gamma^0\gamma^k)(\frac{\hbar}{i})\partial_k \psi+mc^2\gamma^0 \psi$$\\
 oder mit Wechselwirkung:
+$$(A^\mu) \ra \xout{A}:=\gamma_\mu A^\mu=\gamma^\mu A_\mu=\gamma^0A^0-\vec \gamma \vec A$$
 $$i\hbar \partial_t \psi=\gamma^0e\Phi\psi+c(\gamma^0\gamma^k)(\frac{\hbar}{i}\partial_k -eA_k)\psi+mc^2\gamma^0 \psi$$
 (Mit Vierepotential der Elektrodynamik $(A^\mu):=(\Phi,\vec A)$)\\
 Wäre Verallgemeinerung der Schrödingergleichung für ein Atom.
@@ -2258,13 +2297,14 @@ Die R.S. (FIXME rechte Seite) heißt Diracoperator $\D$. Seine mathematischen Ei
 Das kleinste $n$, für das es eine Darstellung der $\gamma$-Matrizen gibt, ist 4.
 \subsubsection*{Beweis}
 $\gamma^{0+}=\gamma^0$, $\gamma^{k+}=-\gamma^k$, $\gamma^0\gamma^k\stackrel{(*)}{=}-\gamma^k\gamma^0=(\gamma^0\gamma^k)^*, \ \ k=1,2,3$, d.h. $\gamma^0, \gamma^0\gamma^k$ sind hermitesch $\Ra$ Eigenwerte sind reel\\
-Weiterhin: $(\gamma^0\gamma^k)=\Eins$
+Weiterhin: $(\gamma^0\gamma^k)^2=\Eins$
 \begin{enumerate}
 \item EW$=\pm 1$
 \item Antikommutierend $\Ra$ Spur$(\gamma^0,\gamma^0\gamma^k)=0$, weil ist Summe der EW $\ra$ Summe positiver EW=-Summe negativer EW $\Ra dim(n)$ ist gerade
-\item \underline{$n=2$}: Es gibt nur die antikommutierenden Paulimatrizen.
-\item Nächstes \underline{$n=4$}: Dort eght es! $\Box$
+\item \underline{$n=2$}: Es gibt nur die drei antikommutierenden Paulimatrizen.
+\item Nächstes \underline{$n=4$}: Dort geht es! $\Box \ra \psi=\begin{pmatrix} \psi_1 \\ ... \\ \psi_4 \end{pmatrix}, \psi_i \in$ Komplexe Funktionen
 \end{enumerate}
+
 \subsubsection*{Erinnerung}
 Zur Klein-Gordon-Gleichung gibt es keinen positiv-definiten Wahrscheinichkeitsstrom (genauer: nullte Komponenten ist nicht positiv definit)
 \subsubsection*{Stromerhaltung bei Dirac-Gleichung?}
@@ -2276,20 +2316,21 @@ $$(\partial_t \psi^++c\partial_1\psi^+\gamma^0\gamma^1 +...+c\partial_3\psi^+\ga
 \item Mutiplikation von rechts mit $\psi$ und Addition
 \end{enumerate}
 \subsubsection*{Folgerung}
-$\frac{\partial}{\partial t} \psi^+\psi+\nabla \vec j=0$ mit $\vec j^i=c \psi^+\gamma^0\gamma^i\psi$, $i=1,2,3$ \\
-oder $\partial x_\nu \gamma^\nu\equiv 0$, $\dot \gamma^0=\psi^+\psi$, $j^i=\psi^+\gamma^0\gamma^i\psi$\\
-D.h. die Diracgleichung hat erhaltenen Strom mit positiv definiten nullter Komponente $\psi^+\psi=\sum_i \overline{\psi_i}\psi_i$.\\
+$\frac{\partial}{\partial t} \psi^+\psi+\nabla \cdot \vec j=0$ mit $\vec j^i=c \psi^+\gamma^0\gamma^i\psi$, $i=1,2,3$ \\
+oder $\partial j_\nu \gamma^\nu\equiv 0$, $j^0=\psi^+\psi$, $j^i=\psi^+\gamma^0\gamma^i\psi$\\
+D.h. die Diracgleichung hat erhaltenen Strom mit positiv definiten nullter Komponente $\psi^+\psi=\sum_i \overline{\psi_i}\psi_i=\rho(x)$.\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %18.01.10
 % 
 
-Diracgleichung: erhaltener Strom $\partial_t\rho+\nabla \vec j=0$, $\rho=¸\psi^+\psi$, $\psi=\begin{pmatrix}\psi_1 \\ \vdots \\ \psi_4\end{pmatrix}$, $\psi^+=(\overline{\psi}_1,...,\overline{\psi}_4)$\\
+Diracgleichung: erhaltener Strom $\partial_t\rho+\nabla \vec j=0$, $\rho=\psi^+\psi$, $\psi=\begin{pmatrix}\psi_1 \\ \vdots \\ \psi_4\end{pmatrix}$, $\psi^+=(\overline{\psi}_1,...,\overline{\psi}_4)$\\
 $\rho$ positiv definit, Stromerhaltung $\ra \int_{\R^3} \rho(\vec x,t) d^3x\equiv \mathrm{const.}$
 $$\vec j_k=c\psi^+ \gamma^0\gamma^k\psi, \ \ k=1,2,3$$
+$$\partial_0 \int_V j^0(\vec x,t)d^3x=-\int_V\nabla \cdot \vec j(\vec x,t) d^3x=(\pm)\int_{\partial V}\vec j(\vec x,t) d^3x \ra 0$$
 \subsubsection*{Bemerkung}
 In der Herleitung der Diracgleichung werden zunächst andere Matrizen engeführt, d.h. $\beta,\alpha^k,k=1,2,3$ mit $\gamma^0=\beta$, $\alpha^k=\gamma^0\gamma^k$
 \subsubsection*{Anschein}
-Es gibt eine Wahrscheinlichkeitsinterpretation.
+Es gibt eine Wahrscheinlichkeitsinterpretation und Erhaltung der Wahrscheinlichkeit.
 \subsubsection*{Aber}
 Im wesentlichen die gleichen Probleme wie bei der Klein-Grodon-Gleichung, d.h. Zustände mit negativer Energie (Deutung?) etc.
 \subsubsection*{Folgerung}
@@ -2301,33 +2342,31 @@ Die Felder $\begin{pmatrix}\psi_1(x) \\ \vdots \\ \psi_4(x)\end{pmatrix}\in L^2(
 \subsubsection{Allgemeine Überlegungen}
 \subsubsection*{Aufgabe:}
 Quantentheorie und speziele Relativitätstheorie vereinigen $\Ra$ Diracgleichung forminvariant unter Lorentztransformation\\
-$\psi$ ist vierkomponentig, $\L$ Lorentztransformation \underline{Frage:}\\
+$\psi$ ist vierkomponentig, $\L$ Lorentztransformation  $S \ra S'$ $\ra$ Darstellungstheorie der Lorentzgruppe
+\\ \underline{Frage:}\\
 $$x \stackrel{\L}{\ra} x'$$
 $$x \mapsto x'=\L x$$
 $$\psi'(x')\stackrel{?}{=} \D(\L) \psi(x)$$
 \subsubsection*{Erinnerung (Darstellung):}
-ruppe $G$ $\Ra$ Darstellung von$G$ über Vektorraum $V$ ist eine Abbildung von $g \ni g \mapsto \D(g)\in$ invertierbare lineare Abbildungen, oft unitäre Abbildung mit:
+Gruppe $G$ $\Ra$ Darstellung von$G$ über Vektorraum $V$ ist eine Abbildung von $g \ni g \mapsto \D(g)\in$ invertierbare lineare Abbildungen, oft unitäre Abbildung mit:
 $$\D(g_1\circ g_2)=\D(g_1)\D(g_2) \ra \D(g^{-1})=\D(g)^{-1}$$
 \subsubsection*{Bei uns:}
-$V=L^2(\R^4)\otimes \C^4$, $G=L$ (homogene Lorentzgruppe)
+$V=L^2(\R^4)\otimes \C^4$, $G=L$ (homogene Lorentzgruppe), $\psi \in V$
 \subsubsection*{Beobachtung:}
-Auf Funktionen ist die Darstellungstheorie einfach, d.h. 
-$$(\D(\L)\circ f)(x):=f(\L^{-1}x)$$
-Auf $\C^4 \ra$ 4x4-Matrizen $S(\L)$, $S(\L)\cdot \begin{pmatrix}c_1 \\ \vdots \\ c_4\end{pmatrix}$, $c_i \in \C$.
+\begin{itemize}
+\item Auf Funktionen ist die Darstellungstheorie einfach $\L \in G$, d.h. 
+$$(\D(\L)\circ f)(x):=f(\L^{-1}x)=f_\L(x)$$
+\item Auf $\C^4 \ra$ 4x4-Matrizen $S(\L)$, $S(\L)\cdot \begin{pmatrix}c_1 \\ \vdots \\ c_4\end{pmatrix}$, $c_i \in \C$.
+\end{itemize}
+
 \subsubsection*{Folgerung:}
-Auf $V=L^2(\R^4)\otimes \C^2 \Ra (\underbrace{\D(\L)\psi}_{\psi'}(x')=S(\L)\circ \psi(\L^{-1}x')$, wobei $x$ Koordinate in Bezugssystem $X$, $x'=\L x$ in $X'$.\\
-(Vorstellung (passiver Point of View): Selber Raumzeit-Punkt (Ereignis) in den Systemem $X$,$X'$)
+Auf $V=L^2(\R^4)\otimes \C^2 \Ra (\underbrace{\D(\L)\psi}_{\psi'}(x')=S(\L)\circ \psi(\L^{-1}x')$, wobei $x$ Koordinate in Bezugssystem $S$, $x'=\L x$ in $S'$. $\L:S \ra S'$\\
+(Vorstellung (passiver Point of View): Selber Raumzeit-Punkt (Ereignis) in den Systemem $S$,$S'$)
 \subsubsection*{Bemerkung:}
 $$S(\L^{-1})=S(\L)^{-1}$$
 \subsubsection*{Aufgabe:}
 Finde $S(\L)$, die die Diracgleichung forminvariant lassen.
 \subsubsection*{Literatur zur Darstellunsgtheorie:}
-\begin{tiny}
-\begin{verbatim}
-Lynbarski: Darstellungstheorie von Gruppen (FIXME nicht gefunden)
-\end{verbatim}
-\end{tiny}
-
 
 \begin{tiny}
 \begin{verbatim}
@@ -2350,15 +2389,22 @@ $$\mathrm{System} \ X': \quad (i\hbar S(\L)\gamma^\mu S^{-1}(\L) \L_\mu^\nu \par
 hier: $\frac{\partial x^{'\nu}}{\partial x^\mu}=\L_\mu^\nu$ (wegen $x'=\L x$)
 \end{enumerate}
 \subsubsection*{Folgerung:}
-Diracgleichung ist frminvariant, wenn gilt:
-$$S(\K) \gamma^\mu S^{-1}(\L) \L_\mu^\nu=\gamma^\nu$$
+Diracgleichung ist forminvariant, wenn gilt:
+$$\exists S(\L): S(\L) \gamma^\mu S^{-1}(\L) \L_\mu^\nu=\gamma^\nu$$
+\subsubsection*{Bemerkung:}
+passiver Standpunkt:
+$$S \stackrel{\L}{\ra} S' $$
+$$S' \ni x'=\L x \in S$$
+$$\psi'(x')=S(\L) \psi(x) \in \C^4$$
+aktiver Standpunkt:
+$$\psi'(x')=S(\L)\psi(\L^{-1} \circ x)$$
 \subsubsection*{Bemerkung:}
 Die $\L_\mu^\nu$ sind mit $\gamma_S$ vertauschbar, da sie Zahlen sind.\\
 oder: $$\L_\mu^\nu \gamma^\mu=S^{-1}(\L)\gamma^\nu S(\L)$$
 \subsubsection*{Bemerkung:}
 $\gamma_\mu:=\eta_{\mu\nu}\gamma^\nu$, d.h. $\gamma_0=\gamma^0$, $\gamma_i=-\gamma^i$ für $i=1,2,3$.
 \subsubsection*{Definition:}
-Die $\psi$, die obiges Transformationsverhalten unter $L$ haben, nannt man \underline{Viererspinoren} oder \underline{Diracspinoren}.
+Die $\psi$, die obiges Transformationsverhalten unter $L$ haben, nannt man \underline{Viererspinoren} oder \underline{Diracspinoren} (Lorentz-Spinor).
 \subsubsection*{Bemerkung:}
 Ebenso wie $O(3)$ die Überlagerungsgruppe $SU(2)[\ra$ Spinoren$]$, so hat $L$ die Überlagerungsgruppe $SL_2(\C)[\ra$ Spinoren$]$.
 \subsubsection*{Folgerung:}
@@ -2379,7 +2425,7 @@ Existenz von $S(\L)$ folgt aus einen allgemeinen Satz.
 \subsubsection*{Definition}
 $$\hat \gamma^\nu:= \L_\mu^\nu \gamma^\mu$$
 \subsubsection*{Behauptung}
-Die $\{\hat \gamma^\nu \}$ erfüllen die Relation $\hat\gamma^\mu\hat\gamma\nu+\hat \gamma^\nu\hat \gamma^\mu=2 \eta^{\mu\nu}$.
+Die $\{\hat \gamma^\nu \}$ erfüllen die Relation $\hat\gamma^\mu\hat\gamma^\nu+\hat \gamma^\nu\hat \gamma^\mu=2 \eta^{\mu\nu}\circ \Eins$.
 \subsubsection*{Früher (allg. Satz):}
 Alle Systeme, $\{\gamma^\nu\}$, die $(*)$ erfüllen, hängen durch eine Ähnlichkeitstransformation zusammen.\\
 $$\Ra \ \mathrm{(hier)} \ \hat \gamma^\nu=S(\L) \gamma^\nu S^{-1}(\L)$$
@@ -2396,31 +2442,37 @@ Es existiert eine Darstellung $S(\L)$ im Raum der Spinoren $\psi$, sodass die Di
 Die Gesamtheit der Lorentztransformationen (Gruppe $L$) besteht aus 4 Zusammenhangskomponenten, die durch diskrete Transformationen $P,T,P\circ T$ verbunden werden, wobei $P\entspricht$ Raumspiegelung, $T\entspricht$ Zeitspiegelung und $P\circ T\entspricht$ Raum-Zeitspiegelung.
 \subsubsection*{Definition}
  $L_+^\uparrow$, die Zusammenhangskomponente der $\Eins$, heißt Gruppe der \underline{eigentlich-orthochronen Transformationen} (besteht aus Kombinationen von Drehungen und Lorentzboosts).
-$$P\circ L_+^\uparrow, \ T \circ L_+^\uparrow, \ P \circ T \circ L_+^\uparrow$$
+$$\{P\circ L_+^\uparrow, \ T \circ L_+^\uparrow, \ P \circ T \circ L_+^\uparrow\}=L \ \mathrm{Lorentzgruppe}$$
+$\uparrow \entspricht \L_0^0 >0$ (Zeitrichtung erhalten), $+\entspricht Det(\L)=+1$
+
 \subsubsection*{Bedeutung}
-$\uparrow \entspricht \L_0^0 >0$, $+\entspricht Det(\L)=+1$
 $$P:= \begin{pmatrix}1 \\ & -1 \\ & & -1 \\ & & & -1\end{pmatrix}$$
 $$T:= \begin{pmatrix}-1 \\ & +1 \\ & & +1 \\ & & & +1\end{pmatrix}$$
 $$PT:= \begin{pmatrix}-1 \\ & -1 \\ & & -1 \\ & & & -1\end{pmatrix}$$
-Die Lorentzboosts (Geschwindigkeitstransformationen), etwa entlang der \underline{positive} $x^1$-Achse haben die Form (d.h. $v>0 \ra x'$ bewegt sich in positiver Richtung entlang der $x^1-$Achse):
-$$x^{'0}=\gamma(x^0-\beta x^1)=x^2 cosh(u)-x^1 sinh(u)$$
+Die Lorentzboosts (Geschwindigkeitstransformationen), etwa entlang der \underline{positiven} $x^1$-Achse haben die Form (d.h. $v>0 \ra x'$ bewegt sich in positiver Richtung entlang der $x^1-$Achse):
+$$x^{'0}=\gamma(x^0-\beta x^1)=x^0 cosh(u)-x^1 sinh(u)$$
 $$x^{'1}=\gamma(x^1-\beta x^0)=x^1 cosh(u)-x^0 sinh(u)$$
 $$x^{'2}=x^2, \ \ x^{'3}=x^3$$
 $$ tanh(u)=\beta, \quad \gamma=(1-\beta^2)^{-\frac{1}{2}}, \quad \beta=\frac{v}{c}$$
 \subsubsection*{Bemerkung}
-$L$ enthält die Untergruppe der räumlichen Drehungen, i.e. $\begin{pmatrix}1 & 0\\ 0 & R\end{pmatrix}$ mit $R=$3x3-orthogonale Matrix
+$L$ enthält die Untergruppe der räumlichen Drehungen, i.e. $\begin{pmatrix}1 & 0\\ 0 & R\end{pmatrix}$ mit $R=$3x3-orthogonale Matrix ($SO(3)$ oder $O(3)$)
 \subsubsection*{Bemerkung}
-$L$ erweitern zu Poincaregruppe $\entspricht$ semidirektes Produkt von $L$ uns Raumzeittranslationen
+$L$ erweitern zu Poincaregruppe $\entspricht$ semidirektes Produkt von $L$ und Raumzeittranslationen
 \subsubsection*{Bemerkung}
-Ein allg. $\L$ in $L_+^\uparrow$ hat die Form $\L=\L(R_2)\L(v_ix^1)\L(R_1)$
+Eine allg. Lorentztransformation $\L$ in $L_+^\uparrow$ hat die Form $\L=\L(R_2)\L(v x^1)\L(R_1)$
 \subsubsection*{Beobachtung}
-Lorentzgruppe ist eine 6-parametrige Liegruppe (3 Boosts, 3 Drehwinkel)\\
-(allg. Beweis geht via $\L^T \eta \L=\eta$)
+Lorentzgruppe $L_+^\uparrow$ ist eine 6-parametrige Liegruppe (3 Boosts, 3 Drehwinkel)\\
+(allg. Beweis geht via $\L^T \eta \L=\eta$)\\
+Standard-Basis: 
+$$(\L e^\nu | \eta \L e^\nu)=(e^\nu|\eta e^\nu)$$
+$$(e^0 | \eta e^0)=1$$
+$$(e^i | \eta e^i)=-1, \ \ i=1,2,3$$
+
 \subsubsection*{Satz}
-In der Umgebung der $\Eins$ gibt es 6 linear unabhängige \underline{infinitesimale Transformationen}, die wir durch 6 infinitesimale ''Drehwinkel'' $w_{\rho\sigma}$ parametrisieren.
+In der Umgebung der $\Eins$ gibt es 6 linear unabhängige \underline{infinitesimale Transformationen} (Generatoren), die wir durch 6 infinitesimale ''Drehwinkel'' $w_{\rho\sigma}$ parametrisieren.
 \begin{enumerate}
 \item Drehungen in $\underbrace{1-2}_{w_{12}}-,\underbrace{2-3}_{w_{23}}-,\underbrace{3-1}_{w_{31}}-$Ebene (Rechtsschraube)
-\item Geschwindigkeitstransformationen in $\underbrace{x^1}_{w_{02}}-,\underbrace{x^2}_{w_{02}}-,\underbrace{x^3}_{w_{03}}-$Richtung
+\item Geschwindigkeitstransformationen in $\underbrace{x^1}_{w_{01}}-,\underbrace{x^2}_{w_{02}}-,\underbrace{x^3}_{w_{03}}-$Richtung
 \end{enumerate}
 \subsubsection*{Definition}
 $$w_{\rho\sigma}:=-w_{\sigma\rho}$$
@@ -2435,29 +2487,36 @@ $$M^{31}:=\begin{pmatrix}0 & 0& 0& 0 \\ 0 & 0 & 0& -1 \\ 0 & 0& 0 & 0 \\ 0& 1& 0
 \subsubsection*{Definition}
 $$M^{\mu\nu}:=-M^{\nu\mu}$$
 \subsubsection*{Folgerung}
-Eine allgemeine infinitesimale Transformation in Näher der $\Eins$ hat die Form (Einsteinsche Summenkonvention):
-$$\L(w)=\Eins+\frac{1}{2} w_{\mu\nu}M^{\mu\nu}$$
+Eine allgemeine infinitesimale Lorentztransformation in Nähe der $\Eins$ hat die Form (Einsteinsche Summenkonvention):
+$$\L(\{w\})=\Eins+\frac{1}{2} w_{\mu\nu}M^{\mu\nu}$$
 $w_{\mu\nu}\entspricht$ Zahlen, $M^{\mu\nu}\entspricht$ 4x4-Matrizen
 \subsubsection*{Bemerkung}
 $w_{\rho\sigma}:=-w_{\sigma\rho}$, $M^{\mu\nu}:=-M^{\nu\mu}$ entspricht positivem/negativem Drehwinkel bzw. positiver/negativer Achse und positiven Drehungen um positive Achse $\entspricht$ negativer Drehung um negative Achse.
-\subsubsection*{Korollar}
+\subsubsection*{Bemerkung}
+Eine endl. Lorentztransformation durch Aufintegrieren (nicht ganz einfach, da $[M_{\mu\nu},M_{\sigma\rho}]\neq 0$)
+\subsubsection*{Korollar: Spezialfall}
 Für 1-parametrige infinitesimale Transformationen, d.h ein $w_{\rho\sigma}$, $\ra$ endliche Lorentztranzformation hat die Form:
 $$\L(\mu\nu,u)=e^{u \cdot M^{\mu\nu}}$$
-(Beweis: löse Matrix-Diracgleichung oder Potenzreihe, $e^x=\lim_{n \ra \infty} (1+\frac{x}{n})^n$)
+(Beweis: löse Matrix-Diracgleichung oder Potenzreihe, $e^x=\lim_{n \ra \infty} (1+\frac{x}{n})^n$, für Operatoren $\ra$ Spektraldarstellung, Matrizen $\ra$ Potenzreihenentwicklung)
 \subsubsection*{Bemerkung (Indexgymnastik)}
-In vielen Büchern fendet man die Indizes auch unten für $M^{\mu\nu}$ bzw. oben auch für $w_{\mu\nu}$:
-$$M_{\mu_\nu}:=\eta_{\mu\mu'}\eta_{\nu\nu'}M^{\mu'\nu'}$$
-$$w^{\mu_\nu}:=\eta^{\mu\mu'}\eta^{\nu\nu'}w_{\mu'\nu'}$$
+In vielen Büchern findet man die Indizes auch unten für $M^{\mu\nu}$ bzw. oben auch für $w_{\mu\nu}$:
+$$M_{\mu\nu}:=\eta_{\mu\mu'}\eta_{\nu\nu'}M^{\mu'\nu'}$$
+$$w^{\mu\nu}:=\eta^{\mu\mu'}\eta^{\nu\nu'}w_{\mu'\nu'}$$
 wobei $\eta_{\mu\nu}=\begin{pmatrix}1 & 0& 0& 0 \\ 0 & -1 & 0& 0 \\ 0 & 0& -1 & 0 \\ 0& 0& 0& -1\end{pmatrix} \ra \eta^{\mu\nu}=\begin{pmatrix}1 & 0& 0& 0 \\ 0 & -1 & 0& 0 \\ 0 & 0& -1 & 0 \\ 0& 0& 0& -1\end{pmatrix}$
 $$\eta^{\mu\rho}\eta_{\rho\nu}=\delta_\nu^\mu= \eta_\nu^\mu$$
 \subsubsection*{Folgerung}
 $L_+^\uparrow$ ist Liegruppe $\ra$ Die $M$ bilden eine Lie-Algebra:
 $$[M_{\rho\sigma},M_{\tau\delta}]=\eta_{\rho\tau}M_{\sigma\delta}-\eta_{\rho\delta}M_{\sigma\tau}-\eta_{\sigma\tau}M_{\rho\delta}+\eta_{\sigma\delta}M_{\rho\tau}$$
+Die Generatoren erzeugen $L_+^\uparrow$.
 \subsubsection*{Bemerkung}
 $M_1:=-iM_{23}$, $M_2:=-iM_{31}$,$M_3:=-iM_{12}$\\
 $\ra$ $M_k$ haben Vertauschungsrelationen der Drehimpulsalgebra:
 $$[M_i,M_j]=i\epsilon_{ijk}M_k$$
-($M_k$ selbstadjungiert, in Mathematik iA. ohne $i$, d.h. i.A. Generatoren in Mathematik nicht hermitesch.)
+($M_k$ selbstadjungiert, in Mathematik iA. ohne $i$, d.h. i.A. Generatoren in Mathematik nicht hermitesch.)\\
+Mathe: Sei $e^{aM}$ unitär $\ra$ $M$ schiefsymmetrisch.\\
+Physik: $e^{-iaM}$ unitär (FIXME)  $\ra$ $M$ symmetr. bzw. s.a.\\
+Sei $e^{aM}$ unitär o. orthogonal ($\ra UU^*=\Eins$):
+$$(1+aM)(1+aM^*)=\Eins \ra 1+a(M+M*)=1 \ra M=-M^*$$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %25.01.10
 % 
@@ -2469,47 +2528,60 @@ Für infinitesimale Lorentztransformationen, d.h Parameter $w_{\mu\nu}$ infinite
 $$\Ra \L(w)=\Eins+M^{\mu\nu}w_{\mu\nu}+...$$
 \subsubsection*{Bemerkung}
 Erste Ordnung einer Potenzreihenentwicklung in den 6 $w_{\mu\nu}$.\\
-$$\Ra S(\L(w))=S(\Eins+M^{\mu\nu}w_{\mu\nu})=\Eins+D_{\rho\sigma}w^{\rho\sigma}$$
+$$\Ra S(\L(w))=S(\Eins+M^{\mu\nu}w_{\mu\nu})=\Eins+\frac{1}{2}D_{\rho\sigma}w^{\rho\sigma}$$
 \subsubsection*{Beobachtung}
 Die $D_{\rho\sigma}$ sind die Darsteller im Spinraum der $M_{\rho\sigma}$.\\
 $M^{\mu\nu}$ operieren auf $\R^4$\\
 $D^{\mu\nu}$ operieren auf $\C^4$
 \subsubsection*{Methode}
 Benutze Gleichung $\L^\nu_\mu \gamma^\mu=S^{-1}(\L)\gamma^\nu S(\L)$ $(**)$ für infinitesimale $\L$.
+
 \subsubsection*{Start}
+$D_{\rho\sigma}$ Darsteller vpn $M_{\rho\sigma}$\\
 $S^{-1}(\L)=1-D_{\rho\sigma}\epsilon$, d.h. zunächst nur Transformation in $\rho\sigma-$Ebene.\\
-Einsetzen in $(**)$:
+Wenn:
 $$\Ra (S(\L_{\rho\sigma}(\epsilon))=1+D_{\rho\sigma}\epsilon)$$
 Ausrechnen bis zur Ordnung 1 in $\epsilon$:
-$$\Ra D_{\rho\sigma}\gamma^\nu+\gamma^\nu D_{\rho\sigma}=(M_{\rho\sigma})^\nu_\mu \cdot \gamma^\mu=-\eta_\rho^\nu\gamma_\sigma+\eta^\nu_\sigma \gamma_\rho \ (***)$$
+$$\Ra -D_{\rho\sigma}\gamma^\nu+\gamma^\nu D_{\rho\sigma}=(M_{\rho\sigma})^\nu_\mu \cdot \gamma^\mu=-\eta_\rho^\nu\gamma_\sigma+\eta^\nu_\sigma \gamma_\rho \ (***)$$
 $(***)$ wird gelöst durch:
 $$D_{\rho\sigma}=-\frac{1}{4}(\gamma_\rho\gamma_\sigma-\gamma_\sigma\gamma_\rho)=-\frac{1}{4}[\gamma_\rho,\gamma_\sigma]$$
+
 \subsubsection*{Beweis}
 Einsetzen und verifizieren mit $\gamma^\nu\gamma^\mu+\gamma^\mu\gamma^\nu=2\eta^{\mu\nu}$, $\gamma_\rho:=\eta_{\rho\sigma}\gamma^\sigma$
-\subsubsection*{Allgemeine Form (FIXME $-\frac{1}{4}$ statt $\frac{1}{8}$)}
-$$S(\L(w))=\Eins+D_{\rho\sigma}w^{\rho\sigma}=\Eins+\frac{1}{8}[\gamma_\rho,\gamma_\sigma]w^{\rho\sigma}$$
+
+\subsubsection*{Allgemeine Form}
+$$S(\L(w))=\Eins+\frac{1}{2}D_{\rho\sigma}w^{\rho\sigma}=\Eins-\frac{1}{8}[\gamma_\rho,\gamma_\sigma]w^{\rho\sigma}$$
+$\omega$ infinitesimaler Parameter
 \subsubsection*{Korollar}
 Die Darstellung einer endlichen Lorentztransformation (in einer Ebene, d.h. Rotation oder Boost, z.B. $\L_{\rho\sigma}(\alpha)$)
 $$S(\L_{\rho\sigma}(\alpha))=\lim_{n\ra \infty} (1+\frac{\alpha}{n} D_{\rho\sigma})^n=e^{\alpha D_{\rho\sigma}}$$
+$\alpha$ endlicher Parameter
 \subsubsection*{Bemerkung}
 Geht so nur für einparametrige Untergruppen der Liegruppe, weil die Generatoren i.A. nicht vertauschen.
 \subsubsection*{Allgemeiner}
 Baker-Campbell-Hausdroff-Formel (z.B.  Hein, Gruppentheorie)
 \subsubsection*{Beobachtung}
-Die Darstellungen der räumlichen Drehungen sind \underline{unitär}, die Darstellungen der Lorentzboosts sin \underline{nicht} unitär, aber hermitesch.
+Die Darstellungen der räumlichen Drehungen sind \underline{unitär}, die Darstellungen der Lorentzboosts sind \underline{nicht} unitär, aber hermitesch.
+\subsubsection*{Beobachtung}
+Entsprechend wie für $M_{\rho\sigma}$ sind doe $[\gamma_\rho,\gamma_\sigma]$ schiefsymmetrisch für Drehungen und symemtrisch für Boosts.
+
 \subsubsection{Die Kovarianz der Observablen}
 Wir betrachten den Viererstrom :
-$$\mathrm{in \ X: \ } j^{'\mu}(x)=c\psi^+(x)\gamma^0 \gamma^\mu \psi(x)$$
-$$\mathrm{in \ X': \ } j^{'\mu}(x')=c\psi^{'+}(x')\gamma^0 \gamma^\mu \psi'(x')$$
+$$\mathrm{in \ X: \ } j^{\mu}(x)=c\psi^+(x)\gamma^0 \gamma^\mu \psi(x)$$
+$$\mathrm{in \ X': \ } j'^{\mu}(x')=c\psi^{'+}(x')\gamma^0 \gamma^\mu \psi'(x')$$
+$$\partial_\mu j^\mu=0$$
+$\psi^+\gamma^0=\tilde \psi$ adjungierter Spinor
+
 \subsubsection*{Beobachtung}
+$$S(\L)\psi(x)=\psi(x')$$
 Wir wissen, wie die $\psi(x)$ sich transformieren. (mit $x \stackrel{\L}{\ra} x'$)
 $$j^{'\mu}(x')=c\psi^{'+}(x')\gamma^0 \gamma^\mu \psi'(x')=c\psi^+(x)S_{\L}^+\gamma^0\gamma^\mu S_{\L}\psi(x)$$
 $$=c \psi^+(x)\gamma^0S^{-1}\gamma^\mu S \psi(x)$$
-Mit \underline{Lemma}: $S^{-1}?\gamma^0S^+\gamma^0$ (zu beweisen)
+Mit \underline{Lemma}: $S^{-1}=\gamma^0S^+\gamma^0$ (zu beweisen)
 $$=c  \L_\nu^\mu\psi^+(x)\gamma^0 \gamma^\nu \psi(x)=\L_\nu^\mu\gamma^\nu(x)$$
-mit der Fundamentalrelation: $S^{-1}(\L)\gamma\nu S(\L)=\L_\mu^\nu \gamma^\mu$
+mit der Fundamentalrelation: $S^{-1}(\L)\gamma_\nu S(\L)=\L_\mu^\nu \gamma^\mu$
 \subsubsection*{Folgerung}
-$j^\mu(x)$ transformiert sich wie ein Veirervektor.
+$j^\mu(x)$ transformiert sich wie ein Vierervektor.
 \subsubsection*{Beweis des Lemmas (mit Fundamentalrelation)}
 \begin{enumerate}
 \item $S(\L)^{-1}\gamma^\nu S(\L)=\L_\mu^\nu\gamma^\mu$, bilden der adjungierte Gleichung
@@ -2538,60 +2610,79 @@ In $L_+^\uparrow$ ist $b=1$ $\Ra S^{-1}=\gamma^0 S^+ \gamma^0$
 % 
 \subsection{Lösung der (freien) Diracgleichung}
 Diracgleichung in der Form:
-$$(i\gamma^mu \partial_\mu-\frac{mc}{\hbar})\psi=0$$
+$$(i\gamma^\mu \partial_\mu-\frac{mc}{\hbar})\psi=0$$
 Ansatz mit ebenen Wellen $(*)$:
 $$\psi(x)=\begin{cases}
-  e^{\frac{-ipx}{\hbar}}u_+(p),  & \text{a)}\\
-  e^{\frac{ipx}{\hbar}}u_-(p), & \text{b)}
+  e^{\frac{-ip_\mu x^\mu}{\hbar}}u_+(p),  & \text{a)}\\
+  e^{\frac{ip_\mu x^\mu}{\hbar}}u_-(p), & \text{b)}
 \end{cases}$$
 $$px=p_\nu x^\nu$$
-Beachte: $(p)^\nu=(p^0=\frac{E\geq 0}{c}, \vec p)$, $(p)_\nu=(p^0,-\vec p)$
+Beachte: $(p)^\nu=(p^0=\frac{E\geq 0}{c}, \vec p)$, $(p)_\nu=(p^0,-\vec p)$\\
 $u_+(p), u_-(p)$ sind vierkomponentige Spinoren.
+
+\subsubsection*{Bemerkung}
+$$p_0>0, \ p_0=\sqrt{|\vec p|^2+m_0^2c^2}=\frac{E}{c}$$
+$$p_\mu x^\mu=p_0x^0+p_kx^k=p_0x^0-\vec p \vec x$$
+$$p_k=-p^k$$
+\subsubsection*{Beobachtung}
+\begin{enumerate}
+\item $i\hbar \partial_t (e^{-\frac{ip_\nu x^\nu}{\hbar}}u_+(p)), \ \ p_0=\frac{E}{c} \ra p_0(...)\geq 0$ auf L.S.
+\item $i\hbar \partial_t (e^{\frac{ip_\nu x^\nu}{\hbar}}u_-(p)), \ \ p_0=\frac{E}{c} \ra -p_0(...)<0$ auf L.S. 
+\end{enumerate}
+\subsubsection*{Redeweise}
+$e^{-ip_\mu x^\mu}(...) \ra$ Lösungen mit positiver Energie\\
+$e^{ip_\mu x^\mu}(...) \ra$ Lösungen mit negativer Energie\\
+
 \subsubsection*{Folgerung $(1)$}
 $u_+(p), u_-(p)$ erfüllen 
-$$(\xout{p}-mc)U_+(p)=0$$
-$$(\xout{p}+mc)u_-(p)=0$$
+$$(\xout{p}-m_0c)u_+(p)=0 \ra E>0$$
+$$(\xout{p}+m_0c)u_-(p)=0 \ra E<0$$
 $$\xout{p}:=\gamma^\nu p_\nu=\gamma^0p^0-\vec \gamma \vec p, \ \ \vec \gamma=(\gamma^1,\gamma^2,\gamma^3)$$
+$\ra$ je 4 homogene Gleichungen
+
 \subsubsection*{Bemerkung}
 Günstiger ist, die Diracgleichung in folgender Form zu benutzen:
 $$(**) \ i\hbar \partial_t \psi=(c \frac{\hbar}{i} \vec \alpha \circ \vec \partial + \beta mc^2)\psi=H_D \psi=\D\psi$$
 $$\vec \alpha=(\gamma^0\gamma^1,...,\gamma^0\gamma^3)$$
 $$\beta=\gamma^0$$
 $$\vec \partial =(\partial_1,...,\partial_3)$$
-\subsubsection*{Bemerkung}
-$$p^0=\frac{E}{c}\geq 0$$
-\subsubsection*{Beobachtung}
-\begin{enumerate}
-\item $i\hbar \partial_t (e^{-\frac{ip_\nu x^\nu}{\hbar}}u_+(p)), \ \ p_0=\frac{E}{c} \ra p_0(...)$ auzf L.S. (FIXME)
-\item $\ra -p_0(...)$ auf L.S. (FIXME) 
-\end{enumerate}
-\subsubsection*{Redeweise}
-$e^{-ipx}(...) \ra$ Lösungen mit positiver Energie\\
-$e^{ipx}(...) \ra$ Lösungen mit negativer Energie\\
+$$\vec \alpha \vec \partial=\alpha^k \partial_k$$
 \subsubsection*{Folgerung}
 Mit $(*)$ und $(**)$: $(2)$ 
 \begin{enumerate}
 \item a) $i\hbar \partial_t(e^{-\frac{ip_\mu x^\mu}{\hbar}}) \ra cp_0 u_+(p)=(c \vec \alpha \vec p +\beta mc^2)u_+(p)$
 \item b) $i\hbar \partial_t(e^{\frac{ip_\mu x^\mu}{\hbar}}) \ra -cp_0 u_-(p)=(-c \vec \alpha \vec p +\beta mc^2)u_-(p) \ra cp_0 u_-(p)=(c \vec \alpha \vec p -\beta mc^2)u_-(p)$
 \end{enumerate}
+\subsubsection*{Definition (Skalarprodukt):}
+$$u'(p) \cdot u(p)=\sum_{\nu=1}^4\overline{u_\nu}u_\nu=\tilde u' \gamma^0 u$$
+$$\tilde u:=u^+\gamma_0$$
+$$\psi^+\psi=tilde \psi \gamma_0 \psi=\sum_{\nu=1}^4\overline \psi_\nu \psi_\nu$$
+
 \subsubsection*{Beobachtung}
 $(1)$ bzw. $(2)$ ist ein homogenes System von 4 Gleichungen $\Ra$ Lösungen von $det(C)=0$.
+
 \subsubsection*{Behauptung $(**)$}
 $det(\xout{p} \mp mc)=(p^2- m^2c^2)^2$, falls $=0$ $\Ra$ 2 doppelte Nullstellen.\\
 $p_0=\pm\sqrt{\vec p^2+m^2c^2}$ (vetraute Relation aus SRT)
+
 \subsubsection*{Folgerung aus $(**)$}
 Da Matrix symmetrisch ist $\ra$ charakteristische Gleichung:\\
 $A$ selbstadjungiert, $det(A-\l)=0$ liefert EW, mehrfache Nullstellen $\ra$ entartete EW\\
 $\Ra (**)$ liefert 4 Nullstellen zu $+p_0,-p_0$, zweifach entartet
+
 \subsubsection*{Beweis von $(**)$}
 Es gilt:
-$$det(S^{-1}(\L)\gamma^\mu S(\L) p_\mu-mc)=det/\gamma^\mu p_\mu -mc)=det(\xout{p} -mc)$$
-$$\stackrel{\mathrm{Fundamentalrelation}}{=} det(\gamma^\nu \L_\nu^\mu p_\mu-mc)=det(\gamma^\nu(\L^{-1}p)_\nu-mc$$
-Wähle spezielle Lorentztransformation $\L$, sodass Transformation ins Ruhesystem, d.h. $p_\nu \stackrel{\L}{\ra} (\pm \sqrt{p^2},0,0,0)$, $p^2=p_\nu p^\nu$
+$$det(S^{-1}(\L)\gamma^\mu S(\L) p_\mu-mc)=det(\gamma^\mu p_\mu -mc)=det(\xout{p} -mc)$$
+$$\stackrel{\mathrm{Fundamentalrelation}}{=} det(\gamma^\nu \L_\nu^\mu p_\mu-mc)=det(\gamma^\nu(\L^{-1}p)_\nu-mc)$$
+Wähle spezielle Lorentztransformation $\L$, sodass Transformation ins Ruhesystem, d.h. $p_\nu \stackrel{\L}{\ra} (\pm \sqrt{p^2},0,0,0)$, $p^2=p_\nu p^\nu=m_0^2c^2$
 $$=det(\gamma^0\sqrt{p^2}-mc)=(p^2-m^2c^2)^2$$
+
 \subsubsection*{Bemerkung}
-$u_+(\vec p)$ Lösung zu $cp_0=E(\vec p)=+\sqrt{\vec p^2+m^2c^2}$, $u_+(\vec p)$ löst Gleichung: $(\vec \alpha \vec p+\beta mc^2)u_+(\vec p)=E(\vec p)u_+(\vec p)$
-\subsubsection*{Notation}
+$u_+(\vec p)$ Lösung zu $cp_0=E(\vec p)=+\sqrt{\vec p^2+m^2c^2}$, $u_+(\vec p)$ löst Gleichung: $$(c\vec \alpha \vec p+\beta mc^2)u_+(\vec p)=E(\vec p)u_+(\vec p)$$
+$$\alpha^k=\gamma^0\gamma^k$$
+$$\beta=\gamma^0$$
+
+\subsubsection*{Notation: Fall positiver Energie}
 $$u_+(\vec p)=\begin{pmatrix}u_1(\vec p) \\ u_2(\vec p) \end{pmatrix}=\begin{pmatrix}u^1_+ \\ u^2_+ \\ u^3_+ \\ u^4_+ \end{pmatrix}$$
 $$\alpha^k=\begin{pmatrix}0 & \sigma^k \\ \sigma^k & 0 \end{pmatrix}$$
 $$\beta=\begin{pmatrix}\Eins \\  & -\Eins \end{pmatrix}$$
@@ -2600,13 +2691,13 @@ $$\beta=\begin{pmatrix}\Eins \\  & -\Eins \end{pmatrix}$$
 \item b) $c\vec \sigma \vec p u_1-mc^2 u_2=E(\vec p)u_2$
 \end{itemize}
 Lösungen von a),b):\\
-b) $u_2=c\frac{\vec \sigma \vec p}{E(\vec p)+mc^2}u_1$, $ E(\vec p)-mc^2>0$\\
+b) $u_2=c\frac{\vec \sigma \vec p}{E(\vec p)+mc^2}u_1$, $ E(\vec p)+mc^2>0$\\
 a) $E(\vec p)u_1=(\frac{c^2(\vec\sigma\vec p)^2}{E(\vec p)+mc^2}+mc^2)u_1$\\
-Mit $(\vec \sigma \vec p)^2=\vec p^2$
+Mit $(\vec \sigma \vec p)^2=\vec p^2$ (Übung)
 $$\Ra \frac{c^2\vec p^2}{E(\vec p)+mc^2}=\frac{E^2(\vec p)-m^2c^4}{E(\vec p)+mc^2}=E(\vec p)-mc^2$$
 \subsubsection*{Folgerung}
-a) mit Umformung an b) ist indentisch in $u_1$ erfüllt!\\
-$\Ra$ man kann 2 linear unabhängige Lösungen wählen für $u_1=\begin{pmatrix}1 \\ 0\end{pmatrix}$, $u_1=\begin{pmatrix}0 \\ 1\end{pmatrix}$
+a) $u_1$ unabh. $\ra$ frei wählbar $\ra$ $u_2$ mittels $u_2$ bestimmbar\\
+$\Ra$ man kann 2 linear unabhängige Lösungen wählen für $u_1=\begin{pmatrix}1 \\ 0\end{pmatrix},\begin{pmatrix}0 \\ 1\end{pmatrix}$
 \subsubsection*{Fall negativer Energien}
 $$u_-(\vec p)=\begin{pmatrix}v_1 \\ v_2\end{pmatrix}$$
 \begin{itemize}
@@ -2619,10 +2710,10 @@ a) $E(\vec p)v_2=(\frac{c^2(\vec\sigma\vec p)^2}{E(\vec p)+mc^2}+mc^2)v_2$ (wied
 $v_2=\begin{pmatrix}1 \\ 0\end{pmatrix},\begin{pmatrix}0 \\ 1\end{pmatrix}$
 \subsubsection*{Endergebnis}
 Vier linear unabhängige Lösungen der freien Diracgleichung (ebene Wellen), zwei zu positiver, zwei zu negativer Energie, sind:
-$$u_+^{(1)}(\vec p)=\sqrt{\frac{E(\vec p)+mc^2}{2 E(\vec p)}} \begin{pmatrix}1 \\ 0 \\ \frac{c^2(\vec\sigma\vec p)^2}{E(\vec p)+mc^2}+mc^2) \begin{pmatrix}1 \\ 0\end{pmatrix} \end{pmatrix}$$
-$$u_+^{(2)}(\vec p)=\sqrt{\frac{E(\vec p)+mc^2}{2 E(\vec p)}} \begin{pmatrix}0 \\ 1 \\ \frac{c^2(\vec\sigma\vec p)^2}{E(\vec p)+mc^2}+mc^2) \begin{pmatrix}0 \\ 1\end{pmatrix} \end{pmatrix}$$
-$$u_-^{(1)}(\vec p)=\sqrt{\frac{E(\vec p)+mc^2}{2 E(\vec p)}} \begin{pmatrix}\frac{c^2(\vec\sigma\vec p)^2}{E(\vec p)+mc^2}+mc^2) \begin{pmatrix}1 \\ 0\end{pmatrix} \\ 1 \\ 0 \end{pmatrix}$$
-$$u_-^{(2)}(\vec p)=\sqrt{\frac{E(\vec p)+mc^2}{2 E(\vec p)}} \begin{pmatrix}\frac{c^2(\vec\sigma\vec p)^2}{E(\vec p)+mc^2}+mc^2) \begin{pmatrix}0 \\ 1\end{pmatrix} \\ 0 \\ 1 \end{pmatrix}$$
+$$u_+^{(1)}(\vec p)=\sqrt{\frac{E(\vec p)+mc^2}{2 E(\vec p)}} \begin{pmatrix}1 \\ 0 \\ \frac{c\vec\sigma\vec p}{E(\vec p)+mc^2} \begin{pmatrix}1 \\ 0\end{pmatrix} \end{pmatrix}$$
+$$u_+^{(2)}(\vec p)=\sqrt{\frac{E(\vec p)+mc^2}{2 E(\vec p)}} \begin{pmatrix}0 \\ 1 \\ \frac{c\vec\sigma\vec p}{E(\vec p)+mc^2} \begin{pmatrix}0 \\ 1\end{pmatrix} \end{pmatrix}$$
+$$u_-^{(1)}(\vec p)=\sqrt{\frac{E(\vec p)+mc^2}{2 E(\vec p)}} \begin{pmatrix}\frac{c\vec\sigma\vec p}{E(\vec p)+mc^2} \begin{pmatrix}0 \\ 1\end{pmatrix} \\ 0 \\ 1 \end{pmatrix}$$
+$$u_-^{(2)}(\vec p)=\sqrt{\frac{E(\vec p)+mc^2}{2 E(\vec p)}} \begin{pmatrix}\frac{c\vec\sigma\vec p}{E(\vec p)+mc^2} \begin{pmatrix}1 \\ 0\end{pmatrix} \\ 1 \\ 0 \end{pmatrix}$$
 \subsubsection*{Bemerkung}
 $\sqrt{\frac{E(\vec p)+mc^2}{2 E(\vec p)}}$ ist so gewählt, dass $u^+(\vec p)u(\vec p)=1$.
 \subsubsection*{Beobachtung}
@@ -2635,6 +2726,8 @@ Für die Lösungen der freien Diracgleichung $u_{\pm}^{(1,2)}(\vec p)$ gilt in $
 $$u_+^{(1)}(\vec p) \bot u_+^{(2)}(\vec p)$$
 $$u_-^{(1)}(\vec p) \bot u_-^{(2)}(\vec p)$$
 $$u_+^{(i)}(\vec p) \bot u_-^{(j)}(-\vec p)$$
+$$u^+(\vec p)u(\vec p)=1 \ \forall u_\pm^{1,2}$$
+
 \subsubsection*{Grund}
 Ursprüngliche Konvention:\\
 Ansatz $e^{-\frac{i p_\mu x^\mu}{\hbar}}u_+(\vec p)$, $e^{\frac{i p_\mu x^\mu}{\hbar}}u_-(\vec p)$\\
@@ -2654,26 +2747,27 @@ $$(\xout{p}+mc)u_-=0$$
 \subsubsection*{Bemerkung}
 Diracgleichung für ruhendes Elektron, d.h. $\vec p=0$:
 $u_+^{(1)}=\begin{pmatrix}1 \\ 0 \\ 0 \\ 0\end{pmatrix}$, $u_+^{(2)}=\begin{pmatrix}0 \\ 1 \\ 0 \\ 0\end{pmatrix}$, $u_-^{(1)}=\begin{pmatrix}0 \\ 0 \\ 0 \\1\end{pmatrix}$, $u_-^{(2)}=\begin{pmatrix}0 \\ 0 \\ 1 \\ 0\end{pmatrix}$\\
-Die Komponente mit $x \frac{\vec \sigma \vec p}{E_p+mc^2} \begin{pmatrix}1 \\ 0 \end{pmatrix}$ bzw. $\begin{pmatrix}0 \\ 1 \end{pmatrix}$ $\ra$ \underline{kleine Komponente} (klein in nichtrelativistischer Näherung)
+Die Komponente mit $\frac{\vec \sigma \vec p}{E_p+mc^2} \begin{pmatrix}1 \\ 0 \end{pmatrix}$ bzw. $\begin{pmatrix}0 \\ 1 \end{pmatrix}$ $\ra$ \underline{kleine Komponente} (klein in nichtrelativistischer Näherung)
 \subsubsection*{Bemerkung}
 Wellenpackete durch Überlagerung der $u_\pm^{(i)}(\vec p)$.\\
 Diracgleichung für $\vec p=0$: $i\hbar \partial_t \psi=\beta mc^2 \psi$
 \subsubsection*{Bemerkung (ohne Rechnung)}
  Der nicht-relativistische Limes der Diracgleichung ist die Pauligleichung:
 $$i \hbar \partial_t \phi=[\frac{(\vec p -\frac{e}{c}\vec A)^2}{2m}-\frac{e \hbar}{2mc}\vec \sigma \vec B+e\Phi]\phi$$
-$\phi=\begin{pmatrix}\phi_1 \\ \phi_2\end{pmatrix}$ (Lösungen zu positiver Energie)
+$\phi=\begin{pmatrix}\phi_1 \\ \phi_2\end{pmatrix}$ (Lösungen zu positiver Energie, $+$-Komponenten von $\psi$)
 
 \subsection{Die Interpretation der Lösungen mit negativer Energie}
 \subsubsection*{Bemerkung}
-In freier Diracgleichung könnte man sie ignorieren (aber keine gute Methode). Aber mit Wechselwirkung existieren Übergänge von positiven zu negativen Energien (z.B. Kleinsches Paradoxon (Potentialstufe))
+In freier Diracgleichung könnte man sie ignorieren (aber keine gute Methode).\\
+ Aber mit Wechselwirkung existieren Übergänge von positiven zu negativen Energien (z.B. Kleinsches Paradoxon (Streuung an Potentialstufe))
 \subsubsection*{Folgerung}
 Wenn es diese gäbe, würde man abgestrahlte positive Energien sehen (in dieser Form \underline{nicht} beobachtet).
 \subsubsection*{Dirac (1930)}
-Löchertheorie (Proc. Cambr. ph .Soc. 36 (1030), p. 376)
+Löchertheorie (Proc. Cambr. ph. Soc. 26 (1930), p. 376)
 \subsubsection*{Annahme}
-Negative Energiezustände praktisch alle besetzt (mit Pauliprinzip) $\Ra$ verhindert Übergänge zu negativen Energien\\
+Negative Energiezustände praktisch alle besetzt (mit Pauliprinzip, Diracsee) $\Ra$ verhindert Übergänge zu negativen Energien\\
 Möglich nur, wenn einige negative Niveaus geleert worden sind \\
-$\Ra$ Leerstellen im See von negativer Energie der Elektronen $\Ra$ Teilchen mit positiver Energie, positiver Ladung, ....
+$\Ra$ Leerstellen im See von negativer Energie der Elektronen ($\ra$ Löcher) $\Ra$ Teilchen mit positiver Energie, positiver Ladung, ....
 \subsubsection*{Folgerung}
 Übergänge möglich $\ra$ Systeme mit \underline{nichterhaltener Teilchenzahl} $\ra$ Feldtheorie (keine Einteilchentheorie wie Diracgleichung)\\
 Bild machte große Probleme (speziell Pauli (Handbuchartikel: Problem der Diracgleichung (1933)))\\
@@ -2682,6 +2776,56 @@ Bild bestätigt durch Anderson: 1932 fand er das Antiteilchen zu Elektron: das P
 Paarerzeugung (Elektron-Positron)
 \subsubsection*{Übergang}
 $ \psi(x) \Ra$ Feldoperatoren 
+
+\subsection{Spin in der Dirac-Gleichung}
+$$S(\L)=1+\frac{1}{8}[\gamma^\mu,\gamma^\nu]\omega_{\mu\nu}$$
+d.h. Wirkung auf $\psi$ gilt für kleine $\omega_{\mu\nu}$ (Drehungen)
+\subsubsection*{Häufig (Physik):}
+$$S(\L)=1-\frac{i}{4}\delta^{\mu\nu}\omega_{\mu\nu}$$
+$$\delta^{\mu\nu}=\frac{1}{2}[\gamma^\mu,\gamma^\nu]$$
+$SO(3)$ ist Untergruppe der Lorentzgruppe $\ra$ Darstellung\\
+$\ra$ \underline{Spezialfall:} (Drehungen um z-Achse) $\ra$ Drehung in 1-2-Ebene $\ra M^{12} \ra \frac{1}{2}\delta^{\mu\nu}=\frac{i}{4}[\gamma^\mu,\gamma^\nu]$
+$$\Ra S(\L_{12})=1-\frac{1}{2}\delta^{12}\omega_{12}$$
+
+\subsubsection*{Folgerung}
+$S(\L_{12})$ ist Darstellung einer infinitesimalen Rotation und die z-Achse im Spinraum der $\psi$
+\subsubsection*{Ausrechnen von $\frac{i}{2}[\gamma^\mu,\gamma^\nu]$}
+$$\frac{i}{2}\left( \begin{pmatrix}0 & \sigma_1 \\ -\sigma_1 & 0\end{pmatrix}, \begin{pmatrix}0 & \sigma_2 \\ -\sigma_2 & 0\end{pmatrix}\right)=-\frac{i}{2}\begin{pmatrix}\sigma_1 \sigma_2-\sigma_2\sigma_1 & 0 \\ 0 & \sigma_1 \sigma_2-\sigma_2\sigma_1\end{pmatrix}$$
+$$=\begin{pmatrix}\sigma_3 & 0 \\ 0 & \sigma_3 \end{pmatrix}$$
+$$\Ra S(\L_{12}=1-\frac{i}{2}\begin{pmatrix}\sigma_3 & 0 \\ 0 & \sigma_3 \end{pmatrix}\omega_{12}$$
+
+\subsubsection*{Beobachtung}
+Erinnert an nichtrelativistische SPinoren (2-komponentig) $\ra \frac{1}{2}\sigma_3$ entspricht Spinoperator bzgl. z-Achse\\
+$\ra$ EW von $\frac{\hbar}{2}\sigma_3$ sind $\pm \frac{\hbar}{2}$, $\psi_{12}=(1,0),(0,1)$\\
+Speziell für obere beiden Komponenten in $\psi$ (FIXME)
+
+\subsubsection*{Folgerung}
+Spin ($\pm \frac{\hbar}{2}$) ist in Dirac-Gleichung enthalten, $SO(3) \subset L_+^P$ (FIXME)
+
+\subsubsection*{Korollar (Endliche Drehung um z-Achse}
+$$S(\L_{12})=e^{-\frac{i}{2}\begin{pmatrix}\sigma_3 & 0 \\ 0 & \sigma_3 \end{pmatrix}\alpha}$$
+$\alpha$ endlicher Winkel
+
+\subsubsection*{Spezialfall (EV zum Spin in z-Richtung)}
+\textbf{Ruhessystem der Elektronen:} $\ra$ Ebene Welle $\ra$ \\
+$u_+^{(1)}=\begin{pmatrix}1 \\ 0 \\ 0 \\ 0\end{pmatrix}$, $u_+^{(2)}=\begin{pmatrix}0 \\ 1 \\ 0 \\ 0\end{pmatrix}$, $u_-^{(1)}=\begin{pmatrix}0 \\ 0 \\ 0 \\1\end{pmatrix}$, $u_-^{(2)}=\begin{pmatrix}0 \\ 0 \\ 1 \\ 0\end{pmatrix}$\\
+Folgerung: Die $u_\pm^{(1,2)}$ sind die EV zu $\delta^{12}$ mit $\pm \frac{\hbar}{2}$ als EW\\
+\textbf{Bewegte Elektronen:}
+d.h. $\vec p \neq 0$ $\ra$ Definition: $\vec \Sigma=\begin{pmatrix}\vec \sigma  & 0 \\ 0 & \vec \sigma \end{pmatrix}$ $\ra$ $\vec \Sigma \vec p$ oder $\hat {\vec p}=\frac{\hbar}{i}\vec \sigma$ (FIXME ?)
+\subsubsection*{Definition}
+$$S(\vec p):=\frac{\vec \Sigma \vec p}{|\vec p|}$$
+heißt Helizitätsoperator und misst den Spin parallel zur AUsbreitungsrichtung einer ebenen Welle.
+\subsubsection*{Beobachtung}
+$S(\vec  p)$ vertauscht mit $H_D=c \vec \alpha \hat{ \vec p}+\beta m_0c^2$
+\subsubsection*{Begründung}
+In $[\vec \Sigma \vec p,\vec \alpha \vec p]$ taucht $[\sigma_i,\sigma_j]$ und $[\sigma_j,\sigma_i]$ auf und kompensieren sich
+\subsubsection*{Folgerung}
+ $[\vec \Sigma \vec p,\vec \alpha \vec p]=0 \Ra$ geneinsame Menge vom EW.
+\subsubsection*{Beobachtung}
+$$\sigma_i^2=1 \ra S(\vec p)^2=1 \ra \lambda=\pm 1$$
+\subsubsection*{Folgerung}
+$\frac{\hbar}{2}S(\vec p)$ liefert $\pm \frac{\hbar}{2}$ als EW vom Spin in Bewegungsrichtung des Elektrons.
+
 
 \part{Übungsaufgaben}
 
@@ -3142,6 +3286,7 @@ $\Ra$ $D_{01}$ ist \underline{nicht} schiefsymmetrisch, aber symmetrisch $\ra$ $
 \item Mittels der Antivertauschungsrelationen der $\sigma^k$ zeige man $(\vec \sigma \vec p)^2=\vec p^2 \cdot \Eins$.
 \item Zeige für z.B. $u_+^{(1)}(\vec p)$, dass gilt $u_+^{+}(\vec p)u(\vec p)=\sum_{i=1}^4 \overline{u}_i u_i=1$.
 \item Zeige, dass die 4 Lösungen aufeinander senkrecht stehen, d.h. a) $u_+^{(1)}(\vec p), u_+^{(2)}(\vec p)$, b) $u_+^{(1)}(\vec p), u_-^{(1)}(\vec p)$
+\item Man schreibe eine Lorentztransformation infinitesimal und berechne $\L^{-1}$ infinitesimal.
 \end{enumerate}
 \ifthenelse{\boolean{lsg}}{
 \subsubsection*{LÖSUNG}
@@ -3155,6 +3300,9 @@ $$=\frac{E_p+mc^2}{2E_p}(1+<\begin{pmatrix}1 \\ 0\end{pmatrix}|\frac{c^2 (\vec \
 $$c^2 \vec p^2=E_p^2-m^2c^4$$
 \item $$u_+^{(1)} (\vec p)^+ u_-^{(1)}(\vec p)=\frac{E_p+mc^2}{2E_p} <\begin{matrix}\begin{pmatrix}0 \\ 1\end{pmatrix}\\ \begin{pmatrix}0 \\ 1\end{pmatrix} \end{matrix}|\begin{matrix}\frac{-c\vec \sigma \cdot \vec p}{E_p+mc^2}\begin{pmatrix}1 \\ 0\end{pmatrix}\\ \frac{c\vec \sigma \cdot \vec p}{E_p+mc^2}\begin{pmatrix}1 \\ 0\end{pmatrix} \end{matrix}>$$
 (Oberes Skalarprodukt ist das Negative des unteren Skalarprodukts)
+
+\item $$\L=1+\frac{1}{2}M^{\mu\nu}\omega{\mu\nu}$$
+$$\L\L^{-1}=1 \Ra \L^{-1}=1-\frac{1}{2}M^{\mu\nu}\omega{\mu\nu}$$
 \end{enumerate}
 }{}
 
@@ -3163,18 +3311,18 @@ $$c^2 \vec p^2=E_p^2-m^2c^4$$
 % 
 \section{Für die Klausur}
 \begin{enumerate}
-\item Zusammengesetzte Systeme, tensorprodukt, Hamiltonoperator, Eigenzustände, Bsp.: He-Atom
+\item Zusammengesetzte Systeme, Tensorprodukt, Hamiltonoperator, Eigenzustände, Bsp.: He-Atom, $\sigma$-Matrizen,...
 \item Symmetriesierungs- und Antisymmetriesierungsoperator, z.B. hermitesch
 \item Schreibe $f(A)$, $A$ selbstadjungiert, mittels Spektralschar von $A$
-\item 2 Spin -$\frac{1}{2}$-Teilchen, Basis im Hjilbertraum, antisymetrischer Zustand, z-Spin$=0$
+\item 2 Spin -$\frac{1}{2}$-Teilchen, Basis im Hilbertraum, antisymetrischer Zustand, z-Spin$=0$
 \item Begriff der Spur, unabhängig von Auswahl des ON-Systemsm $tr(AB)=tr(BA)$
-\item Besetzungszahldarstellung (z.B. System von $N$ Bosonen), Erzeuger- und Vernichter-Operatoren (Vertauschungsrelationen), Fockraum
-\item Feldoperatoren, Vertauschungsrelationen
-\item Konstruktion von Zuständen, etwa $\hat \psi^+(g)\hat \psi^+(f)|0>$
+\item Besetzungszahldarstellung (Konstruktion z.B. System von $N$ Bosonen), Erzeuger- und Vernichter-Operatoren (Vertauschungsrelationen), Fockraum
+\item Feldoperatoren, Vertauschungsrelationen, Erzeuger, Vernichter
+\item Konstruktion von Zuständen, etwa $\hat \psi^+(g)\hat \psi^+(f)|0>$ für Bosonen
 \item kovariante Form der Diracgleichung mittel $\gamma$-Matrizen, Form wie Schrödingergleichung (Direacoperator)
 \item Wahrscheinlichkeitsinterpretation Klein-Gordon-Gleichung, Diracgleichung, Probleme
-\item Vertauschungsrelationen von $\gamma$-Matrizen mittels der Paulimatrizen
-\item Zeige, dass $[\gamma^0,\gamma^1]$ \underline{nicht} schiefsymmetrisch ist, Folge für $e^{\alpha[\gamma^0,\gamma^1]}$
+\item Vertauschungsrelationen und Form von $\gamma$-Matrizen mittels der Paulimatrizen
+\item Zeige, dass $[\gamma^0,\gamma^\mu]$ \underline{nicht} schiefsymmetrisch ist, Folge für $e^{\alpha[\gamma^0,\gamma^\mu]}$ (nicht unitär)
 \end{enumerate}
 
 

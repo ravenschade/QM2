@@ -1,9 +1,11 @@
 all:
-	pdflatex skript
+	latex skript
+	dvipdfmx skript.dvi
 
 lsg:
 	sed -i "s/setboolean{lsg}{false}/setboolean{lsg}{true}/g" skript.tex
-	pdflatex skript
+	latex skript
+	dvipdfmx skript.dvi
 	sed -i "s/setboolean{lsg}{true}/setboolean{lsg}{false}/g" skript.tex
 
 view:
