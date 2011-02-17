@@ -1981,16 +1981,19 @@ SRT$\cup$QM
 
 \begin{enumerate}
 \item \textbf{Korrespondenzprinzip:}
-$$E \rightsquigarrow i\hbar \partial_t$$
-$$\vec p \rightsquigarrow \frac{\hbar}{i} \nabla_x$$
+$$E \rightsquigarrow i\hbar \partial_t \entspricht \mathrm{Frequenz}$$
+$$\vec p \rightsquigarrow \frac{\hbar}{i} \nabla_xt \entspricht\mathrm{Wellenzahlvektor}$$
 (Constraint) $E=\frac{\vec p^2}{2m}+V \rightsquigarrow  i\hbar \partial_t \psi=\frac{1}{2m}(\frac{\hbar}{i}\nabla_x)^2+V$
-\item \textbf{wichtiges Konzept:}\\
-Erhaltung der Wahrscheinlichkeit $\entspricht$ es existiert ein erhaltener Wahrscheinlichkeitsstrom
+\item \textbf{wichtiges Konzepte aus der QM, die bestehen bleiben sollen:}\\
+\begin{itemize}
+\item Erhaltung der Wahrscheinlichkeit $\entspricht$ es existiert ein erhaltener Wahrscheinlichkeitsstrom
 $$\partial_t \rho(x,t)+\nabla \vec j(x,t)\equiv0$$
 $$\rho(x,t)=\overline{\psi(x,t)} \psi(x,t)$$
 $$\vec j(x,t)=\frac{\hbar}{2mi}(\overline{\psi}\nabla_x \psi-\nabla_x \overline{\psi}\psi)$$
-$$=\frac{1}{2m}(\overline{\psi} \hat{\vec p} \psi-\nabla_x \overline{\hat{\vec p}\psi}\psi)$$
+$$=\frac{1}{2m}(\overline{\psi} \hat{\vec p} \psi+\overline{\hat{\vec p}\psi}\psi)$$
+\item Erhaltung der Gesamtwahrscheinlichkeit:\\
 $\Ra \int \overline{\psi}(x,t) \psi(x,t)d^3x=1$ (zeitlich konstant) 
+\end{itemize}
 \end{enumerate}
 \subsubsection*{Ziel}
 Relativistische Wellengleichung (analog der Schrödingergleichung) mit erhaltenen Wahrscheinlichkeitsstrom.\\
@@ -2004,13 +2007,23 @@ $\ra$ (Schrödinger) \underline{nichtrelativistische Approximation} $\ra$ Schrö
 Titel	Wellenmechanik: Einführung und Originaltexte
 Autor	Günther Ludwig
 \end{verbatim}
+\begin{verbatim}
+Titel:	Relativity : special, general, and cosmological / Wolfgang Rindler
+Verfasser:	Rindler, Wolfgang *1924-*
+\end{verbatim}
+\begin{verbatim}
+Titel:	Relativity, groups, particles : special relativity and relativistic symmetry in field and particle physics / Roman U. Sexl; Helmuth K. Urbantke. Rev. and transl. from the German by Helmuth K. Urbantke
+Verfasser:	Sexl, Roman *1939-1986* ; Urbantke, Helmuth K. *1940-*
+\end{verbatim}
 \end{tiny}
+
 
 
 \subsubsection{Wiederholung SRT}
 \begin{enumerate}
 \item \textbf{Ereignisabstand:}\\
-$(ct)^2-\vec x^2$ bzw. $c^2(t'-t)^2-(\vec v'-\vec x)^2$ ist \underline{invariant} unter Übergang von einem Inertialsystem $S$ zu $S'$. (Wechsel des Inertialsystems: Drehungen und Geschwindigkeitstransformation)
+$(ct)^2-\vec x^2$ bzw. $c^2(t'-t)^2-(\vec x'-\vec x)^2$ ist \underline{invariant} unter Übergang von einem Inertialsystem $S$ zu $S'$ (ohne äußeren Kräfte). (Wechsel des Inertialsystems: Drehungen und Geschwindigkeitstransformation)\\
+$(ct)^2-\vec x^2$ ist invariant unter Lorentztransformation.
 \item \textbf{Schreibweise:}\\
 $(x^i)=(x^0,x^1,x^2,x^3)=(ct,\vec x)$ Index oben $\ra$ kontravariante Vektoren
 \item \textbf{Minkowskikinetik (metrischer Tensor):}\\
@@ -2019,7 +2032,7 @@ $$(\eta_{ik})=\begin{pmatrix}1 \\ & -1 \\ & & -1 \\ & & & -1\end{pmatrix} \ \mat
 \subsubsection*{Definition/Folgerung}
 $$(ct)^2-\vec x^2= \eta_{ik} x^ix^k=x_ix^i$$
 \subsubsection*{Konvention (Einsteinsche Summenkonvention)}
-Man summiert in Ausdrücken wiedem oben über oben und unten stehene gleiche Indizes von $0,...,I$.
+Man summiert in Ausdrücken wie dem oben über oben und unten stehene gleiche Indizes von $0,...,3$.
 \subsubsection*{Daher}
 $(x^i)$ kontravarianter Vierervektor, $x_i:= \eta_{ik}x^k$ kovarianter Vektor\\
 $\Ra (x_0,x_1,x_2,x_3)$ mit $x_0=x^0, x_{1,2,3}=-x^{1,2,3}$\\
@@ -2039,9 +2052,10 @@ $(*)$ in Indexschreibweise: $\L_k^i \eta_{il} \L_m^l=\eta_{km}$
 \begin{enumerate}
 \item $(\frac{E}{c},\vec p)=(p^0,p^1,p^2,p^3)$ ist kontravariant, weil $(\frac{E}{c},\vec p)$ entsteht aus $m_0(u^i)$, mit $u^i$ als Vierergeschwindigkeit
 \item $(\Phi,\vec A)=(A^0,A^1,A^2,A^3)$ Elektromagnetisches Viererpotential
+\item $p_\nu p^\nu$ ist lorentzinvariant, d.h. $p_\nu p^\nu=m_0^2c^2$, $m:=m_0$ Ruhemasse
 \end{enumerate}
 \subsubsection*{Beobachtung}
-Vierervektor $\ra$ Minkowskiskalarprodukt ist erhaltenen
+Vierervektor $\ra$ Minkowskiskalarprodukt ist erhalten
 $$\ra (\frac{E}{c})^2-\vec p^2=m^2c^2$$
 $$p_ip^i=m^2c^2 \ra E=\sqrt{c^2\vec p^2+m^2c^4}$$
 
